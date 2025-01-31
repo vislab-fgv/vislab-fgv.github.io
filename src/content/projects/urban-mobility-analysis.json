@@ -1,0 +1,5 @@
+{
+  "title": "Urban Mobility Analysis",
+  "coverImage": "http://visualdslab.com/static/images/projects/UrbanMobilityAnalysis.png",
+  "abstract": "Urban Mobility is a research project that aims to develop visual systems that help to visualize, analyze, and understand the behavior of urban transport in different cities. This project covers methods of visualization, pattern detection, and functional analysis. This project aims to develop tools that allow visualizing and analyzing large amounts of spatial-temporal data of urban mobility through different visualization techniques, pattern detection, and functional analysis. The current project consists of two main approaches: The first one presents TaxiVis, a system that allows the analysis of the behavior of New York City's taxis through different visual components. The second presents a vector-based model that allows the analysis of traffic dynamics. This model is based on the vehicles' speed and direction, which allows it to detect interesting mobility patterns in New York City."
+}

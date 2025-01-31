@@ -1,0 +1,56 @@
+---
+import fs from "node:fs/promises";
+import path from "node:path";
+
+interface Content {
+    title: string;
+    coverImage: string;
+    abstract: string;
+}
+
+export async function getStaticPaths() {
+    const contentDir = path.join(process.cwd(), "src/content/projects");
+
+    try {
+        const files = await fs.readdir(contentDir);
+        const jsonFiles = files.filter((file) => file.endsWith(".json"));
+
+        return jsonFiles.map((file) => ({
+            params: {
+                slug: file.replace(".json", ""),
+            },
+            // Opcionalmente, podemos pasar props
+            // props: { filename: file }
+        }));
+    } catch (error) {
+        console.error("Error al leer el directorio:", error);
+        return [];
+    }
+}
+
+const { slug } = Astro.params;
+let content: Content;
+
+try {
+    const contentDir = path.join(process.cwd(), "src/content/projects");
+    const filePath = path.join(contentDir, `${slug}.json`);
+    const fileContent = await fs.readFile(filePath, "utf-8");
+    content = JSON.parse(fileContent);
+} catch (error) {
+    return Astro.redirect("/404");
+}
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{content.title}</title>
+    </head>
+    <body>
+        <main>
+            <h1 class="text-amber-400 font-bold">{content.title}</h1>
+            <p>{content.abstract}</p>
+        </main>
+    </body>
+</html>
