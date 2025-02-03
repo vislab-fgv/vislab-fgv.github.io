@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://vislab-fgv.github.io",
-  base: "/vislab-fgv.github.io",
+  base: "/",
   vite: {
     plugins: [tailwindcss()],
   },
