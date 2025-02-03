@@ -1596,5 +1596,30 @@
     "pub_date": "2025-01-17",
     "url": "https://ieeexplore.ieee.org/abstract/document/10844578",
     "authors": [13, 10, 23, 25, 0]
+  },
+  {
+    "id": 51,
+    "title": "ZigzagNetVis: Suggesting temporal resolutions 2",
+    "venue_id": 3,
+    "venue": "TVCG",
+    "web_name": "ZigzagNetVis",
+    "year": 2025,
+    "bibtext": "2025-ZigzagNetVis",
+    "pdf": "files/papers/2025-ZigzagNetVis-TVCG.pdf",
+    "thumbnail": "images/thumbs/2025-ZigzagNetVis.png",
+    "figure": "images/figures/2025-ZigzagNetVis.png",
+    "caption": "ZigzagNetVis system prototype, an interactive and web-based system with linked views designed to assist the analysis of temporal graphs by highlighting connected components’ structure and evolution. (A) Colored barcode with bottom-based ordering that highlights the longest connected component in the graph — note that (i), (ii), and (iii) represent time intervals with few connected components compared to others. (B) Timestamp markers indicating the three timestamps being depicted by (C-E) the three node-link diagrams. (F) Tooltip showing extra information. (G) Users can select groups of nodes by label or by connected component. (H) Users can choose between two available component positioning strategies.",
+    "start_page": "",
+    "end_page": "",
+    "volume": "",
+    "issue": "",
+    "editors": "0",
+    "publisher": "0",
+    "location": "0",
+    "abstract": "Temporal graphs are commonly used to represent complex systems and track the evolution of their constituents over time. Visualizing these graphs is crucial as it allows one to quickly identify anomalies, trends, patterns, and other properties that facilitate better decision-making. In this context, selecting an appropriate temporal resolution is essential for constructing and visually analyzing the layout. The choice of resolution is particularly important, especially when dealing with temporally sparse graphs. In such cases, changing the temporal resolution by grouping events (i.e., edges) from consecutive timestamps — a technique known as timeslicing — can aid in the analysis and reveal patterns that might not be discernible otherwise. However, selecting an appropriate temporal resolution is a challenging task. In this paper, we propose ZigzagNetVis, a methodology that suggests temporal resolutions potentially relevant for analyzing a given graph, i.e., resolutions that lead to substantial topological changes in the graph structure. ZigzagNetVis achieves this by leveraging zigzag persistent homology, a well-established technique from Topological Data Analysis (TDA). To improve visual graph analysis, ZigzagNetVis incorporates the colored barcode, a novel timeline-based visualization inspired by persistence barcodes commonly used in TDA. We also contribute with a web-based system prototype that implements suggestion methodology and visualization tools. Finally, we demonstrate the usefulness and effectiveness of ZigzagNetVis through a usage scenario, a user study with 27 participants, and a detailed quantitative evaluation.",
+    "note": "",
+    "pub_date": "2025-01-17",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10844578",
+    "authors": [13, 10, 23, 25]
   }
 ]
