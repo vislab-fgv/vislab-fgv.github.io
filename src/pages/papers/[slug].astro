@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { Paper } from '../../types/paper';
+import papersData from '../../data/papers.json';
+
+
+// Import your papers data
+
+export function getStaticPaths() {
+  const papers = papersData;
+  return papers.map((paper) => ({
+    params: { slug: paper.web_name },
+    props: { paper },
+  }));
+}
+
+interface Props {
+  paper: Paper;
+}
+
+const { paper } = Astro.props;
+
+// Función helper para formatear la fecha
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<Layout title={paper.title}>
+  <main class="container mx-auto px-4 py-8 max-w-6xl">
+    {/* Header Section */}
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-4">{paper.title}</h1>
+      <div class="text-lg text-gray-600 mb-4">
+        {/* Authors list */}
+        {paper.authors.join(', ')}
+      </div>
+      <div class="text-gray-500">
+        {paper.venue} · {paper.year} · {formatDate(paper.pub_date)}
+      </div>
+    </div>
+
+    {/* Main Content Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Left Column - Main Content */}
+      <div class="lg:col-span-2">
+        {/* Figure Section */}
+        {paper.figure && (
+          <div class="mb-8">
+            <img
+              src={`http://visualdslab.com/static/${paper.figure}`}
+              alt={paper.title}
+              class="w-full rounded-lg shadow-lg mb-2"
+            />
+            {paper.caption && (
+              <p class="text-sm text-gray-600 italic">{paper.caption}</p>
+            )}
+          </div>
+        )}
+
+        {/* Abstract Section */}
+        <div class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Abstract</h2>
+          <div class="prose max-w-none">
+            <p>{paper.abstract}</p>
+          </div>
+        </div>
+
+        {/* Materials Section if they exist */}
+        {paper.links && paper.links.length > 0 && (
+          <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Materials</h2>
+            <div class="flex flex-wrap gap-3">
+              {paper.pdf && (
+                <a
+                  href={paper.pdf}
+                  class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PDF
+                </a>
+              )}
+              {paper.links.map((link) => (
+                <a
+                  href={link.file || link.link}
+                  class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Right Column - Sidebar */}
+      <div class="lg:col-span-1">
+        {/* Publication Details Card */}
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+          <h3 class="text-lg font-semibold mb-4">Publication Details</h3>
+          <dl class="space-y-2">
+            <dt class="text-gray-600">Venue</dt>
+            <dd class="font-medium">{paper.venue}</dd>
+            
+            <dt class="text-gray-600">Year</dt>
+            <dd class="font-medium">{paper.year}</dd>
+            
+            <dt class="text-gray-600">Publication Date</dt>
+            <dd class="font-medium">{formatDate(paper.pub_date)}</dd>
+
+            {paper.url && (
+              <>
+                <dt class="text-gray-600">DOI</dt>
+                <dd>
+                  <a 
+                    href={paper.url}
+                    class="text-blue-600 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {paper.url}
+                  </a>
+                </dd>
+              </>
+            )}
+          </dl>
+        </div>
+
+        {/* Citation Card - You might want to add this */}
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-lg font-semibold mb-4">Cite this paper</h3>
+          <div class="bg-gray-50 p-3 rounded text-sm font-mono">
+            {/* Add formatted citation here */}
+            {`${paper.authors.join(', ')} (${paper.year}). ${paper.title}. ${paper.venue}.`}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

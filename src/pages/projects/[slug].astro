@@ -1,6 +1,7 @@
 ---
 import fs from "node:fs/promises";
 import path from "node:path";
+import Layout from "../../layouts/Layout.astro";
 
 interface Content {
     title: string;
@@ -9,7 +10,7 @@ interface Content {
 }
 
 export async function getStaticPaths() {
-    const contentDir = path.join(process.cwd(), "src/content/projects");
+    const contentDir = path.join(process.cwd(), "src/data/projects");
 
     try {
         const files = await fs.readdir(contentDir);
@@ -32,7 +33,7 @@ const { slug } = Astro.params;
 let content: Content;
 
 try {
-    const contentDir = path.join(process.cwd(), "src/content/projects");
+    const contentDir = path.join(process.cwd(), "src/data/projects");
     const filePath = path.join(contentDir, `${slug}.json`);
     const fileContent = await fs.readFile(filePath, "utf-8");
     content = JSON.parse(fileContent);
@@ -41,16 +42,8 @@ try {
 }
 ---
 
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{content.title}</title>
-    </head>
-    <body>
-        <main>
-            <h1 class="text-amber-400 font-bold">{content.title}</h1>
-            <p>{content.abstract}</p>
-        </main>
-    </body>
-</html>
+<Layout>
+    <h1 class="text-amber-400 font-bold">{content.title}</h1>
+    <p>{content.abstract}</p>
+    <img src={content.coverImage} alt={content.title} />
+</Layout>

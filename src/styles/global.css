@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@import "./font.css";
+
+
+@theme {
+  --font-display: "Avenir", Helvetica, Arial, sans-serif;
+}

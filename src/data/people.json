@@ -1,0 +1,1332 @@
+[
+  {
+    "status": "faculty",
+    "name": "Jorge Poco",
+    "firstname": "Jorge",
+    "lastname": "Poco",
+    "position": "Associate Professor",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Visualization and Data Science",
+    "image": "images/people/jorgepoco.png",
+    "url": "http://visualdslab.com/~jpocom/",
+    "visible": 1,
+    "order": 1,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "alumni",
+    "name": "Giovani Valdrighi",
+    "firstname": "Giovani",
+    "lastname": "Valdrighi",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Statistics, Data Science",
+    "image": "images/people/giovanivaldrighi.png",
+    "url": "https://giovanivaldrighi.github.io/",
+    "visible": 1,
+    "order": 22,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Machine Learning, Statistics, Data Science",
+    "alumni_position": "Now PhD. at IC-UNICAMP, Brazil"
+  },
+  {
+    "status": "alumni",
+    "name": "Tiago Silva",
+    "firstname": "Tiago",
+    "lastname": "Silva",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Science, Visualization",
+    "image": "images/people/tiagosilva.png",
+    "url": "https://github.com/tiagodsilva",
+    "visible": 1,
+    "order": 29,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Data Science, Visualization"
+  },
+  {
+    "status": "alumni,collaborator",
+    "name": "Lucas Resck",
+    "firstname": "Lucas",
+    "lastname": "Resck",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Natural Language Processing, Explainable Artificial Intelligence",
+    "image": "images/people/lucasdomingues.jpg",
+    "url": "https://lucasresck.github.io/",
+    "visible": 1,
+    "order": 21,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Machine Learning, NLP, Explainable AI",
+    "alumni_position": "Now PhD. at University of Cambrige, US"
+  },
+  {
+    "status": "student",
+    "name": "Felipe Moreno-Vera",
+    "firstname": "Felipe A.",
+    "lastname": "Moreno",
+    "position": "PhD. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Interpretability AI, Urban Perception",
+    "image": "images/people/felipemoreno.png",
+    "url": "http://www.fmorenovr.com/",
+    "visible": 1,
+    "order": 5,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "alumni",
+    "name": "Vitória Guardieiro",
+    "firstname": "Vitória",
+    "lastname": "Guardieiro",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Data Science, Fairness, Optimization",
+    "image": "images/people/vitoriaguardieiro.jpeg",
+    "url": "https://www.linkedin.com/in/vitoriaguardieiro/",
+    "visible": 1,
+    "order": 23,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "ML, Data Science, Fairness, Optimization",
+    "alumni_position": "Now researcher at NYU, US"
+  },
+  {
+    "status": "student",
+    "name": "Walter Zuñiga",
+    "firstname": "Walter",
+    "lastname": "Zuñiga",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Anomaly detection and visualization",
+    "image": "images/people/walterzuniga.jpg",
+    "url": "https://emap.fgv.br/",
+    "order": 100000,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Matheus Souza",
+    "firstname": "Matheus",
+    "lastname": "Souza",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Computer Vision, Interpretability, Deep Learning, Data Science, Optimization",
+    "image": "images/people/matheussouza.jpg",
+    "url": "http://www.linkedin.com/in/matheus-p-souza",
+    "order": 30,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "alumni,collaborator",
+    "name": "Marcos Medeiros Raimundo",
+    "firstname": "Marcos",
+    "lastname": "Medeiros Raimundo",
+    "position": "Postdoctoral Research",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Multi-objective Optimization, Crime Data, Combinatorial Optimization, Data Science",
+    "image": "images/people/marcosraimundo.jpg",
+    "url": "https://ic.unicamp.br/marcos/",
+    "visible": 1,
+    "order": 19,
+    "affiliation": "IC/UNICAMP",
+    "alumni_main_research": "Machine Learning and Multi-objective Optimization",
+    "alumni_position": "Now faculty at IC-UNICAMP, Brazil"
+  },
+  {
+    "status": "alumni,collaborator",
+    "name": "Bahram Lavi",
+    "firstname": "Bahram",
+    "lastname": "Lavi",
+    "position": "Postdoctoral Research",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Pattern Recognition, Computer Vision, Machine Learning, Digital Forensics",
+    "image": "images/people/bahramlavi.png",
+    "url": "http://www.linkedin.com/in/bahram-lavi",
+    "visible": 1,
+    "order": 20,
+    "affiliation": "UNICAMP",
+    "alumni_main_research": "Pattern Recognition, Computer Vision, ML, Digital Forensics",
+    "alumni_position": "Now postdoc at UNICAMP, Brazil"
+  },
+  {
+    "status": "alumni,collaborator",
+    "name": "Jean Ponciano",
+    "firstname": "Jean",
+    "lastname": "Ponciano",
+    "position": "Postdoctoral Research",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Visualization, Data Science, Networks, Streaming Data",
+    "image": "images/people/jeanponciano.png",
+    "url": "https://sites.google.com/view/jeanponciano/home",
+    "visible": 1,
+    "order": 18,
+    "affiliation": "ICMC/USP",
+    "alumni_main_research": "Visualization, Data Science, Networks",
+    "alumni_position": "Now post-doc at USP, Brazil"
+  },
+  {
+    "status": "researcher",
+    "name": "Edward Condori",
+    "firstname": "Edward",
+    "lastname": "Condori",
+    "position": "Research Engineer",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Visualization, Big Data, Cloud",
+    "image": "images/people/edwardcondori.png",
+    "url": "https://edwardspc.github.io/",
+    "visible": 1,
+    "order": 3,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "collaborator",
+    "name": "Germain García-Zanabria",
+    "firstname": "Germain",
+    "lastname": "García-Zanabria",
+    "position": "PhD. Student",
+    "org": "San Pablo Catholic University",
+    "interests": "Visualization and Data Science, Crime Data, Urban data Analysis",
+    "image": "images/people/germaingarcia.jpg",
+    "url": "https://www.linkedin.com/in/germain-garcia-zanabria-165544b4/",
+    "visible": 1,
+    "order": 32,
+    "affiliation": "UCSP"
+  },
+  {
+    "status": "collaborator",
+    "name": "Raphael Tinarrage",
+    "firstname": "Raphael",
+    "lastname": "Tinarrage",
+    "position": "Postdoctoral Research",
+    "org": "Getulio Vargas Foundation",
+    "image": "images/people/picture.png",
+    "url": "https://raphaeltinarrage.github.io/",
+    "visible": 1,
+    "order": 33,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "collaborator",
+    "name": "Henrique Ennes",
+    "firstname": "Henrique",
+    "lastname": "Ennes",
+    "position": "Research Assistant",
+    "org": "Getulio Vargas Foundation",
+    "image": "images/people/picture.png",
+    "url": "https://emap.fgv.br/",
+    "visible": 1,
+    "order": 34,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "collaborator",
+    "name": "Claudio T. Silva",
+    "firstname": "Claudio",
+    "lastname": "Silva",
+    "position": "member",
+    "org": "New York University ",
+    "image": "images/people/picture.png",
+    "url": "https://vgc.poly.edu/~csilva/",
+    "visible": 1,
+    "order": 35,
+    "affiliation": "NYU"
+  },
+  {
+    "status": "collaborator",
+    "name": "Nivan Ferreira",
+    "firstname": "Nivan",
+    "lastname": "Ferreira",
+    "position": "member",
+    "org": "Universidade Federal de Pernambuco",
+    "image": "images/people/picture.png",
+    "url": "https://www.cin.ufpe.br/~nivan/",
+    "visible": 1,
+    "order": 36,
+    "affiliation": "UFPE"
+  },
+  {
+    "status": "collaborator",
+    "name": "Erick Gomez-Nieto",
+    "firstname": "Erick",
+    "lastname": "Gomez Nieto",
+    "position": "member",
+    "org": "San Pablo Catholic University",
+    "image": "images/people/picture.png",
+    "url": "https://sites.google.com/site/erickgomeznieto/",
+    "visible": 1,
+    "order": 37,
+    "affiliation": "UCSP"
+  },
+  {
+    "status": "collaborator",
+    "name": "Luis Gustavo Nonato",
+    "firstname": "Luis Gustavo",
+    "lastname": "Nonato",
+    "position": "member",
+    "org": "University of São Paulo",
+    "image": "images/people/picture.png",
+    "url": "https://sites.icmc.usp.br/gnonato/",
+    "visible": 1,
+    "order": 38,
+    "affiliation": "USP"
+  },
+  {
+    "status": "alumni",
+    "name": "Joao Pinheiro",
+    "firstname": "Joao",
+    "lastname": "Pinheiro",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Chart Automation, Visualization, Interactive documents",
+    "image": "images/people/joaopinheiro.jpg",
+    "url": "https://emap.fgv.br/",
+    "visible": 1,
+    "order": 25,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Linking Text with Charts in Documents"
+  },
+  {
+    "status": "alumni",
+    "name": "A. Mayhua",
+    "firstname": "Angela",
+    "lastname": "Mayhua",
+    "position": "MSc. Student",
+    "org": "La Salle University",
+    "interests": "Data visualization, Image processing, Pattern recognition",
+    "image": "images/people/picture.png",
+    "url": "https://pe.linkedin.com/in/amayhuaq",
+    "visible": 1,
+    "order": 24,
+    "affiliation": "La Salle",
+    "alumni_main_research": "Extracting Visual Encodings from Map Chart Images"
+  },
+  {
+    "status": "alumni",
+    "name": "Elio Rodriguez",
+    "firstname": "Elio",
+    "lastname": "Rodriguez",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Visualization, Urban Data",
+    "image": "images/people/eliorodriguez.png",
+    "url": "https://pe.linkedin.com/in/eliorodriguezcondori",
+    "visible": 1,
+    "order": 26,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Exploration and Visualization of Traffic Jams"
+  },
+  {
+    "status": "other",
+    "name": "Victor Rodrigues",
+    "firstname": "Victor",
+    "lastname": "Rodrigues",
+    "position": "member",
+    "org": "Rio de Janeiro Municipal Court of Accounts",
+    "image": "images/people/picture.png",
+    "url": "https://www.tcm.rj.gov.br/",
+    "order": 100002,
+    "affiliation": "TCMRJ"
+  },
+  {
+    "status": "collaborator",
+    "name": "Claudio Douglas Linhares",
+    "firstname": "Claudio",
+    "lastname": "Linhares",
+    "position": "Research Assistant",
+    "org": "University of São Paulo",
+    "image": "images/people/picture.png",
+    "url": "https://sites.google.com/view/claudiodglinhares",
+    "visible": 1,
+    "order": 39,
+    "affiliation": "ICMC/USP"
+  },
+  {
+    "status": "other",
+    "name": "Luis Enrique Correia Rocha",
+    "firstname": "Luis",
+    "lastname": "Rocha",
+    "position": "Research Assistant",
+    "org": "Department of Economics, Physics, Astronomy, Ghent University",
+    "image": "images/people/picture.png",
+    "url": "https://www.ugent.be/eb/economics/en",
+    "visible": 1,
+    "order": 100003,
+    "affiliation": "UGent"
+  },
+  {
+    "status": "collaborator",
+    "name": "Agma Traina",
+    "firstname": "Agma",
+    "lastname": "Traina",
+    "position": "Research Assistant",
+    "org": "University of São Paulo",
+    "image": "images/people/picture.png",
+    "url": "https://www.icmc.usp.br/",
+    "visible": 1,
+    "order": 40,
+    "affiliation": "ICMC/USP"
+  },
+  {
+    "status": "other",
+    "name": "Fernando V. Paulovich",
+    "firstname": "Fernando V.",
+    "lastname": "Paulovich",
+    "order": 100004
+  },
+  {
+    "status": "other",
+    "name": "Danilo. M. Eler",
+    "firstname": "Danilo M.",
+    "lastname": "Eler",
+    "order": 100005
+  },
+  {
+    "status": "other",
+    "name": "C.P. Botha",
+    "firstname": "C.P.",
+    "lastname": "Botha",
+    "order": 100006
+  },
+  {
+    "status": "other",
+    "name": "Rosane Minghim",
+    "firstname": "Rosane",
+    "lastname": "Minghim",
+    "order": 100007
+  },
+  {
+    "status": "other",
+    "name": "R. Etemadpour",
+    "firstname": "R.",
+    "lastname": "Etemadpour",
+    "order": 100008
+  },
+  {
+    "status": "other",
+    "name": "T.V. Long",
+    "firstname": "T.V.",
+    "lastname": "Long",
+    "order": 100009
+  },
+  {
+    "status": "other",
+    "name": "P. Rosenthal",
+    "firstname": "P.",
+    "lastname": "Rosenthal",
+    "order": 100010
+  },
+  {
+    "status": "other",
+    "name": "M.C.F. Oliveira",
+    "firstname": "M.C.F.",
+    "lastname": "Oliveira",
+    "order": 100011
+  },
+  {
+    "status": "other",
+    "name": "L. Linsen",
+    "firstname": "L.",
+    "lastname": "Linsen",
+    "order": 100012
+  },
+  {
+    "status": "other",
+    "name": "Emanuele Santos",
+    "firstname": "Emanuele",
+    "lastname": "Santos",
+    "order": 100013
+  },
+  {
+    "status": "other",
+    "name": "Yaxing Wei",
+    "firstname": "Yaxing",
+    "lastname": "Wei",
+    "order": 100014
+  },
+  {
+    "status": "other",
+    "name": "Shishi Liu",
+    "firstname": "Shishi",
+    "lastname": "Liu",
+    "order": 100015
+  },
+  {
+    "status": "other",
+    "name": "Bob Cook",
+    "firstname": "Bob",
+    "lastname": "Cook",
+    "order": 100016
+  },
+  {
+    "status": "other",
+    "name": "D. N. Williams",
+    "firstname": "D. N.",
+    "lastname": "Williams",
+    "order": 100017
+  },
+  {
+    "status": "other",
+    "name": "T. Bremer",
+    "firstname": "T.",
+    "lastname": "Bremer",
+    "order": 100018
+  },
+  {
+    "status": "other",
+    "name": "C. Doutriaux",
+    "firstname": "C.",
+    "lastname": "Doutriaux",
+    "order": 100019
+  },
+  {
+    "status": "other",
+    "name": "J. Patchett",
+    "firstname": "J.",
+    "lastname": "Patchett",
+    "order": 100020
+  },
+  {
+    "status": "other",
+    "name": "S. Williams",
+    "firstname": "S.",
+    "lastname": "Williams",
+    "order": 100021
+  },
+  {
+    "status": "other",
+    "name": "G. Shipman",
+    "firstname": "G.",
+    "lastname": "Shipman",
+    "order": 100022
+  },
+  {
+    "status": "other",
+    "name": "R. Miller",
+    "firstname": "R.",
+    "lastname": "Miller",
+    "order": 100023
+  },
+  {
+    "status": "other",
+    "name": "D. R. Pugmire",
+    "firstname": "D. R.",
+    "lastname": "Pugmire",
+    "order": 100024
+  },
+  {
+    "status": "other",
+    "name": "B. Smith",
+    "firstname": "B.",
+    "lastname": "Smith",
+    "order": 100025
+  },
+  {
+    "status": "other",
+    "name": "C. Steed",
+    "firstname": "C.",
+    "lastname": "Steed",
+    "order": 100026
+  },
+  {
+    "status": "other",
+    "name": "E. Wes Bethel",
+    "firstname": "E.",
+    "lastname": "Wes Bethel",
+    "order": 100027
+  },
+  {
+    "status": "other",
+    "name": "H. Childs",
+    "firstname": "H.",
+    "lastname": "Childs",
+    "order": 100028
+  },
+  {
+    "status": "other",
+    "name": "H. Krishnan",
+    "firstname": "H.",
+    "lastname": "Krishnan",
+    "order": 100029
+  },
+  {
+    "status": "other",
+    "name": "P. Prabhat",
+    "firstname": "P.",
+    "lastname": "Prabhat",
+    "order": 100030
+  },
+  {
+    "status": "other",
+    "name": "M. Wehner",
+    "firstname": "M.",
+    "lastname": "Wehner",
+    "order": 100031
+  },
+  {
+    "status": "other",
+    "name": "D. Koop",
+    "firstname": "D.",
+    "lastname": "Koop",
+    "order": 100032
+  },
+  {
+    "status": "other",
+    "name": "T. Ellqvist",
+    "firstname": "T.",
+    "lastname": "Ellqvist",
+    "order": 100033
+  },
+  {
+    "status": "other",
+    "name": "B. Geveci",
+    "firstname": "B.",
+    "lastname": "Geveci",
+    "order": 100034
+  },
+  {
+    "status": "other",
+    "name": "A. Chaudhary",
+    "firstname": "A.",
+    "lastname": "Chaudhary",
+    "order": 100035
+  },
+  {
+    "status": "other",
+    "name": "A. Bauer",
+    "firstname": "A.",
+    "lastname": "Bauer",
+    "order": 100036
+  },
+  {
+    "status": "other",
+    "name": "A. Pletzer",
+    "firstname": "A.",
+    "lastname": "Pletzer",
+    "order": 100037
+  },
+  {
+    "status": "other",
+    "name": "D. Kindig",
+    "firstname": "D.",
+    "lastname": "Kindig",
+    "order": 100038
+  },
+  {
+    "status": "other",
+    "name": "G. L. Potter",
+    "firstname": "Gerald L.",
+    "lastname": "Potter",
+    "order": 100039
+  },
+  {
+    "status": "other",
+    "name": "T. P. Maxwell",
+    "firstname": "Thomas P.",
+    "lastname": "Maxwell",
+    "order": 100040
+  },
+  {
+    "status": "other",
+    "name": "Huy T. Vo",
+    "firstname": "Huy T.",
+    "lastname": "Vo",
+    "order": 100041
+  },
+  {
+    "status": "other",
+    "name": "Juliana Freire",
+    "firstname": "Juliana",
+    "lastname": "Freire",
+    "order": 100042
+  },
+  {
+    "status": "other",
+    "name": "A. Dasgupta",
+    "firstname": "Aritra",
+    "lastname": "Dasgupta",
+    "order": 100043
+  },
+  {
+    "status": "other",
+    "name": "Y. Wei",
+    "firstname": "Yaxing",
+    "lastname": "Wei",
+    "order": 100044
+  },
+  {
+    "status": "other",
+    "name": "W. Hargrove",
+    "firstname": "William",
+    "lastname": "Hargrove",
+    "order": 100045
+  },
+  {
+    "status": "other",
+    "name": "C. Schwalm",
+    "firstname": "Christopher",
+    "lastname": "Schwalm",
+    "order": 100046
+  },
+  {
+    "status": "other",
+    "name": "R. Cook",
+    "firstname": "Robert",
+    "lastname": "Cook",
+    "order": 100047
+  },
+  {
+    "status": "other",
+    "name": "E. Bertini",
+    "firstname": "Enrico",
+    "lastname": "Bertini",
+    "order": 100048
+  },
+  {
+    "status": "other",
+    "name": "H. Doraiswamy",
+    "firstname": "Harish",
+    "lastname": "Doraiswamy",
+    "order": 100049
+  },
+  {
+    "status": "other",
+    "name": "Deborah N. Huntzinger",
+    "firstname": "Deborah N.",
+    "lastname": "Huntzinger",
+    "order": 100050
+  },
+  {
+    "status": "other",
+    "name": "João L. D. Comba",
+    "firstname": "João L. D.",
+    "lastname": "Comba",
+    "order": 100051
+  },
+  {
+    "status": "other",
+    "name": "Marian Talbert",
+    "firstname": "Marian",
+    "lastname": "Talbert",
+    "order": 100052
+  },
+  {
+    "status": "other",
+    "name": "Jeffrey Morisette",
+    "firstname": "Jeffrey",
+    "lastname": "Morisette",
+    "order": 100053
+  },
+  {
+    "status": "other",
+    "name": "Jeffrey Heer",
+    "firstname": "Jeffrey",
+    "lastname": "Heer",
+    "order": 100054
+  },
+  {
+    "status": "other",
+    "name": "Bernice Rogowitz",
+    "firstname": "Bernice",
+    "lastname": "Rogowitz",
+    "order": 100055
+  },
+  {
+    "status": "other",
+    "name": "Kyungsik Han",
+    "firstname": "Kyungsik",
+    "lastname": "Han",
+    "order": 100056
+  },
+  {
+    "status": "other",
+    "name": "Jaqueline Silveira",
+    "firstname": "Jaqueline",
+    "lastname": "Silveira",
+    "order": 100057
+  },
+  {
+    "status": "other",
+    "name": "Marcelo Batista Nery",
+    "firstname": "Marcelo",
+    "lastname": "Nery",
+    "url": "https://nev.prp.usp.br/en/equipe/marcelo-batista-nery-2/",
+    "order": 100058
+  },
+  {
+    "status": "other",
+    "name": "Sergio Adorno",
+    "firstname": "Sergio",
+    "lastname": "Adorno",
+    "url": "https://nev.prp.usp.br/equipe/sergio-adorno/",
+    "order": 100059
+  },
+  {
+    "status": "other",
+    "name": "Afonso Paiva",
+    "firstname": "Afonso",
+    "lastname": "Paiva",
+    "order": 100060
+  },
+  {
+    "status": "other",
+    "name": "Daniel A. Gutierrez-Pachas",
+    "firstname": "Daniel A.",
+    "lastname": "Gutierrez Pachas",
+    "position": "member",
+    "image": "images/people/picture.png",
+    "order": 100061
+  },
+  {
+    "status": "other",
+    "name": "Alex J. Cuadros-Vargas",
+    "firstname": "Alex J.",
+    "lastname": "Cuadros-Vargas",
+    "position": "member",
+    "image": "images/people/picture.png",
+    "order": 100062
+  },
+  {
+    "status": "other",
+    "name": "Guillermo Cámara-Chávez",
+    "firstname": "Guillermo",
+    "lastname": "Cámara-Chávez",
+    "position": "member",
+    "image": "images/people/picture.png",
+    "url": "https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=16064",
+    "order": 100063
+  },
+  {
+    "status": "alumni",
+    "name": "William Sena",
+    "firstname": "William",
+    "lastname": "Sena",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Software Development, Machine Learning",
+    "image": "images/people/willsena.png",
+    "url": "https://github.com/wllsena",
+    "visible": 1,
+    "order": 27,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Criação de Visualizações em Linguagem Natural"
+  },
+  {
+    "status": "other",
+    "name": "Elaine Ribeiro Faria",
+    "firstname": "Elaine",
+    "lastname": "Faria",
+    "org": "Federal University of Uberlandia",
+    "url": "http://www.portal.facom.ufu.br/en",
+    "order": 100064,
+    "affiliation": "FACOM/UFU"
+  },
+  {
+    "status": "other",
+    "name": "Bruno A. N. Travençolo",
+    "firstname": "Bruno",
+    "lastname": "Travençolo",
+    "org": "Federal University of Uberlandia",
+    "url": "http://www.portal.facom.ufu.br/en",
+    "order": 100065,
+    "affiliation": "FACOM/UFU"
+  },
+  {
+    "status": "other",
+    "name": "Ximena Pocco",
+    "firstname": "Ximena",
+    "lastname": "Pocco",
+    "org": "San Pablo Catholic University",
+    "order": 100066,
+    "affiliation": "UCSP"
+  },
+  {
+    "status": "other",
+    "name": "Matheus Viana",
+    "firstname": "Matheus",
+    "lastname": "Viana",
+    "order": 100067,
+    "affiliation": "IBM Research"
+  },
+  {
+    "status": "other",
+    "name": "Rogerio de Paula",
+    "firstname": "Rogerio",
+    "lastname": "de Paula",
+    "order": 100068,
+    "affiliation": "IBM Research"
+  },
+  {
+    "status": "other",
+    "name": "GF Quispe-Torres",
+    "firstname": "GF",
+    "lastname": "Quispe-Torres",
+    "order": 100069,
+    "affiliation": "UnB"
+  },
+  {
+    "status": "other",
+    "name": "Harley Vera-Olivera",
+    "firstname": "Harley",
+    "lastname": "Vera-Olivera",
+    "order": 100070,
+    "affiliation": "UNSAAC"
+  },
+  {
+    "status": "other",
+    "name": "Lauro Enciso-Rojas",
+    "firstname": "Lauro",
+    "lastname": "Enciso-Rojas",
+    "order": 100071,
+    "affiliation": "UNSAAC"
+  },
+  {
+    "status": "other",
+    "name": "Eric K. Tokuda",
+    "firstname": "Eric",
+    "lastname": "Tokuda",
+    "org": "University of São Paulo",
+    "order": 100072,
+    "affiliation": "IME/USP"
+  },
+  {
+    "status": "researcher",
+    "name": "Luan Dias",
+    "firstname": "Luan",
+    "lastname": "Dias",
+    "position": "Research Engineer",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Engineering, Data Visualization",
+    "image": "images/people/luandias.png",
+    "url": "https://www.linkedin.com/in/luan-alfredo-freitas-dias-924133180/",
+    "order": 100001,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Daniel M. Lima",
+    "firstname": "Daniel",
+    "lastname": "Lima",
+    "org": "University of São Paulo",
+    "url": "https://bv.fapesp.br/pt/pesquisador/699531/daniel-mario-de-lima/",
+    "order": 100073,
+    "affiliation": "HCFM/USP"
+  },
+  {
+    "status": "other",
+    "name": "Mauro M. Olivatto",
+    "firstname": "Mauro",
+    "lastname": "Olivatto",
+    "org": "Federal University of Fronteira Sul",
+    "order": 100074,
+    "affiliation": "UFFS"
+  },
+  {
+    "status": "other",
+    "name": "Marco A. Gutierrez",
+    "firstname": "Marco",
+    "lastname": "Gutierrez",
+    "org": "Faculdade de Medicina, Universidade de Sao Paulo",
+    "url": "https://bv.fapesp.br/pt/pesquisador/2165/marco-antonio-gutierrez/",
+    "order": 100075,
+    "affiliation": "HCFM/USP"
+  },
+  {
+    "status": "other",
+    "name": "Caetano Traina Jr.",
+    "firstname": "Caetano",
+    "lastname": "Traina Jr.",
+    "org": "University of São Paulo",
+    "url": "https://www.icmc.usp.br/",
+    "order": 100076,
+    "affiliation": "ICMC/USP"
+  },
+  {
+    "status": "researcher",
+    "name": "Carlos G P Malqui",
+    "firstname": "Gerardo",
+    "lastname": "Paucar",
+    "position": "Research Engineer",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Engineering, DevOps",
+    "image": "images/people/gerardopaucar.png",
+    "url": "https://www.linkedin.com/in/gerardopaucar/",
+    "visible": 1,
+    "order": 4,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Diogenes S. Pedro",
+    "firstname": "Diogenes",
+    "lastname": "Pedro",
+    "org": "University of São Paulo",
+    "order": 100077,
+    "affiliation": "ICMC/USP"
+  },
+  {
+    "status": "student",
+    "name": "Juanpablo Heredia",
+    "firstname": "Juanpablo",
+    "lastname": "Heredia",
+    "position": "PhD. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine/Deep Learning, Knowledge Modelling, Neuroscience",
+    "image": "images/people/juanpabloheredia.png",
+    "url": "https://github.com/juan1t0",
+    "visible": 1,
+    "order": 6,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Edgar Medina",
+    "firstname": "Edgar",
+    "lastname": "Medina",
+    "org": "QualityMinds",
+    "url": "https://www.linkedin.com/in/emedinac/",
+    "order": 100078,
+    "affiliation": "QualityMinds"
+  },
+  {
+    "status": "alumni",
+    "name": "Bruno Brandoli",
+    "firstname": "Bruno",
+    "lastname": "Brandoli",
+    "position": "Postdoctoral Research",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Deep Learning, Data Science",
+    "image": "images/people/brunobrandoli.png",
+    "url": "http://brunobrandoli.com/",
+    "visible": 1,
+    "order": 17,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Deep Learning, Data Science"
+  },
+  {
+    "status": "alumni",
+    "name": "Bruno Visnadi",
+    "firstname": "Bruno",
+    "lastname": "Visnadi",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "visible": 1,
+    "order": 28,
+    "affiliation": "FGV EMAp",
+    "alumni_main_research": "Aplicações de Deep Reinforcement Learning"
+  },
+  {
+    "status": "student",
+    "name": "Jairon Henrique",
+    "firstname": "Jairon",
+    "lastname": "Henrique",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine/Deep Learning, Probability",
+    "image": "images/people/jaironhenrique.jpeg",
+    "url": "https://github.com/JaironHenrique",
+    "order": 31,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Mauro Diaz",
+    "firstname": "Mauro",
+    "lastname": "Diaz",
+    "position": "PhD. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Visualization",
+    "image": "images/people/maurodiaz.jpg",
+    "url": "https://github.com/maurodiaz7",
+    "visible": 1,
+    "order": 7,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Zuilho Segundo",
+    "firstname": "Zuilho",
+    "lastname": "Segundo",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Artificial Intelligence, Data Science",
+    "image": "images/people/zuilhosegundo.jpg",
+    "url": "https://github.com/ZuilhoSe",
+    "visible": 1,
+    "order": 10,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Fabrício Dalvi Venturim",
+    "firstname": "Fabricio",
+    "lastname": "Dalvi Venturim",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Visualization",
+    "image": "images/people/fabriciodalviventurim.png",
+    "url": "https://www.linkedin.com/in/fabricio-dalvi-venturim/",
+    "visible": 1,
+    "order": 11,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "researcher",
+    "name": "Pablo Ccori",
+    "firstname": "Pablo",
+    "lastname": "Ccori",
+    "position": "Postdoctoral Research",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Internet of Things, Smart Cities, IA",
+    "image": "images/people/pabloccori.jpg",
+    "url": "https://br.linkedin.com/in/pablo-c-ccori-2b6327151",
+    "visible": 1,
+    "order": 2,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Tamara Pereira",
+    "firstname": "Tamara",
+    "lastname": "Pereira",
+    "org": "Federal Institute of Ceará",
+    "url": "https://scholar.google.com/citations?user=OwB9En0AAAAJ",
+    "order": 100079,
+    "affiliation": "IFCE"
+  },
+  {
+    "status": "other",
+    "name": "Erik Nascimento",
+    "firstname": "Erik",
+    "lastname": "Nascimento",
+    "org": "Federal Institute of Ceará",
+    "url": "https://scholar.google.com/citations?user=cg7qxqYAAAAJ",
+    "order": 100080,
+    "affiliation": "IFCE"
+  },
+  {
+    "status": "other",
+    "name": "Diego Mesquita",
+    "firstname": "Diego",
+    "lastname": "Mesquita",
+    "org": "Getulio Vargas Foundation",
+    "url": "https://weakly-informative.github.io/",
+    "order": 100081,
+    "affiliation": "EMAp/FGV"
+  },
+  {
+    "status": "other",
+    "name": "Amauri Souza",
+    "firstname": "Amauri",
+    "lastname": "Souza",
+    "org": "Aalto University",
+    "url": "https://amauriholanda.org/",
+    "order": 100082,
+    "affiliation": "Aalto"
+  },
+  {
+    "status": "student",
+    "name": "Esdras Cavalcanti",
+    "firstname": "Esdras",
+    "lastname": "Cavalcanti",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Science, Natural Language Processing, Visualization",
+    "image": "images/people/esdrascavalcanti.png",
+    "url": "https://www.linkedin.com/in/esdras-cavalcanti-wbt/",
+    "visible": 1,
+    "order": 12,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Andres De La Puente",
+    "firstname": "Andres",
+    "lastname": "De La Puente",
+    "position": "PhD. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning",
+    "image": "images/people/andresdelapuente.jpeg",
+    "url": "https://www.linkedin.com/in/vdelapuentea/",
+    "visible": 1,
+    "order": 8,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Ethan Brewer",
+    "firstname": "Ethan",
+    "lastname": "Brewer",
+    "org": "Spectral Sciences, Inc.",
+    "order": 100083,
+    "affiliation": "Spectral Sciences, Inc./USA"
+  },
+  {
+    "status": "other",
+    "name": "Parikshit Solunke",
+    "firstname": "Parikshit",
+    "lastname": "Solunke",
+    "org": "New York University",
+    "order": 100084,
+    "affiliation": "New York University"
+  },
+  {
+    "status": "other",
+    "name": "Joao Rulff",
+    "firstname": "Joao",
+    "lastname": "Rulff",
+    "org": "New York University",
+    "order": 100085,
+    "affiliation": "New York University"
+  },
+  {
+    "status": "other",
+    "name": "Yurii Piadyk",
+    "firstname": "Yurii",
+    "lastname": "Piadyk",
+    "org": "New York University",
+    "order": 100086,
+    "affiliation": "New York University"
+  },
+  {
+    "status": "other",
+    "name": "Zhonghui Lv",
+    "firstname": "Zhonghui",
+    "lastname": "Lv",
+    "org": "William & Mary",
+    "order": 100087,
+    "affiliation": "William & Mary"
+  },
+  {
+    "status": "student",
+    "name": "Ana Luiza Nunes",
+    "firstname": "Ana Luiza",
+    "lastname": "Nunes",
+    "position": "MSc. Student",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Machine Learning, Data Science",
+    "image": "images/people/analuiza.jpg",
+    "url": "https://github.com/analununes",
+    "visible": 1,
+    "order": 9,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Ximena Gomez",
+    "firstname": "Ximena",
+    "lastname": "Gomez",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Competitive Programming, Graphs",
+    "image": "images/people/ximenagomez.png",
+    "url": "https://www.linkedin.com/in/ximena-beatriz-gomez-flores-09a9572aa/",
+    "visible": 1,
+    "order": 13,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Lucas T. Gomes",
+    "firstname": "Lucas",
+    "lastname": "Gomes",
+    "org": "Getulio Vargas Foundation",
+    "order": 100088,
+    "affiliation": "FGV Direito Rio"
+  },
+  {
+    "status": "student",
+    "name": "Bryan Monteiro",
+    "firstname": "Bryan",
+    "lastname": "Monteiro",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Science, Visualization, Urban Perception",
+    "image": "images/people/bryanmonteiro.png",
+    "url": "https://www.linkedin.com/in/bryan-monteiro",
+    "visible": 1,
+    "order": 14,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Paula Eduarda de Lima",
+    "firstname": "Paula Eduarda",
+    "lastname": "de Lima",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Science, Visualization",
+    "image": "images/people/pauladelima.png",
+    "url": "https://www.linkedin.com/in/paula-eduarda-de-lima-7757062ba?originalSubdomain=br",
+    "visible": 1,
+    "order": 15,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "student",
+    "name": "Gabrielle Mascarelo",
+    "firstname": "Gabrielle",
+    "lastname": "Mascarelo",
+    "position": "Undergraduate",
+    "org": "Getulio Vargas Foundation",
+    "interests": "Data Science, Graphs",
+    "image": "images/people/gabriellemascarelo.png",
+    "url": "https://www.linkedin.com/in/gabrielle-mascarelo-177976296/",
+    "visible": 1,
+    "order": 16,
+    "affiliation": "FGV EMAp"
+  },
+  {
+    "status": "other",
+    "name": "Victor Russo",
+    "firstname": "Victor",
+    "lastname": "Russo",
+    "org": "University of São Paulo",
+    "order": 100089,
+    "affiliation": "USP"
+  },
+  {
+    "status": "other",
+    "name": "Bernardo Costa",
+    "firstname": "Bernardo",
+    "lastname": "Costa",
+    "org": "University of São Paulo",
+    "order": 100090,
+    "affiliation": "USP"
+  },
+  {
+    "status": "other",
+    "name": "Guilherme Toledo",
+    "firstname": "Guilherme",
+    "lastname": "Toledo",
+    "org": "University of São Paulo",
+    "order": 100091,
+    "affiliation": "USP"
+  },
+  {
+    "status": "other",
+    "name": "Osni Brito de Jesus",
+    "firstname": "Osni",
+    "lastname": "Brito de Jesus",
+    "org": "University of São Paulo",
+    "order": 100092,
+    "affiliation": "USP"
+  },
+  {
+    "status": "other",
+    "name": "Robson Vieira",
+    "firstname": "Robson",
+    "lastname": "Vieira",
+    "org": "RFV Consultancy and Systems",
+    "order": 100093,
+    "affiliation": "RFV Consultancy and Systems"
+  },
+  {
+    "status": "other",
+    "name": "Marco Lentini",
+    "firstname": "Marco",
+    "lastname": "Lentini",
+    "org": "Programa de Cadeias Florestais",
+    "order": 100094,
+    "affiliation": "Imaflora"
+  }
+]

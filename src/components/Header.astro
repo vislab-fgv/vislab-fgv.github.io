@@ -1,0 +1,68 @@
+<header class="bg-white shadow">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo + Título -->
+    <div class="flex items-center space-x-2">
+      <!-- Ajusta la ruta y el tamaño del logo según necesites -->
+      <img
+        src="/images/logo-left.png"
+        alt="V-DS Logo"
+        class="w-10 h-10"
+      />
+      <div>
+        <!-- Sección de texto: primero “V-DS” y debajo “Visual Data Science Lab” -->
+        <h1 class="text-xl font-bold text-gray-800">V-DS</h1>
+        <span class="text-sm text-gray-600">Visual Data Science Lab</span>
+      </div>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="flex items-center space-x-6">
+      <a href="/" class="text-gray-600 hover:text-blue-600">Home</a>
+      <a href="/about" class="text-gray-600 hover:text-blue-600">About</a>
+      <a href="/projects" class="text-gray-600 hover:text-blue-600">Projects</a>
+      <a href="/papers" class="text-gray-600 hover:text-blue-600"
+        >Publications</a
+      >
+      <a href="/people" class="text-gray-600 hover:text-blue-600">People</a>
+
+      <!-- Dropdown “Positions” -->
+      <div class="relative group">
+        <!-- Botón que despliega el menú -->
+        <button
+          class="inline-flex items-center text-gray-600 hover:text-blue-600 focus:outline-none"
+        >
+          <span>Positions</span>
+          <svg
+            class="w-4 h-4 ml-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <!-- Menú desplegable oculto por defecto; aparece al hacer hover -->
+        <div
+          class="absolute left-0 mt-2 w-40 bg-white rounded shadow-md hidden group-hover:block"
+        >
+          <a
+            href="/positions/postdoc"
+            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Postdoc</a
+          >
+          <a
+            href="/positions/phd"
+            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PhD</a
+          >
+          <a
+            href="/positions/internship"
+            class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            >Internship</a
+          >
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
