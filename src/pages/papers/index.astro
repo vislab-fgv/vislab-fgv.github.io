@@ -1,48 +1,94 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import PaperCard from '../../components/PaperCard.astro';
-import type { Paper } from '../../types/paper';
-import papersData from '../../data/papers.json';
+import Layout from "../../layouts/Layout.astro";
+import publications from "../../data/dummy.json";
 
+interface Publication {
+  conference: string;
+  title: string;
+  authors: string[];
+  journal: string;
+  year: string;
+  links: string[];
+  thumbnail?: string;
+}
 
-// Import your papers data
-const papers = papersData as Paper[];
-
-// Sort papers by year in descending order, then by pub_date
-const sortedPapers = papers.sort((a, b) => {
-  if (a.year !== b.year) {
-    return b.year - a.year;
-  }
-  return new Date(b.pub_date).getTime() - new Date(a.pub_date).getTime();
-});
-
-// Group papers by year
-const papersByYear = sortedPapers.reduce((acc, paper) => {
-  const year = paper.year;
-  if (!acc[year]) {
-    acc[year] = [];
-  }
-  acc[year].push(paper);
-  return acc;
-}, {} as Record<number, Paper[]>);
-
-// Get years in descending order
-const years = Object.keys(papersByYear).sort((a, b) => Number(b) - Number(a));
+const groupedPublications: { [key: string]: Publication[] } =
+  publications.publications.reduce(
+    (acc: { [key: string]: Publication[] }, publication) => {
+      const year = publication.year;
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      acc[year].push(publication);
+      return acc;
+    },
+    {}
+  );
 ---
 
 <Layout title="Papers">
-  <main class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">Publications</h1>
-
-    {years.map(year => (
-      <div class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">{year}</h2>
-        <div class="space-y-8">
-          {papersByYear[Number(year)].map(paper => (
-            <PaperCard paper={paper} />
-          ))}
-        </div>
+  <main class="flex justify-center py-8">
+    <div class="max-w-4xl w-full">
+      <div class="flex flex-col gap-4">
+        {
+          Object.keys(groupedPublications)
+            .sort((a, b) => parseInt(b) - parseInt(a))
+            .map((year) => (
+              <div>
+                <h2 class="text-md font-semibold mb-4">{year}</h2>
+                <div class="flex flex-col gap-4">
+                  {groupedPublications[year].map((publication: Publication) => (
+                    <div class="flex flex-row md:flex-row gap-4">
+                      <div class="max-w-32 min-w-32 w-full">
+                        {publication.thumbnail && (
+                          <a href="#">
+                            <img
+                              src={publication.thumbnail}
+                              alt={publication.title}
+                              class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
+                            />
+                          </a>
+                        )}
+                      </div>
+                      <div class="text-md text-base/5">
+                        <a
+                          href="#"
+                          class="hover:text-orange-500 hover:underline font-semibold pr-1"
+                        >
+                          {publication.title}
+                        </a>
+                        <div>
+                          {publication.authors.map((author, index) => (
+                            <a
+                              href="#"
+                              class="hover:text-orange-500 hover:underline"
+                            >
+                              {author}
+                              {index < publication.authors.length - 1 && ", "}
+                            </a>
+                          ))}
+                        </div>
+                        <p class="inline italic">{publication.journal}</p>
+                        <p class="inline">, {publication.year}</p>
+                        <div class="flex gap-2">
+                          {publication.links.map((link, index) => (
+                            <a
+                              href="#"
+                              class="hover:underline hover:text-orange-500"
+                            >
+                              {link}
+                              {index < publication.links.length - 1 && " |"}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+        }
       </div>
-    ))}
+    </div>
   </main>
 </Layout>

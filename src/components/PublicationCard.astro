@@ -1,0 +1,57 @@
+---
+interface Props {
+  conference: string;
+  title: string;
+  authors: string[];
+  journal: string;
+  year: string;
+  links: string[];
+  thumbnail?: string;
+}
+
+const { conference, title, authors, journal, year, links, thumbnail } =
+  Astro.props;
+---
+
+<div class="pb-4">
+  {conference && <div class="text-md font-medium">{conference}</div>}
+  <div class="flex flex-row md:flex-row gap-4">
+    {
+      thumbnail && (
+        <div class="min-w-32 max-w-32">
+          <a href="#">
+            <img
+              src={thumbnail}
+              alt={title}
+              class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
+            />
+          </a>
+        </div>
+      )
+    }
+      <div class="text-md text-base/5 w-full">
+        <a class="hover:text-orange-500 hover:underline font-semibold pr-1"
+          >{title}</a
+        >
+        {
+          authors.map((author, index) => (
+            <a href="#" class="hover:text-orange-500 hover:underline">
+              {author} {index < authors.length - 1 && ", "}
+            </a>
+          ))
+        }
+        <p class="inline italic pl-1">{journal}</p>
+        <p class="inline">, {year}</p>
+        <div class="flex gap-2">
+          {
+            links.map((link, index) => (
+              <a href="#" class="hover:underline hover:text-orange-500">
+                {link}
+                {index < links.length - 1 && " |"}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+  </div>
+</div>
