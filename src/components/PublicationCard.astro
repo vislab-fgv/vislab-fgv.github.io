@@ -1,13 +1,7 @@
 ---
-interface Props {
-  conference: string;
-  title: string;
-  authors: string[];
-  journal: string;
-  year: string;
-  links: string[];
-  thumbnail?: string;
-}
+import type { Publication } from "../types/paper";
+
+type Props = Publication;
 
 const { conference, title, authors, journal, year, links, thumbnail } =
   Astro.props;
@@ -29,29 +23,29 @@ const { conference, title, authors, journal, year, links, thumbnail } =
         </div>
       )
     }
-      <div class="text-md text-base/5 w-full">
-        <a class="hover:text-orange-500 hover:underline font-semibold pr-1"
-          >{title}</a
-        >
+    <div class="text-md text-base/5 w-full">
+      <a class="hover:text-orange-500 hover:underline font-semibold pr-1"
+        >{title}</a
+      >
+      {
+        authors.map((author, index) => (
+          <a href="#" class="hover:text-orange-500 hover:underline">
+            {author} {index < authors.length - 1 && ", "}
+          </a>
+        ))
+      }
+      <p class="inline italic pl-1">{journal}</p>
+      <p class="inline">, {year}</p>
+      <div class="flex gap-2">
         {
-          authors.map((author, index) => (
-            <a href="#" class="hover:text-orange-500 hover:underline">
-              {author} {index < authors.length - 1 && ", "}
+          links.map((link, index) => (
+            <a href="#" class="hover:underline hover:text-orange-500">
+              {link}
+              {index < links.length - 1 && " |"}
             </a>
           ))
         }
-        <p class="inline italic pl-1">{journal}</p>
-        <p class="inline">, {year}</p>
-        <div class="flex gap-2">
-          {
-            links.map((link, index) => (
-              <a href="#" class="hover:underline hover:text-orange-500">
-                {link}
-                {index < links.length - 1 && " |"}
-              </a>
-            ))
-          }
-        </div>
       </div>
+    </div>
   </div>
 </div>

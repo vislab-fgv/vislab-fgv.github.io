@@ -1,16 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import publications from "../../data/dummy.json";
-
-interface Publication {
-  conference: string;
-  title: string;
-  authors: string[];
-  journal: string;
-  year: string;
-  links: string[];
-  thumbnail?: string;
-}
+import type { Publication } from "../../types/paper";
 
 const groupedPublications: { [key: string]: Publication[] } =
   publications.publications.reduce(
