@@ -1,0 +1,19 @@
+---
+interface Props {
+  date: string;
+  title: string;
+  type: string;
+}
+
+const { date, title, type } = Astro.props;
+---
+
+<div class="text-sm">
+  <div class="italic">{date}</div>
+  <div class="py-3">
+    <p class="">{type}</p>
+    <a href="#" class="hover:text-orange-500 hover:underline font-semibold"
+      >{title}</a
+    >
+  </div>
+</div>

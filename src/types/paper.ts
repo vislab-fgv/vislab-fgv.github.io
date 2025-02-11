@@ -18,3 +18,13 @@ export type Paper = {
   figure?: string;
   caption?: string;
 };
+
+export type Publication = {
+  conference: string;
+  title: string;
+  authors: string[];
+  journal: string;
+  year: string;
+  links: string[];
+  thumbnail?: string;
+}
