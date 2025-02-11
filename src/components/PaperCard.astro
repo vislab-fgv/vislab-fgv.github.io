@@ -20,52 +20,60 @@ const { paper } = Astro.props;
 ---
 
 <div class="flex gap-4 p-4 bg-white rounded-lg shadow-md">
-  {paper.thumbnail && (
-    <div class="flex-shrink-0 w-48">
-      <img 
-        src={`http://visualdslab.com/static/${paper.thumbnail}`} 
-        alt={`Thumbnail for ${paper.title}`}
-        class="w-full h-auto rounded"
-      />
-    </div>
-  )}
-  
+  {
+    paper.thumbnail && (
+      <div class="flex-shrink-0 w-48">
+        <img
+          src={`http://visualdslab.com/static/${paper.thumbnail}`}
+          alt={`Thumbnail for ${paper.title}`}
+          class="w-full h-auto rounded"
+        />
+      </div>
+    )
+  }
+
   <div class="flex-grow">
     <a href={`papers/${paper.web_name}`} class="hover:underline">
       <h3 class="text-xl font-semibold mb-2">{paper.title}</h3>
     </a>
-    
+
     <p class="text-gray-600 mb-2">
-      {/* You'll need to implement author name resolution using the authors array */}
-      {paper.authors.join(', ')}
+      {
+        /* You'll need to implement author name resolution using the authors array */
+      }
+      {paper.authors.join(", ")}
     </p>
-    
+
     <p class="text-gray-500 mb-4">
       {paper.venue} ({paper.year})
     </p>
-    
+
     <div class="flex gap-2">
-      {paper.pdf && (
-        <a 
-          href={`http://visualdslab.com/static/${paper.pdf}`}
-          class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          PDF
-        </a>
-      )}
-      
-      {paper.links?.map(link => (
-        <a
-          href={link.file || link.link}
-          class="px-3 py-1 bg-gray-600 text-white rounded hover:bg-gray-700"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.name}
-        </a>
-      ))}
+      {
+        paper.pdf && (
+          <a
+            href={`http://visualdslab.com/static/${paper.pdf}`}
+            class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PDF
+          </a>
+        )
+      }
+
+      {
+        paper.links?.map((link) => (
+          <a
+            href={link.file || link.link}
+            class="px-3 py-1 bg-gray-600 text-white rounded hover:bg-gray-700"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.name}
+          </a>
+        ))
+      }
     </div>
   </div>
 </div>

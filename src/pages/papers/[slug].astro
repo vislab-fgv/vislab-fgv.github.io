@@ -1,10 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import type { Paper } from '../../types/paper';
-import papersData from '../../data/papers.json';
-
-
-// Import your papers data
+import Layout from "../../layouts/Layout.astro";
+import type { Paper } from "../../types/paper";
+import papersData from "../../data/papers.json";
 
 export function getStaticPaths() {
   const papers = papersData;
@@ -22,10 +19,10 @@ const { paper } = Astro.props;
 
 // Función helper para formatear la fecha
 function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 }
 ---
@@ -37,7 +34,7 @@ function formatDate(dateStr: string) {
       <h1 class="text-3xl font-bold mb-4">{paper.title}</h1>
       <div class="text-lg text-gray-600 mb-4">
         {/* Authors list */}
-        {paper.authors.join(', ')}
+        {paper.authors.join(", ")}
       </div>
       <div class="text-gray-500">
         {paper.venue} · {paper.year} · {formatDate(paper.pub_date)}
@@ -49,18 +46,20 @@ function formatDate(dateStr: string) {
       {/* Left Column - Main Content */}
       <div class="lg:col-span-2">
         {/* Figure Section */}
-        {paper.figure && (
-          <div class="mb-8">
-            <img
-              src={`http://visualdslab.com/static/${paper.figure}`}
-              alt={paper.title}
-              class="w-full rounded-lg shadow-lg mb-2"
-            />
-            {paper.caption && (
-              <p class="text-sm text-gray-600 italic">{paper.caption}</p>
-            )}
-          </div>
-        )}
+        {
+          paper.figure && (
+            <div class="mb-8">
+              <img
+                src={`http://visualdslab.com/static/${paper.figure}`}
+                alt={paper.title}
+                class="w-full rounded-lg shadow-lg mb-2"
+              />
+              {paper.caption && (
+                <p class="text-sm text-gray-600 italic">{paper.caption}</p>
+              )}
+            </div>
+          )
+        }
 
         {/* Abstract Section */}
         <div class="mb-8">
@@ -71,33 +70,35 @@ function formatDate(dateStr: string) {
         </div>
 
         {/* Materials Section if they exist */}
-        {paper.links && paper.links.length > 0 && (
-          <div class="mb-8">
-            <h2 class="text-xl font-semibold mb-4">Materials</h2>
-            <div class="flex flex-wrap gap-3">
-              {paper.pdf && (
-                <a
-                  href={paper.pdf}
-                  class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  PDF
-                </a>
-              )}
-              {paper.links.map((link) => (
-                <a
-                  href={link.file || link.link}
-                  class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.name}
-                </a>
-              ))}
+        {
+          paper.links && paper.links.length > 0 && (
+            <div class="mb-8">
+              <h2 class="text-xl font-semibold mb-4">Materials</h2>
+              <div class="flex flex-wrap gap-3">
+                {paper.pdf && (
+                  <a
+                    href={paper.pdf}
+                    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PDF
+                  </a>
+                )}
+                {paper.links.map((link) => (
+                  <a
+                    href={link.file || link.link}
+                    class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )
+        }
       </div>
 
       {/* Right Column - Sidebar */}
@@ -108,28 +109,30 @@ function formatDate(dateStr: string) {
           <dl class="space-y-2">
             <dt class="text-gray-600">Venue</dt>
             <dd class="font-medium">{paper.venue}</dd>
-            
+
             <dt class="text-gray-600">Year</dt>
             <dd class="font-medium">{paper.year}</dd>
-            
+
             <dt class="text-gray-600">Publication Date</dt>
             <dd class="font-medium">{formatDate(paper.pub_date)}</dd>
 
-            {paper.url && (
-              <>
-                <dt class="text-gray-600">DOI</dt>
-                <dd>
-                  <a 
-                    href={paper.url}
-                    class="text-blue-600 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {paper.url}
-                  </a>
-                </dd>
-              </>
-            )}
+            {
+              paper.url && (
+                <>
+                  <dt class="text-gray-600">DOI</dt>
+                  <dd>
+                    <a
+                      href={paper.url}
+                      class="text-blue-600 hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {paper.url}
+                    </a>
+                  </dd>
+                </>
+              )
+            }
           </dl>
         </div>
 
@@ -138,7 +141,9 @@ function formatDate(dateStr: string) {
           <h3 class="text-lg font-semibold mb-4">Cite this paper</h3>
           <div class="bg-gray-50 p-3 rounded text-sm font-mono">
             {/* Add formatted citation here */}
-            {`${paper.authors.join(', ')} (${paper.year}). ${paper.title}. ${paper.venue}.`}
+            {
+              `${paper.authors.join(", ")} (${paper.year}). ${paper.title}. ${paper.venue}.`
+            }
           </div>
         </div>
       </div>
