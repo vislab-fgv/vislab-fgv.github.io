@@ -11,6 +11,19 @@
         <span class="text-xl md:text-3xl text-gray-950 font-semibold"
           >Visual Data Science Lab</span
         >
+<header class="relative bg-white">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between">
+      <!-- Logo + Title -->
+      <div class="flex items-center space-x-2">
+        <img
+          src="/images/logo-left.png"
+          alt="V-DS Logo"
+          class="w-16 h-16 md:w-20 md:h-20"
+        />
+        <span class="text-xl md:text-3xl text-gray-950 font-semibold"
+          >Visual Data Science Lab</span
+        >
       </div>
 
       <!-- Mobile menu button -->
@@ -153,6 +166,37 @@
     </nav>
   </div>
 </header>
+
+<script>
+  // Toggle mobile menu
+  const menuButton = document.getElementById("menuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuIcon = menuButton?.querySelector(".menu-icon");
+  const closeIcon = menuButton?.querySelector(".close-icon");
+
+  menuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+  });
+
+  // Toggle mobile positions dropdown
+  const mobilePositionsButton = document.getElementById(
+    "mobilePositionsButton"
+  );
+  const mobilePositionsMenu = document.getElementById("mobilePositionsMenu");
+  const mobilePositionsIcon = mobilePositionsButton?.querySelector("svg");
+
+  mobilePositionsButton?.addEventListener("click", () => {
+    mobilePositionsMenu?.classList.toggle("hidden");
+    if (mobilePositionsIcon) {
+      mobilePositionsIcon.style.transform =
+        mobilePositionsMenu?.classList.contains("hidden")
+          ? "rotate(0deg)"
+          : "rotate(180deg)";
+    }
+  });
+</script>
 
 <script>
   // Toggle mobile menu

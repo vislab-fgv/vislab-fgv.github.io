@@ -1,6 +1,9 @@
 ---
 import type { ExtendedPublication } from "../types/publication";
+import type { ExtendedPublication } from "../types/publication";
 
+const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
+type Props = ExtendedPublication;
 const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 type Props = ExtendedPublication;
 
@@ -9,12 +12,14 @@ const { title, authors, year, thumbnail, venue, web_name, pdf } = Astro.props;
 
 <div class="pb-4">
   {venue && <div class="text-md font-medium">{venue.nickname}</div>}
+  {venue && <div class="text-md font-medium">{venue.nickname}</div>}
   <div class="flex flex-row md:flex-row gap-4">
     {
       thumbnail && (
         <div class="min-w-32 max-w-32">
           <a href={`/papers/${web_name}`}>
             <img
+              src={`${BUCKET_BASE_URL}${thumbnail}`}
               src={`${BUCKET_BASE_URL}${thumbnail}`}
               alt={title}
               class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
@@ -42,6 +47,7 @@ const { title, authors, year, thumbnail, venue, web_name, pdf } = Astro.props;
           </a>
         ))
       }
+      <p class="inline italic pl-1">{venue?.full_name}</p>
       <p class="inline italic pl-1">{venue?.full_name}</p>
       <p class="inline">, {year}</p>
       <div class="flex gap-2">
