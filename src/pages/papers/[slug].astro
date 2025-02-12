@@ -1,23 +1,25 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import type { Paper } from "../../types/paper";
-import papersData from "../../data/papers.json";
+import publicationsData from "../../data/publications.json";
+import type { ExtendedPublication, Publication } from "../../types/publication";
+import { extendPublication } from "../../lib/utils";
 
 export function getStaticPaths() {
-  const papers = papersData;
-  return papers.map((paper) => ({
-    params: { slug: paper.web_name },
-    props: { paper },
+  const publications = publicationsData;
+  return publications.map((publication) => ({
+    params: { slug: publication.web_name },
+    props: { publication },
   }));
 }
 
 interface Props {
-  paper: Paper;
+  publication: Publication;
 }
 
-const { paper } = Astro.props;
+const { publication: publicationBase } = Astro.props;
 
-// Función helper para formatear la fecha
+const publication: ExtendedPublication = extendPublication(publicationBase);
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
     year: "numeric",
@@ -27,17 +29,23 @@ function formatDate(dateStr: string) {
 }
 ---
 
-<Layout title={paper.title}>
+<Layout title={publication.title}>
   <main class="container mx-auto px-4 py-8 max-w-6xl">
     {/* Header Section */}
     <div class="mb-8">
-      <h1 class="text-3xl font-bold mb-4">{paper.title}</h1>
+      <h1 class="text-xl font-bold">{publication.title}</h1>
       <div class="text-lg text-gray-600 mb-4">
         {/* Authors list */}
-        {paper.authors.join(", ")}
+        {
+          publication.authors
+            ?.map((author) => `${author.first_name} ${author.last_name}`)
+            .join(", ")
+        }
       </div>
       <div class="text-gray-500">
-        {paper.venue} · {paper.year} · {formatDate(paper.pub_date)}
+        {publication.venue?.full_name} · {publication.year} · {
+          formatDate(publication.pub_date)
+        }
       </div>
     </div>
 
@@ -47,15 +55,17 @@ function formatDate(dateStr: string) {
       <div class="lg:col-span-2">
         {/* Figure Section */}
         {
-          paper.figure && (
+          publication.figure && (
             <div class="mb-8">
               <img
-                src={`http://visualdslab.com/static/${paper.figure}`}
-                alt={paper.title}
+                src={`http://visualdslab.com/static/${publication.figure}`}
+                alt={publication.title}
                 class="w-full rounded-lg shadow-lg mb-2"
               />
-              {paper.caption && (
-                <p class="text-sm text-gray-600 italic">{paper.caption}</p>
+              {publication.caption && (
+                <p class="text-sm text-gray-600 italic">
+                  {publication.caption}
+                </p>
               )}
             </div>
           )
@@ -65,19 +75,19 @@ function formatDate(dateStr: string) {
         <div class="mb-8">
           <h2 class="text-xl font-semibold mb-4">Abstract</h2>
           <div class="prose max-w-none">
-            <p>{paper.abstract}</p>
+            <p>{publication.abstract}</p>
           </div>
         </div>
 
         {/* Materials Section if they exist */}
         {
-          paper.links && paper.links.length > 0 && (
+          publication.links && publication.links.length > 0 && (
             <div class="mb-8">
               <h2 class="text-xl font-semibold mb-4">Materials</h2>
               <div class="flex flex-wrap gap-3">
-                {paper.pdf && (
+                {publication.pdf && (
                   <a
-                    href={paper.pdf}
+                    href={publication.pdf}
                     class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -85,7 +95,7 @@ function formatDate(dateStr: string) {
                     PDF
                   </a>
                 )}
-                {paper.links.map((link) => (
+                {publication.links.map((link) => (
                   <a
                     href={link.file || link.link}
                     class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
@@ -108,26 +118,26 @@ function formatDate(dateStr: string) {
           <h3 class="text-lg font-semibold mb-4">Publication Details</h3>
           <dl class="space-y-2">
             <dt class="text-gray-600">Venue</dt>
-            <dd class="font-medium">{paper.venue}</dd>
+            <dd class="font-medium">{publication.venue}</dd>
 
             <dt class="text-gray-600">Year</dt>
-            <dd class="font-medium">{paper.year}</dd>
+            <dd class="font-medium">{publication.year}</dd>
 
             <dt class="text-gray-600">Publication Date</dt>
-            <dd class="font-medium">{formatDate(paper.pub_date)}</dd>
+            <dd class="font-medium">{formatDate(publication.pub_date)}</dd>
 
             {
-              paper.url && (
+              publication.url && (
                 <>
                   <dt class="text-gray-600">DOI</dt>
                   <dd>
                     <a
-                      href={paper.url}
+                      href={publication.url}
                       class="text-blue-600 hover:underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {paper.url}
+                      {publication.url}
                     </a>
                   </dd>
                 </>
@@ -138,11 +148,11 @@ function formatDate(dateStr: string) {
 
         {/* Citation Card - You might want to add this */}
         <div class="bg-white rounded-lg shadow p-6">
-          <h3 class="text-lg font-semibold mb-4">Cite this paper</h3>
+          <h3 class="text-lg font-semibold mb-4">Cite this publication</h3>
           <div class="bg-gray-50 p-3 rounded text-sm font-mono">
             {/* Add formatted citation here */}
             {
-              `${paper.authors.join(", ")} (${paper.year}). ${paper.title}. ${paper.venue}.`
+              `${publication.authors.join(", ")} (${publication.year}). ${publication.title}. ${publication.venue}.`
             }
           </div>
         </div>

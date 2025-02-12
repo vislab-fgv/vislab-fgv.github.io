@@ -1,0 +1,26 @@
+---
+interface Props {
+  web_name: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { web_name, title, description, image } = Astro.props;
+---
+
+<a href={`projects/${web_name}`} class="group">
+  <div
+    class="relative overflow-hidden rounded-lg border border-orange-100 p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-100/50 group"
+  >
+    <div class="aspect-video w-full overflow-hidden mb-4">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover rounded-md transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+    <h3 class="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
+    <p class="text-gray-600 text-sm">{description}</p>
+  </div>
+</a>

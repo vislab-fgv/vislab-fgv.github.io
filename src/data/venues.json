@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "nickname": "InfoVis",
+    "full_name": "IEEE Trans. Visualization & Comp. Graphics (Proc. InfoVis)",
+    "venue_type": "J"
+  },
+  {
+    "id": 2,
+    "nickname": "CHI",
+    "full_name": "ACM Human Factors in Computing Systems (CHI)",
+    "venue_type": "C"
+  },
+  {
+    "id": 3,
+    "nickname": "UIST",
+    "full_name": "ACM User Interface Software & Technology (UIST)",
+    "venue_type": "C"
+  },
+  {
+    "id": 4,
+    "nickname": "TVCG",
+    "full_name": "IEEE Transactions on Visualization and Computer Graphics",
+    "venue_type": "J"
+  },
+  {
+    "id": 5,
+    "nickname": "VAST",
+    "full_name": "IEEE Visual Analytics Science & Technology (VAST)",
+    "venue_type": "C"
+  },
+  {
+    "id": 6,
+    "nickname": "InfoVis (Pre-TVCG)",
+    "full_name": "IEEE Information Visualization (InfoVis)",
+    "venue_type": "C"
+  },
+  {
+    "id": 7,
+    "nickname": "EuroVis",
+    "full_name": "Computer Graphics Forum (Proc. EuroVis)",
+    "venue_type": "J"
+  },
+  {
+    "id": 8,
+    "nickname": "CG&A",
+    "full_name": "Computer Graphics and Applications",
+    "venue_type": "J"
+  },
+  {
+    "id": 9,
+    "nickname": "CSCW",
+    "full_name": "ACM Computer-Supported Cooperative Work (CSCW)",
+    "venue_type": "C"
+  },
+  {
+    "id": 10,
+    "nickname": "PLOS ONE",
+    "full_name": "PLOS ONE",
+    "venue_type": "J"
+  },
+  {
+    "id": 11,
+    "nickname": "VAST-TVCG",
+    "full_name": "IEEE Trans. Visualization & Comp. Graphics (Proc. VAST)",
+    "venue_type": "J"
+  },
+  {
+    "id": 12,
+    "nickname": "arXiv",
+    "full_name": "arXiv",
+    "venue_type": "J"
+  },
+  {
+    "id": 13,
+    "nickname": "Computer",
+    "full_name": "Computer",
+    "venue_type": "J"
+  },
+  {
+    "id": 14,
+    "nickname": "SIBGRAPI",
+    "full_name": "Graphics, Patterns and Images (SIBGRAPI) ",
+    "venue_type": "C"
+  },
+  {
+    "id": 15,
+    "nickname": "CiSE",
+    "full_name": "Computing in Science & Engineering",
+    "venue_type": "J"
+  },
+  {
+    "id": 16,
+    "nickname": "SciVis",
+    "full_name": "IEEE Scientific Visualization Conference",
+    "venue_type": "C"
+  },
+  {
+    "id": 17,
+    "nickname": "IEEE Data Eng. Bull",
+    "full_name": "IEEE Data Engineering Bulletin",
+    "venue_type": "J"
+  },
+  {
+    "id": 18,
+    "nickname": "CGF",
+    "full_name": "Computer Graphics Forum",
+    "venue_type": "J"
+  },
+  {
+    "id": 19,
+    "nickname": "CLEI",
+    "full_name": "Conferencia Latinoamericana de Inform\u00e1tica",
+    "venue_type": "C"
+  },
+  {
+    "id": 20,
+    "nickname": "SciVis-TVCG",
+    "full_name": "IEEE Trans. Visualization & Comp. Graphics (Proc. SciVis)",
+    "venue_type": "J"
+  },
+  {
+    "id": 21,
+    "nickname": "C&G",
+    "full_name": "Computers & Graphics",
+    "venue_type": "J"
+  },
+  {
+    "id": 22,
+    "nickname": "MICAI",
+    "full_name": "Mexican International Conference on Artificial Intelligence (MICAI)          ",
+    "venue_type": "C"
+  },
+  {
+    "id": 23,
+    "nickname": "WI-IAT",
+    "full_name": "International Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT)",
+    "venue_type": "C"
+  },
+  {
+    "id": 24,
+    "nickname": "VISAPP",
+    "full_name": "International Conference on Computer Vision Theory and Applications",
+    "venue_type": "C"
+  },
+  {
+    "id": 25,
+    "nickname": "EPJ ST",
+    "full_name": "The European Physical Journal Special Topics (EPJ ST)",
+    "venue_type": "J"
+  },
+  {
+    "id": 26,
+    "nickname": "Educ. Sci.",
+    "full_name": "Education Sciences",
+    "venue_type": "J"
+  },
+  {
+    "id": 27,
+    "nickname": "SAC",
+    "full_name": "ACM/SIGAPP Symposium On Applied Computing",
+    "venue_type": "C"
+  },
+  {
+    "id": 28,
+    "nickname": "Appl. Sci.",
+    "full_name": "Applied Sciences",
+    "venue_type": "J"
+  },
+  {
+    "id": 29,
+    "nickname": "EDM",
+    "full_name": "International Conference on Educational Data Mining",
+    "venue_type": "C"
+  },
+  {
+    "id": 30,
+    "nickname": "VIS-TVCG",
+    "full_name": "IEEE Trans. Visualization & Comp. Graphics (Proc. VIS)",
+    "venue_type": "J"
+  },
+  {
+    "id": 31,
+    "nickname": "Data Min. Knowl. Disc.",
+    "full_name": "Data Mining and Knowledge Discovery",
+    "venue_type": "J"
+  },
+  {
+    "id": 32,
+    "nickname": "AISTATS",
+    "full_name": "International Conference on Artificial Intelligence and Statistics",
+    "venue_type": "C"
+  },
+  {
+    "id": 33,
+    "nickname": "JSTARS",
+    "full_name": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+    "venue_type": "J"
+  },
+  {
+    "id": 34,
+    "nickname": "NAACL Findings",
+    "full_name": "Findings of the Association for Computational Linguistics: NAACL",
+    "venue_type": "C"
+  },
+  {
+    "id": 35,
+    "nickname": "VAST Challenge",
+    "full_name": "IEEE Visual Analytics Science & Technology (VAST) Challenge",
+    "venue_type": "C"
+  },
+  {
+    "id": 36,
+    "nickname": "NATSUSTAIN",
+    "full_name": "Nature Sustainability",
+    "venue_type": "J"
+  }
+]
