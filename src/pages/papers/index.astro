@@ -1,11 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import publications from "../../data/dummy.json";
-import type { Publication } from "../../types/paper";
+import publications from "../../data/publications.json";
+import type { ExtendedPublication } from "../../types/publication";
+import { extendPublications } from "../../lib/utils";
 
-const groupedPublications: { [key: string]: Publication[] } =
-  publications.publications.reduce(
-    (acc: { [key: string]: Publication[] }, publication) => {
+const BUKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
+
+const extendedPublications = extendPublications(publications).sort(
+  (a, b) => new Date(b.pub_date).getTime() - new Date(a.pub_date).getTime()
+);
+
+const groupedPublications: { [key: string]: ExtendedPublication[] } =
+  extendedPublications.reduce(
+    (acc: { [key: string]: ExtendedPublication[] }, publication) => {
       const year = publication.year;
       if (!acc[year]) {
         acc[year] = [];
@@ -18,23 +25,23 @@ const groupedPublications: { [key: string]: Publication[] } =
 ---
 
 <Layout title="Papers">
-  <main class="flex justify-center py-8">
-    <div class="max-w-4xl w-full">
-      <div class="flex flex-col gap-4">
-        {
-          Object.keys(groupedPublications)
-            .sort((a, b) => parseInt(b) - parseInt(a))
-            .map((year) => (
-              <div>
-                <h2 class="text-md font-semibold mb-4">{year}</h2>
-                <div class="flex flex-col gap-4">
-                  {groupedPublications[year].map((publication: Publication) => (
+  <main class="flex justify-center px-2 lg:px-4">
+    <div class="flex flex-col gap-4">
+      {
+        Object.keys(groupedPublications)
+          .sort((a, b) => parseInt(b) - parseInt(a))
+          .map((year) => (
+            <div>
+              <h2 class="text-md font-semibold mb-4">{year}</h2>
+              <div class="flex flex-col gap-4">
+                {groupedPublications[year].map(
+                  (publication: ExtendedPublication) => (
                     <div class="flex flex-row md:flex-row gap-4">
                       <div class="max-w-32 min-w-32 w-full">
                         {publication.thumbnail && (
-                          <a href="#">
+                          <a href={`/papers/${publication.web_name}`}>
                             <img
-                              src={publication.thumbnail}
+                              src={`${BUKET_BASE_URL}${publication.thumbnail}`}
                               alt={publication.title}
                               class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
                             />
@@ -43,43 +50,44 @@ const groupedPublications: { [key: string]: Publication[] } =
                       </div>
                       <div class="text-md text-base/5">
                         <a
-                          href="#"
+                          href={`/papers/${publication.web_name}`}
                           class="hover:text-orange-500 hover:underline font-semibold pr-1"
                         >
                           {publication.title}
                         </a>
                         <div>
-                          {publication.authors.map((author, index) => (
-                            <a
-                              href="#"
-                              class="hover:text-orange-500 hover:underline"
-                            >
-                              {author}
-                              {index < publication.authors.length - 1 && ", "}
-                            </a>
+                          {publication.authors?.map((author, index) => (
+                            <span>
+                              <a
+                                href="#"
+                                class="hover:text-orange-500 hover:underline"
+                              >
+                                {author.first_name} {author.last_name}
+                              </a>
+                              {publication.authors &&
+                                index < publication.authors.length - 1 &&
+                                ","}
+                            </span>
                           ))}
                         </div>
-                        <p class="inline italic">{publication.journal}</p>
+                        <p class="inline italic">
+                          {publication.venue?.full_name}
+                        </p>
                         <p class="inline">, {publication.year}</p>
-                        <div class="flex gap-2">
-                          {publication.links.map((link, index) => (
-                            <a
-                              href="#"
+                        <p>
+                          <a
+                              href={`${BUKET_BASE_URL}${publication.pdf}`}
                               class="hover:underline hover:text-orange-500"
-                            >
-                              {link}
-                              {index < publication.links.length - 1 && " |"}
-                            </a>
-                          ))}
-                        </div>
+                            >PDF</a>
+                        </p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  )
+                )}
               </div>
-            ))
-        }
-      </div>
+            </div>
+          ))
+      }
     </div>
   </main>
 </Layout>

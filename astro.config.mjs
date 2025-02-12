@@ -10,7 +10,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   image: {
-    domains: ["visualdslab.com"],
+    domains: ["pub-a4c8f95635834f02b84a1a6d9b4da9ec.r2.dev"],
     remotePatterns: [{ protocol: "https" }],
   },
 });

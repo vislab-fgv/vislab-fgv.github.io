@@ -1,49 +1,72 @@
 ---
-import fs from "node:fs/promises";
-import path from "node:path";
 import Layout from "../../layouts/Layout.astro";
+import projectsData from "../../data/projects.json";
 
-interface Content {
-    title: string;
-    coverImage: string;
-    abstract: string;
+interface Project {
+  title: string;
+  web_name: string;
+  figure: string;
+  abstract: string;
+  description?: string;
 }
 
 export async function getStaticPaths() {
-    const contentDir = path.join(process.cwd(), "src/data/projects");
-
-    try {
-        const files = await fs.readdir(contentDir);
-        const jsonFiles = files.filter((file) => file.endsWith(".json"));
-
-        return jsonFiles.map((file) => ({
-            params: {
-                slug: file.replace(".json", ""),
-            },
-            // Opcionalmente, podemos pasar props
-            // props: { filename: file }
-        }));
-    } catch (error) {
-        console.error("Error al leer el directorio:", error);
-        return [];
-    }
+  const projects = projectsData;
+  return projects
+    .filter((item) => item.visible === true)
+    .map((project) => ({
+      params: { slug: project.web_name },
+      props: { project },
+    }));
 }
 
-const { slug } = Astro.params;
-let content: Content;
-
-try {
-    const contentDir = path.join(process.cwd(), "src/data/projects");
-    const filePath = path.join(contentDir, `${slug}.json`);
-    const fileContent = await fs.readFile(filePath, "utf-8");
-    content = JSON.parse(fileContent);
-} catch (error) {
-    return Astro.redirect("/404");
+interface Props {
+  project: Project;
 }
+
+const { project } = Astro.props;
 ---
 
 <Layout>
-    <h1 class="text-amber-400 font-bold">{content.title}</h1>
-    <p>{content.abstract}</p>
-    <img src={content.coverImage} alt={content.title} />
+  <div class="lg:py-8 space-y-4 lg:space-y-8">
+    <h1 class="font-bold text-center text-2xl">{project.title}</h1>
+
+    <div class="flex justify-center">
+      <img
+        src={`http://visualdslab.com/static/images${project.figure}`}
+        alt={project.title}
+      />
+    </div>
+
+    <!-- Abstract section -->
+    <div class="space-y-2 lg:space-y-4">
+      <h2 class="text-base font-medium">ABSTRACT</h2>
+      <p>{project.abstract}</p>
+    </div>
+
+    <!-- Researchers section -->
+    <section class="space-y-2 lg:space-y-4">
+      <h2 class="text-base font-medium">RESEARCHERS</h2>
+      <ul class="list-disc">
+        <li class="flex items-center">
+          <span class="text-gray-700">Giovani Valdrighi, FGV EMAp (former)</span
+          >
+        </li>
+        <li class="flex items-center">
+          <span class="text-gray-700">Nivan Ferreira, UFPE</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-gray-700">Jorge Poco, FGV EMAp</span>
+        </li>
+        <li class="flex items-center">
+          <span class="text-gray-700">Elio Rodriguez, FGV EMAp (former)</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Researchers section -->
+    <section class="space-y-2 lg:space-y-4">
+      <h2 class="text-base font-medium">PUBLICATIONS</h2>
+    </section>
+  </div>
 </Layout>

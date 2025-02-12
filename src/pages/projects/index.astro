@@ -1,0 +1,23 @@
+---
+// Example usage in your page
+import ProjectCard from "../../components/ProjectCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import projectsData from "../../data/projects.json";
+---
+
+<Layout>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    {
+      projectsData
+        .filter((item) => item.visible === true)
+        .map((item) => (
+          <ProjectCard
+            web_name={item.web_name}
+            title={item.title}
+            description={item.description}
+            image={`http://visualdslab.com/static/images${item.figure}`}
+          />
+        ))
+    }
+  </div>
+</Layout>
