@@ -1,50 +1,53 @@
 ---
+import basePublications from "../data/publications.json";
 import PublicationCard from "../components/PublicationCard.astro";
-import publications from "../data/dummy.json";
 import NewsItem from "../components/NewsItem.astro";
 import Layout from "../layouts/Layout.astro";
 import Slider from "../components/Slider.astro";
+import type { ExtendedPublication } from "../types/publication";
+import { extendPublications } from "../lib/utils";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const LAST_PAPER_INDEX = 7;
+
+const lastEightPublications = basePublications
+  .sort(
+    (a, b) => new Date(b.pub_date).getTime() - new Date(a.pub_date).getTime()
+  )
+  .slice(0, LAST_PAPER_INDEX);
+
+const extendedPublications: ExtendedPublication[] = extendPublications(
+  lastEightPublications
+);
 ---
 
 <Layout>
-  <div class="flex justify-center">
-    <div class="max-w-4xl w-full">
-      <div class="pt-6 max-h-88 h-full">
-        <Slider />
+  <div class="pt-6 max-h-88 h-full">
+    <Slider />
+  </div>
+  <div class="px-2 py-8">
+    <div class="grid grid-cols-4 gap-8">
+      <!-- Publications -->
+      <div class="w-full col-span-3">
+        <h2 class="text-xl font-semibold pb-6">
+          Recent Publications
+          <a
+            href="#"
+            class="hover:text-orange-500 hover:underline font-thin text-sm"
+            >(VIEW ALL PAPERS)</a
+          >
+        </h2>
+        <div class="space-y-2">
+          {extendedPublications.map((pub) => <PublicationCard {...pub} />)}
+        </div>
       </div>
-      <div class="px-2 py-8 max-w-6xl">
-        <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Publications -->
-          <div class="w-full">
-            <h2 class="text-xl font-semibold pb-6">
-              Recent Publications
-              <a
-                href="#"
-                class="hover:text-orange-500 hover:underline font-thin text-sm"
-                >(VIEW ALL PAPERS)</a
-              >
-            </h2>
-            <div class="space-y-2">
-              {
-                publications.publications.map((pub) => (
-                  <PublicationCard {...pub} />
-                ))
-              }
-            </div>
-          </div>
 
-          <!-- News -->
-          <div class="w-full lg:w-1/8 pt-3">
+      <!-- News -->
+      <!-- <div class="w-full col-span-1 pt-3">
             <h2 class="text-xl font-semibold pb-6">News</h2>
             <div>
               {publications.news.map((item) => <NewsItem {...item} />)}
             </div>
-          </div>
-        </div>
-      </div>
+          </div> -->
     </div>
   </div>
 </Layout>
