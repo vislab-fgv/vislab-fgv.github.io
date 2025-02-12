@@ -1,0 +1,73 @@
+---
+import publications from "../data/dummy.json";
+
+const { autoplaySpeed = 2000 } = Astro.props;
+---
+
+<div
+  class="w-full h-full relative overflow-hidden hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
+  id="slider-container"
+>
+  <a href="#" class="w-full h-full">
+    {
+      publications.publications.map((pub, index) => (
+        <div
+          class={`slide absolute w-full h-full transition-opacity duration-1000 ${
+            index === 0 ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img
+            class="w-full h-full rounded-xl transition-all"
+            src={pub.thumbnail}
+            alt={pub.title}
+            loading="lazy"
+          />
+          <div class="absolute bottom-4 right-4 bg-white/95 text-black border border-black px-4 py-1 rounded-tr-md rounded-bl-md text-sm">
+            {pub.title}
+          </div>
+        </div>
+      ))
+    }
+  </a>
+</div>
+
+<script define:vars={{ autoplaySpeed }}>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll("#slider-container .slide");
+
+  const showNextImage = () => {
+    if (slides.length === 0) return;
+
+    slides[currentIndex].classList.remove("opacity-100");
+    slides[currentIndex].classList.add("opacity-0");
+
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    slides[currentIndex].classList.remove("opacity-0");
+    slides[currentIndex].classList.add("opacity-100");
+  };
+
+  const interval = setInterval(showNextImage, autoplaySpeed);
+
+  if (slides.length === 0) {
+    clearInterval(interval);
+  }
+</script>
+
+<style>
+  #slider-container {
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+  }
+
+  .opacity-0 {
+    opacity: 0;
+  }
+
+  .opacity-100 {
+    opacity: 1;
+  }
+</style>
