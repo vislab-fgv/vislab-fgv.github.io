@@ -1,0 +1,46 @@
+.no-preflight {
+  margin: initial;
+  padding: initial;
+  border: initial;
+  color: initial;
+  background: initial;
+}
+
+.no-preflight h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  line-height: 1.2;
+}
+
+.no-preflight h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  line-height: 1.3;
+}
+
+.no-preflight h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  line-height: 1.4;
+}
+
+.no-preflight p,
+.no-preflight ul,
+.no-preflight ol {
+  all: revert;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+.no-preflight a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.no-preflight ul,
+.no-preflight ol {
+  padding-left: 2rem;
+}

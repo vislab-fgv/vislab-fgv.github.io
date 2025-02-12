@@ -4,8 +4,7 @@ import type { ExtendedPublication } from "../types/publication";
 const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 type Props = ExtendedPublication;
 
-const { title, authors, year, thumbnail, venue } =
-  Astro.props;
+const { title, authors, year, thumbnail, venue, web_name, pdf } = Astro.props;
 ---
 
 <div class="pb-4">
@@ -14,7 +13,7 @@ const { title, authors, year, thumbnail, venue } =
     {
       thumbnail && (
         <div class="min-w-32 max-w-32">
-          <a href="#">
+          <a href={`/papers/${web_name}`}>
             <img
               src={`${BUCKET_BASE_URL}${thumbnail}`}
               alt={title}
@@ -25,28 +24,37 @@ const { title, authors, year, thumbnail, venue } =
       )
     }
     <div class="text-md text-base/5 w-full">
-      <a class="hover:text-orange-500 hover:underline font-semibold pr-1"
+      <a
+        href={`/papers/${web_name}`}
+        class="hover:text-orange-500 hover:underline font-semibold pr-1"
         >{title}</a
       >
       {
         authors?.map((author, index) => (
-          <a href="#" class="hover:text-orange-500 hover:underline">
-            {author.first_name}{author.last_name}{index < authors.length - 1 && ", "}
+          <a
+            href={author.url}
+            target="_blank"
+            class="hover:text-orange-500 hover:underline"
+          >
+            {author.first_name}
+            {author.last_name}
+            {index < authors.length - 1 && ", "}
           </a>
         ))
       }
       <p class="inline italic pl-1">{venue?.full_name}</p>
       <p class="inline">, {year}</p>
-      <!-- <div class="flex gap-2">
-        {
+      <div class="flex gap-2">
+        <a href={`${BUCKET_BASE_URL}${pdf}`} target="_blank" class="hover:underline hover:text-orange-500">PDF</a>
+        <!-- {
           links.map((link, index) => (
             <a href="#" class="hover:underline hover:text-orange-500">
               {link}
               {index < links.length - 1 && " |"}
             </a>
           ))
-        }
-      </div> -->
+        } -->
+      </div>
     </div>
   </div>
 </div>

@@ -58,11 +58,10 @@
           >Publications</a
         >
         <a href="/people" class="text-gray-600 hover:text-blue-600">People</a>
-
         <!-- Desktop Positions Dropdown -->
         <div class="relative group">
           <button
-            class="inline-flex items-center text-gray-600 hover:text-blue-600 focus:outline-none"
+            class="inline-flex items-center text-gray-600 group-hover:text-blue-600 focus:outline-none"
           >
             <span>Positions</span>
             <svg
@@ -77,22 +76,25 @@
               <path d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          <div
-            class="absolute left-0 mt-2 w-40 bg-white rounded shadow-md hidden group-hover:block"
-          >
-            <a
-              href="/positions/postdoc"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Postdoc</a
-            >
-            <a
-              href="/positions/phd"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PhD</a
-            >
-            <a
-              href="/positions/internship"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >Internship</a
-            >
+          <!-- Modificamos esta parte para crear un área invisible que conecte el botón con el menú -->
+          <div class="absolute z-100 left-0 w-40 pt-2 invisible group-hover:visible">
+            <div class="bg-white rounded shadow-md">
+              <a
+                href="/positions/postdoc"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                >Postdoc</a
+              >
+              <a
+                href="/positions/programmers"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                >Programmers</a
+              >
+              <a
+                href="/positions/students"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                >Students</a
+              >
+            </div>
           </div>
         </div>
       </nav>
@@ -139,12 +141,12 @@
             class="block py-2 text-gray-600 hover:text-blue-600">Postdoc</a
           >
           <a
-            href="/positions/phd"
-            class="block py-2 text-gray-600 hover:text-blue-600">PhD</a
+            href="/positions/programmers"
+            class="block py-2 text-gray-600 hover:text-blue-600">Programmers</a
           >
           <a
-            href="/positions/internship"
-            class="block py-2 text-gray-600 hover:text-blue-600">Internship</a
+            href="/positions/students"
+            class="block py-2 text-gray-600 hover:text-blue-600">Students</a
           >
         </div>
       </div>
