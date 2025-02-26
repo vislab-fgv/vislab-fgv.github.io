@@ -1,32 +1,33 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import PersonCard from '../../components/PersonCard.astro';
-import type { Person } from '../../types/people';
-import peopleData from '../../data/people.json';
+import Layout from "../../layouts/Layout.astro";
+import PersonCard from "../../components/PersonCard.astro";
+import type { Person } from "../../types/people";
+import peopleData from "../../data/people.json";
 
-// Cast the imported JSON data to Person[] type
 const allPeople = peopleData as Person[];
+const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 
 
-// Filter and sort by status and order
 const faculty = allPeople
-  .filter(entry => entry.status === 'faculty' && entry.visible !== 0)
+  .filter((entry) => entry.status === "faculty" && entry.visible !== 0)
   .sort((a, b) => a.order - b.order);
 
 const researchers = allPeople
-  .filter(entry => entry.status === 'researcher' && entry.visible !== 0)
+  .filter((entry) => entry.status === "researcher" && entry.visible !== 0)
   .sort((a, b) => a.order - b.order);
 
 const students = allPeople
-  .filter(entry => entry.status === 'student' && entry.visible !== 0)
+  .filter((entry) => entry.status === "student" && entry.visible !== 0)
   .sort((a, b) => a.order - b.order);
 
 const alumni = allPeople
-  .filter(entry => entry.status.includes('alumni') && entry.visible !== 0)
+  .filter((entry) => entry.status.includes("alumni") && entry.visible !== 0)
   .sort((a, b) => a.order - b.order);
 
 const collaborators = allPeople
-  .filter(entry => entry.status.includes('collaborator') && entry.visible !== 0)
+  .filter(
+    (entry) => entry.status.includes("collaborator") && entry.visible !== 0
+  )
   .sort((a, b) => a.order - b.order);
 ---
 
@@ -36,101 +37,139 @@ const collaborators = allPeople
     <section class="mb-16">
       <h2 class="text-2xl font-bold mb-8">FACULTY</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {faculty.map((entry) => (
-          <PersonCard
-            name={entry.name}
-            position={entry.position}
-            interests={entry.interests}
-            image={`http://visualdslab.com/static/${entry.image}`}
-            url={entry.url}
-            affiliation={entry.affiliation}
-          />
-        ))}
+        {
+          faculty.map((entry) => (
+            <PersonCard
+              name={`${entry.first_name} ${entry.last_name}`}
+              position={entry.position}
+              interests={entry.interests}
+              image={`${BUCKET_BASE_URL}/${entry.image}`}
+              url={entry.url}
+              affiliation={entry.affiliation}
+            />
+          ))
+        }
       </div>
     </section>
 
     <!-- Research Staff -->
-    {researchers.length > 0 && (
-      <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-8">RESEARCH STAFF</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {researchers.map((entry) => (
-            <PersonCard
-              name={entry.name}
-              position={entry.position}
-              interests={entry.interests}
-              image={`http://visualdslab.com/static/${entry.image}`}
-              url={entry.url}
-              affiliation={entry.affiliation}
-            />
-          ))}
-        </div>
-      </section>
-    )}
+    {
+      researchers.length > 0 && (
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-8">RESEARCH STAFF</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {researchers.map((entry) => (
+              <PersonCard
+                name={`${entry.first_name} ${entry.last_name}`}
+                position={entry.position}
+                interests={entry.interests}
+                image={`${BUCKET_BASE_URL}/${entry.image}`}
+                url={entry.url}
+                affiliation={entry.affiliation}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <!-- Students Section -->
-    {students.length > 0 && (
-      <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-8">STUDENTS</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {students.map((entry) => (
-            <PersonCard
-              name={entry.name}
-              position={entry.position}
-              interests={entry.interests}
-              image={`http://visualdslab.com/static/${entry.image}`}
-              url={entry.url}
-              affiliation={entry.affiliation}
-            />
-          ))}
-        </div>
-      </section>
-    )}
+    {
+      students.length > 0 && (
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-8">STUDENTS</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {students.map((entry) => (
+              <PersonCard
+                name={`${entry.first_name} ${entry.last_name}`}
+                position={entry.position}
+                interests={entry.interests}
+                image={`${BUCKET_BASE_URL}/${entry.image}`}
+                url={entry.url}
+                affiliation={entry.affiliation}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <!-- Alumni Section -->
-    {alumni.length > 0 && (
-      <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-8">ALUMNI</h2>
-        <div class="prose max-w-none">
-          <ul class="space-y-3 text-gray-700">
-            {alumni.map((entry) => (
-              <li>
-                {entry.url ? (
-                  <a href={entry.url} target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">
-                    <strong>{entry.name}</strong>
-                  </a>
-                ) : (
-                  <strong>{entry.name}</strong>
-                )} 
-                ({entry.position}) - {entry.alumni_main_research}
-                {entry.alumni_position && <span class="text-gray-600"> • {entry.alumni_position}</span>}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    )}
+    {
+      alumni.length > 0 && (
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-8">ALUMNI</h2>
+          <div class="prose max-w-none">
+            <ul class="space-y-2 text-sm text-gray-700">
+              {alumni.map((entry) => (
+                <li class="flex items-start">
+                  <span class="text-gray-700 mr-2">•</span>
+                  <div>
+                    {entry.url ? (
+                      <a
+                        href={entry.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-bold hover:text-orange-600 hover:underline transition-colors duration-200"
+                      >
+                        {entry.first_name} {entry.last_name}
+                      </a>
+                    ) : (
+                      <span class="font-bold">
+                        {entry.first_name} {entry.last_name}
+                      </span>
+                    )}
+                    <span>
+                      {" "}
+                      ({entry.position}) - {entry.alumni_main_research}
+                    </span>
+                    {entry.alumni_position && (
+                      <span class="text-gray-600">
+                        . {entry.alumni_position}
+                      </span>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
 
     <!-- Collaborators Section -->
-    {collaborators.length > 0 && (
-      <section>
-        <h2 class="text-2xl font-bold mb-8">COLLABORATORS</h2>
-        <div class="prose max-w-none">
-          <ul class="space-y-2 text-gray-700">
-            {collaborators.map((entry) => (
-              <li>
-                {entry.url ? (
-                  <a href={entry.url} target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">
-                    {entry.name}
-                  </a>
-                ) : (
-                  entry.name
-                )}, {entry.affiliation}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    )}
+    {
+      collaborators.length > 0 && (
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-8">COLLABORATORS</h2>
+          <div class="prose max-w-none">
+            <ul class="space-y-2 text-sm text-gray-700">
+              {collaborators.map((entry) => (
+                <li class="flex items-start">
+                  <span class="text-gray-700 mr-2">•</span>
+                  <div>
+                    {entry.url ? (
+                      <a
+                        href={entry.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-bold hover:text-orange-600 hover:underline transition-colors duration-200"
+                      >
+                        {entry.first_name} {entry.last_name}
+                      </a>
+                    ) : (
+                      <span class="font-bold">
+                        {entry.first_name} {entry.last_name}
+                      </span>
+                    )}
+                    <span>, {entry.affiliation}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
   </main>
 </Layout>

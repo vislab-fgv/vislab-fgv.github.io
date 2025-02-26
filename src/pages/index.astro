@@ -23,7 +23,7 @@ const extendedPublications: ExtendedPublication[] = extendPublications(
 const news = baseNews
   .filter((item) => item.visible === 1)
   .map((item) => {
-    const date = new Date(item.pub_date).toLocaleDateString("en-US", {
+    const date = new Date(item.pub_date).toLocaleDateString("pr-BR", {
       day: "2-digit",
       month: "short",
       year: "numeric",
@@ -41,7 +41,7 @@ const news = baseNews
 
 <Layout>
   <div class="pt-6 max-h-88 h-full">
-    <Slider />
+    <Slider items={extendedPublications} />
   </div>
   <div class="px-2 py-8">
     <div class="grid grid-cols-4 gap-8">
@@ -68,7 +68,7 @@ const news = baseNews
             news
               .slice(0, 7)
               .map((item) => (
-                <NewsItem id={item.id} date={item.pub_date} text={item.text} />
+                <NewsItem id={item.id} date={item.date} text={item.text} />
               ))
           }
         </div>

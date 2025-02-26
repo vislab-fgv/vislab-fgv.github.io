@@ -5,12 +5,13 @@ interface Props {
   id: number;
 }
 
-const { date, text, id } = Astro.props;
+const { date, text } = Astro.props;
+const processedText = text.replace(/<a /g, '<a class="hover:text-orange-500 hover:underline" ');
 ---
 
 <div class="text-sm mb-6">
   <div class="italic">{date}</div>
   <div class="py-1">
-    <Fragment set:html={text} />
+    <Fragment set:html={processedText} />
   </div>
 </div>

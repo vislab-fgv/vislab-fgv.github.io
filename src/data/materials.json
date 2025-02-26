@@ -1,0 +1,443 @@
+[
+  {
+    "id": 1,
+    "pub_id": 2,
+    "name": "Presentation",
+    "material": "files\/slides\/2011-3DProjections-CGF.pdf",
+    "link": null
+  },
+  {
+    "id": 2,
+    "pub_id": 3,
+    "name": "Presentation",
+    "material": "files\/slides\/2012-FibersProjection-CGF.pdf",
+    "link": null
+  },
+  {
+    "id": 3,
+    "pub_id": 4,
+    "name": "Website",
+    "material": null,
+    "link": "http:\/\/uv-cdat.llnl.gov\/"
+  },
+  {
+    "id": 4,
+    "pub_id": 4,
+    "name": "Data",
+    "material": null,
+    "link": "http:\/\/bigdata.poly.edu\/projects\/uvcdat\/cise2012data\/"
+  },
+  {
+    "id": 5,
+    "pub_id": 6,
+    "name": "Website",
+    "material": null,
+    "link": "http:\/\/vgc.poly.edu\/projects\/taxivis\/"
+  },
+  {
+    "id": 6,
+    "pub_id": 6,
+    "name": "Presentation",
+    "material": "files\/slides\/2013-TaxiVis-TVCG.pdf",
+    "link": null
+  },
+  {
+    "id": 7,
+    "pub_id": 6,
+    "name": "Video 1",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599109085"
+  },
+  {
+    "id": 8,
+    "pub_id": 6,
+    "name": "Video 2",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/674442679"
+  },
+  {
+    "id": 9,
+    "pub_id": 7,
+    "name": "Presentation",
+    "material": "files\/slides\/2014-SimilarityExplorer-CGF.pdf",
+    "link": null
+  },
+  {
+    "id": 10,
+    "pub_id": 7,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599111225"
+  },
+  {
+    "id": 11,
+    "pub_id": 9,
+    "name": "Website",
+    "material": null,
+    "link": "http:\/\/vgc.poly.edu\/projects\/VisualReconciliation\/"
+  },
+  {
+    "id": 12,
+    "pub_id": 9,
+    "name": "Presentation",
+    "material": "files\/slides\/2014-VisualReconciliation-TVCG.pdf",
+    "link": null
+  },
+  {
+    "id": 13,
+    "pub_id": 9,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599111804"
+  },
+  {
+    "id": 14,
+    "pub_id": 10,
+    "name": "Website",
+    "material": null,
+    "link": "http:\/\/vgc.poly.edu\/projects\/TrafficFlow\/"
+  },
+  {
+    "id": 15,
+    "pub_id": 10,
+    "name": "Presentation",
+    "material": "files\/slides\/2015-TrafficFlow-CGF.pdf",
+    "link": null
+  },
+  {
+    "id": 16,
+    "pub_id": 10,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599112703"
+  },
+  {
+    "id": 17,
+    "pub_id": 10,
+    "name": "Appendix",
+    "material": "files\/appendix\/2015-TrafficFlow-CGF.pdf",
+    "link": null
+  },
+  {
+    "id": 18,
+    "pub_id": 11,
+    "name": "Website",
+    "material": null,
+    "link": "http:\/\/vgc.poly.edu\/projects\/ClimateVisEvaluation\/"
+  },
+  {
+    "id": 19,
+    "pub_id": 12,
+    "name": "Presentation",
+    "material": "files\/slides\/2015-TopoMatching-SciVis.pdf",
+    "link": null
+  },
+  {
+    "id": 20,
+    "pub_id": 12,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599112149"
+  },
+  {
+    "id": 21,
+    "pub_id": 14,
+    "name": "Code",
+    "material": null,
+    "link": "https:\/\/github.com\/visual-ds\/rev"
+  },
+  {
+    "id": 22,
+    "pub_id": 14,
+    "name": "Appendix",
+    "material": "files\/appendix\/2017-ReverseEngineeringVis-CGF.pdf",
+    "link": null
+  },
+  {
+    "id": 23,
+    "pub_id": 15,
+    "name": "Video 1",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599113747"
+  },
+  {
+    "id": 24,
+    "pub_id": 15,
+    "name": "Video 2",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599113082"
+  },
+  {
+    "id": 25,
+    "pub_id": 17,
+    "name": "Suplement",
+    "material": null,
+    "link": "https:\/\/vgc.poly.edu\/~jpocom\/pubs\/colorStudy2020Supplemental.zip"
+  },
+  {
+    "id": 26,
+    "pub_id": 17,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599114269"
+  },
+  {
+    "id": 27,
+    "pub_id": 18,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/674440555"
+  },
+  {
+    "id": 28,
+    "pub_id": 19,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/599115203"
+  },
+  {
+    "id": 29,
+    "pub_id": 21,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/607668077"
+  },
+  {
+    "id": 30,
+    "pub_id": 22,
+    "name": "Data",
+    "material": "files\/data\/2021-OnlineTimeslicing-C&G.pdf",
+    "link": null
+  },
+  {
+    "id": 31,
+    "pub_id": 18,
+    "name": "Best Paper Award in Visualization",
+    "material": "files\/docs\/2020-Mirante-SIBGRAPI-BestPaper.pdf",
+    "link": null
+  },
+  {
+    "id": 32,
+    "pub_id": 23,
+    "name": "Honorable Mention in Visualization",
+    "material": "files\/docs\/2021-DRIFT-SIBGRAPI-HonorableMention.pdf",
+    "link": null
+  },
+  {
+    "id": 33,
+    "pub_id": 30,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/manage\/videos\/669447193"
+  },
+  {
+    "id": 34,
+    "pub_id": 23,
+    "name": "Video 1",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/623563608"
+  },
+  {
+    "id": 35,
+    "pub_id": 23,
+    "name": "Video 2",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/623626417"
+  },
+  {
+    "id": 36,
+    "pub_id": 29,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/673264404"
+  },
+  {
+    "id": 37,
+    "pub_id": 30,
+    "name": "Data",
+    "material": "files\/data\/2022-ChartText-arXiv.zip",
+    "link": null
+  },
+  {
+    "id": 38,
+    "pub_id": 28,
+    "name": "Code",
+    "material": null,
+    "link": "https:\/\/github.com\/visual-ds\/17K-Graffiti"
+  },
+  {
+    "id": 39,
+    "pub_id": 28,
+    "name": "Data",
+    "material": null,
+    "link": "https:\/\/zenodo.org\/record\/5899631"
+  },
+  {
+    "id": 40,
+    "pub_id": 31,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/677947247"
+  },
+  {
+    "id": 41,
+    "pub_id": 32,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/684392693"
+  },
+  {
+    "id": 42,
+    "pub_id": 32,
+    "name": "Appendix",
+    "material": "files\/appendix\/2023-LegalVis-TVCG.pdf",
+    "link": null
+  },
+  {
+    "id": 43,
+    "pub_id": 35,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/718018648"
+  },
+  {
+    "id": 44,
+    "pub_id": 35,
+    "name": "Appendix",
+    "material": "files\/appendix\/2022-ClinicalPath-TVCG.pdf",
+    "link": null
+  },
+  {
+    "id": 45,
+    "pub_id": 36,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/718021442"
+  },
+  {
+    "id": 46,
+    "pub_id": 37,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/735518962"
+  },
+  {
+    "id": 47,
+    "pub_id": 37,
+    "name": "Poster",
+    "material": "files\/poster\/2022-AnalyzingENEM-EDM.pdf",
+    "link": null
+  },
+  {
+    "id": 48,
+    "pub_id": 38,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/738097881"
+  },
+  {
+    "id": 49,
+    "pub_id": 38,
+    "name": "Appendix",
+    "material": "files\/appendix\/2022-LargeNetVis-TVCG.pdf",
+    "link": null
+  },
+  {
+    "id": 50,
+    "pub_id": 38,
+    "name": "Demo",
+    "material": null,
+    "link": "http:\/\/visualdslab.com\/largenetvis"
+  },
+  {
+    "id": 51,
+    "pub_id": 38,
+    "name": "Video Presentation",
+    "material": null,
+    "link": "https:\/\/youtu.be\/L523gBLIM5c?t=2328"
+  },
+  {
+    "id": 52,
+    "pub_id": 32,
+    "name": "Video Presentation",
+    "material": null,
+    "link": "https:\/\/youtu.be\/0qY_NxLSGBk?t=26070"
+  },
+  {
+    "id": 53,
+    "pub_id": 42,
+    "name": "Code",
+    "material": null,
+    "link": "https:\/\/github.com\/visual-ds\/morevis"
+  },
+  {
+    "id": 54,
+    "pub_id": 39,
+    "name": "Journal",
+    "material": null,
+    "link": "https:\/\/link.springer.com\/article\/10.1007\/s10618-022-00906-4"
+  },
+  {
+    "id": 55,
+    "pub_id": 41,
+    "name": "Journal",
+    "material": null,
+    "link": "https:\/\/link.springer.com\/article\/10.1007\/s10618-023-00922-y"
+  },
+  {
+    "id": 56,
+    "pub_id": 42,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/801624188"
+  },
+  {
+    "id": 57,
+    "pub_id": 43,
+    "name": "Poster",
+    "material": "files\/poster\/2023-DnX-AISTATS.pdf",
+    "link": null
+  },
+  {
+    "id": 58,
+    "pub_id": 43,
+    "name": "Code",
+    "material": null,
+    "link": "https:\/\/github.com\/tamararruda\/DnX"
+  },
+  {
+    "id": 59,
+    "pub_id": 43,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/www.youtube.com\/watch?v=DsTpJfjz6BQ"
+  },
+  {
+    "id": 60,
+    "pub_id": 45,
+    "name": "Code",
+    "material": null,
+    "link": "https:\/\/github.com\/visual-ds\/plausible-nlp-explanations"
+  },
+  {
+    "id": 61,
+    "pub_id": 47,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/1018871681"
+  },
+  {
+    "id": 62,
+    "pub_id": 48,
+    "name": "Video",
+    "material": null,
+    "link": "https:\/\/vimeo.com\/1026637544"
+  },
+  {
+    "id": 63,
+    "pub_id": 50,
+    "name": "Journal",
+    "material": null,
+    "link": "https:\/\/www.nature.com\/articles\/s41893-024-01491-8"
+  }
+]

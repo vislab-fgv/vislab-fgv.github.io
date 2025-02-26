@@ -2,14 +2,14 @@
 interface Props {
   image?: string;
   name: string;
-  position: string;
-  interests?: string;
-  url?: string;
-  affiliation?: string;
+  position?: string | null;
+  interests?: string | null;
+  url?: string | null;
+  affiliation?: string | null;
   alumni_position?: string;
 }
 
-const { image, name, position, interests, url, affiliation, alumni_position } =
+const { image, name, position, interests, url, alumni_position } =
   Astro.props;
 const defaultImage = "/images/people/picture.png";
 ---
@@ -27,7 +27,7 @@ const defaultImage = "/images/people/picture.png";
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-blue-600"
+          class="hover:text-orange-600"
         >
           {name}
         </a>
@@ -37,7 +37,6 @@ const defaultImage = "/images/people/picture.png";
     }
   </h3>
   <p class="text-gray-600 text-sm mb-2">{position}</p>
-  {affiliation && <p class="text-gray-500 text-sm mb-2">{affiliation}</p>}
   {interests && <p class="text-gray-500 text-sm italic">{interests}</p>}
   {alumni_position && <p class="text-gray-500 text-sm">{alumni_position}</p>}
 </div>
