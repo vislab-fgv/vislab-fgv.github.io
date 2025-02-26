@@ -1,11 +1,12 @@
 ---
 import basePublications from "../data/publications.json";
+import baseNews from "../data/news.json";
 import PublicationCard from "../components/PublicationCard.astro";
-import NewsItem from "../components/NewsItem.astro";
 import Layout from "../layouts/Layout.astro";
 import Slider from "../components/Slider.astro";
 import type { ExtendedPublication } from "../types/publication";
 import { extendPublications } from "../lib/utils";
+import NewsItem from "../components/NewsItem.astro";
 
 const LAST_PAPER_INDEX = 7;
 
@@ -18,6 +19,24 @@ const lastEightPublications = basePublications
 const extendedPublications: ExtendedPublication[] = extendPublications(
   lastEightPublications
 );
+
+const news = baseNews
+  .filter((item) => item.visible === 1)
+  .map((item) => {
+    const date = new Date(item.pub_date).toLocaleDateString("en-US", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+
+    return {
+      ...item,
+      date,
+    };
+  })
+  .sort(
+    (a, b) => new Date(b.pub_date).getTime() - new Date(a.pub_date).getTime()
+  );
 ---
 
 <Layout>
@@ -42,12 +61,18 @@ const extendedPublications: ExtendedPublication[] = extendPublications(
       </div>
 
       <!-- News -->
-      <!-- <div class="w-full col-span-1 pt-3">
-            <h2 class="text-xl font-semibold pb-6">News</h2>
-            <div>
-              {publications.news.map((item) => <NewsItem {...item} />)}
-            </div>
-          </div> -->
+      <div class="w-full col-span-1 pt-3">
+        <h2 class="text-xl font-semibold pb-6">News</h2>
+        <div>
+          {
+            news
+              .slice(0, 7)
+              .map((item) => (
+                <NewsItem id={item.id} date={item.pub_date} text={item.text} />
+              ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </Layout>

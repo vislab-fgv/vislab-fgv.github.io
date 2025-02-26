@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "text": "New paper on <a href=\"\/papers\/ColorStudy\"><b>Spatial Data Analysis<\/b><\/a>.",
+    "mod_date": "2020-10-17",
+    "pub_date": "2020-10-17",
+    "visible": 0
+  },
+  {
+    "id": 2,
+    "text": "<b>Best Paper Award<\/b> at SIBGRAPI 2020 on <a href=\"\/papers\/Mirante\">analisys of urban crimes<\/a>.",
+    "mod_date": "2020-11-25",
+    "pub_date": "2020-11-25",
+    "visible": 0
+  },
+  {
+    "id": 3,
+    "text": "New paper <a href=\"\/papers\/CrimAnalyzer\"><b>Visual CrimAnalyzer:<\/b> Understanding Crime Patterns in S\u00e3o Paulo<\/a>.",
+    "mod_date": "2021-01-04",
+    "pub_date": "2021-01-04",
+    "visible": 0
+  },
+  {
+    "id": 4,
+    "text": "Congrats Prof. Jorge Poco for received the <b>Most Influential Scholar Award Honorable Mention<\/b> in Visualization at AMiner.org.",
+    "mod_date": "2021-01-07",
+    "pub_date": "2021-01-07",
+    "visible": 0
+  },
+  {
+    "id": 5,
+    "text": "Prof. Jorge Poco was recognized as <b>Distinguished Young Researcher<\/b> by FAPERJ.",
+    "mod_date": "2021-01-08",
+    "pub_date": "2021-01-08",
+    "visible": 0
+  },
+  {
+    "id": 6,
+    "text": "New paper accepted <a href=\"\/papers\/CriPAV\"><b>CriPAV: <\/b> Street-Level Crime Patterns Analysis and Visualization (in-press)<\/a>.",
+    "mod_date": "2021-08-26",
+    "pub_date": "2021-08-26",
+    "visible": 0
+  },
+  {
+    "id": 7,
+    "text": "New paper on <a href=\"\/papers\/OnlineTimeslicing\"><b>Online Timeslicing<\/b><\/a>.",
+    "mod_date": "2021-09-17",
+    "pub_date": "2021-09-17",
+    "visible": 0
+  },
+  {
+    "id": 8,
+    "text": "New accepted papers <a href=\"\/papers\/DRIFT\/\"><b>DRIFT: A Visual Analytic Tool<\/b><\/a> and <a href=\"\/papers\/UrbanPerceptionSafe\"><b>Urban Perception<\/b><\/a>.",
+    "mod_date": "2021-10-01",
+    "pub_date": "2021-10-01",
+    "visible": 0
+  },
+  {
+    "id": 9,
+    "text": "Paper <a href=\"\/papers\/DRIFT\/\"><b>DRIFT<\/b><\/a> has received an <b>Honorable Mention in Visualization<\/b>.",
+    "mod_date": "2021-11-29",
+    "pub_date": "2021-10-22",
+    "visible": 0
+  },
+  {
+    "id": 10,
+    "text": "Paper <a href=\"\/papers\/Mirante\/\"><b>Mirante<\/b><\/a> has received the <b>Best Paper Award in Visualization<\/b>.",
+    "mod_date": "2021-11-30",
+    "pub_date": "2020-11-10",
+    "visible": 0
+  },
+  {
+    "id": 11,
+    "text": "New paper accepted <a href=\"\/papers\/17KGraffiti\/\"><b>17K-Graffiti: Spatial and Crime Data Assessments in S\u00e3o Paulo City<\/b><\/a>.",
+    "mod_date": "2021-12-20",
+    "pub_date": "2021-12-20",
+    "visible": 0
+  },
+  {
+    "id": 12,
+    "text": "New paper published <a href=\"\/papers\/JamVis\/\"><b> JamVis: Exploration and Visualization of Traffic Jams<\/b><\/a>.",
+    "mod_date": "2022-01-06",
+    "pub_date": "2022-01-27",
+    "visible": 0
+  },
+  {
+    "id": 13,
+    "text": "New paper accepted <a href=\"\/papers\/SciLitDRIFT\/\"><b>Exploring Scientific Literature by Textual and Image Content using DRIFT<\/b><\/a>.",
+    "mod_date": "2022-02-16",
+    "pub_date": "2022-02-11",
+    "visible": 0
+  },
+  {
+    "id": 14,
+    "text": "New paper accepted <a href=\"\/papers\/LegalVis\/\"><b>LegalVis: Exploring and Inferring Precedent Citations in Legal Documents<\/b><\/a>.",
+    "mod_date": "2022-03-03",
+    "pub_date": "2022-02-18",
+    "visible": 0
+  },
+  {
+    "id": 15,
+    "text": "New paper published <a href=\"\/papers\/CurricularCS\/\"><b>How Do Curricular Design Changes Impact Computer Science Programs?<\/b><\/a>.",
+    "mod_date": "2022-03-29",
+    "pub_date": "2022-03-28",
+    "visible": 0
+  },
+  {
+    "id": 16,
+    "text": "New paper published <a href=\"\/papers\/ClutterMethods\/\"><b>Combining Clutter Reduction Methods for Temporal Network Visualization<\/b><\/a>.",
+    "mod_date": "2022-05-13",
+    "pub_date": "2022-05-06",
+    "visible": 0
+  },
+  {
+    "id": 17,
+    "text": "New paper published <a href=\"\/papers\/ClinicalPath\/\"><b>ClinicalPath: A Visualization Tool to Improve the Evaluation of Electronic Health Records in Clinical Decision-Making<\/b><\/a>.",
+    "mod_date": "2022-06-01",
+    "pub_date": "2022-05-19",
+    "visible": 0
+  },
+  {
+    "id": 18,
+    "text": "New paper published <a href=\"\/papers\/SDAVis\/\"><b>SDAVis: A Visualization System for Student Dropout Analysis Based on Counterfactual Exploration<\/b><\/a>.",
+    "mod_date": "2022-06-07",
+    "pub_date": "2022-06-07",
+    "visible": 0
+  },
+  {
+    "id": 19,
+    "text": "New poster published <a href=\"\/papers\/AnalyzingENEM\/\"><b>Analyzing the Equity of the Brazilian National High School Exam by Validating the Item Response Theory's Invariance<\/b><\/a>",
+    "mod_date": "2022-06-29",
+    "pub_date": "2022-07-24",
+    "visible": 0
+  },
+  {
+    "id": 20,
+    "text": "New paper accepted <a href=\"\/papers\/LargeNetVis\/\"><b>LargeNetVis: Visual Exploration of Large Temporal Networks Based on Community Taxonomies<\/b><\/a>.",
+    "mod_date": "2022-08-09",
+    "pub_date": "2022-10-16",
+    "visible": 0
+  },
+  {
+    "id": 21,
+    "text": "New paper published <a href=\"\/papers\/ParetoOptimal\/\"><b>Mining Pareto-Optimal Counterfactual Antecedents with a Branch-And-Bound Model-Agnostic Algorithm<\/b><\/a>.",
+    "mod_date": "2023-01-02",
+    "pub_date": "2022-12-16",
+    "visible": 0
+  },
+  {
+    "id": 22,
+    "text": "New paper accepted <a href=\"\/papers\/WSAM\/\"><b>WSAM: Visual Explanations from Style Augmentation as Adversarial Attacker and their Influence in Image Classification<\/b><\/a>.",
+    "mod_date": "2023-02-15",
+    "pub_date": "2023-02-21",
+    "visible": 0
+  },
+  {
+    "id": 23,
+    "text": "New paper published <a href=\"\/papers\/EnforcingFairness\/\"><b>Enforcing Fairness using Ensemble of Diverse Pareto-Optimal Models<\/b><\/a>.",
+    "mod_date": "2023-02-15",
+    "pub_date": "2023-02-14",
+    "visible": 0
+  },
+  {
+    "id": 24,
+    "text": "New paper published <a href=\"\/papers\/MoReVis\/\"><b>MoReVis: A Visual Summary for Spatiotemporal Moving Regions<\/b><\/a>.",
+    "mod_date": "2023-03-13",
+    "pub_date": "2023-03-01",
+    "visible": 0
+  },
+  {
+    "id": 25,
+    "text": "New paper published <a href=\"\/papers\/2023-DnX\/\"><b>Distill n\u2019 Explain: Explaining Graph Neural Networks Using Simple Surrogates<\/b><\/a>.",
+    "mod_date": "2023-05-15",
+    "pub_date": "2023-04-11",
+    "visible": 0
+  },
+  {
+    "id": 26,
+    "text": "&#11088; The paper <a href=\"\/papers\/TaxiVis\/\">Visual Exploration of Big Spatio-Temporal Urban Data: A Study of New York City Cab Trips<\/a> has received the <a href=\"https:\/\/ieeevis.org\/year\/2023\/info\/awards\/test-of-time-awards\"><b>IEEE VIS Test of Time Award and will be awarded in Melbourne<\/b><\/a>.",
+    "mod_date": "2023-09-21",
+    "pub_date": "2023-09-21",
+    "visible": 0
+  },
+  {
+    "id": 27,
+    "text": "Congrats Lucas Resck for the poster presented at the <a href=\"https:\/\/tropical.probabilistic.ai\/\"><b>Tropical Probabilistic AI School 2024<\/b><a>.",
+    "mod_date": "2023-02-05",
+    "pub_date": "2024-01-30",
+    "visible": 0
+  },
+  {
+    "id": 28,
+    "text": "New paper published <a href=\"\/papers\/ENSI\/\"><b>Granularity at Scale: Estimating Neighborhood Socioeconomic Indicators from High-Resolution Orthographic Imagery and Hybrid Learning<\/b><\/a>.",
+    "mod_date": "2023-02-26",
+    "pub_date": "2024-02-21",
+    "visible": 0
+  },
+  {
+    "id": 29,
+    "text": "New paper accepted <a href=\"\/papers\/PlausibleNLPExplanations\/\"><b>Exploring the Trade-off Between Model Performance and Explanation Plausibility of Text Classifiers Using Human Rationales<\/b><\/a>.",
+    "mod_date": "2024-04-19",
+    "pub_date": "2024-04-19",
+    "visible": 0
+  },
+  {
+    "id": 30,
+    "text": "Congrats Lucas Resck for the <a href=\"\/papers\/PlausibleNLPExplanations\/\">poster <\/a>presented at the latinX in NLP at <a href=\"https:\/\/www.latinxinai.org\/events\/latinx-in-nlp-at-naacl-2024\">NAACL 2024 workshop<\/a>.",
+    "mod_date": "2024-07-05",
+    "pub_date": "2024-06-16",
+    "visible": 1
+  },
+  {
+    "id": 31,
+    "text": "Professor Jorge discusses AI in the magazine Cojuntura Economica: <a href=\"https:\/\/ibre.fgv.br\/blog-da-conjuntura-economica\/artigos\/inteligencia-artificial-o-risco-tambem-esta-em-nao-reter\">blog<\/a> and <a href=\"https:\/\/ibre.fgv.br\/sites\/ibre.fgv.br\/files\/arquivos\/u65\/07ce2024_ia_emap.pdf\">full article<\/a>.",
+    "mod_date": "2024-07-17",
+    "pub_date": "2024-07-15",
+    "visible": 1
+  },
+  {
+    "id": 32,
+    "text": "New paper accepted <a href=\"\/papers\/MLSV\/\"><b>Empirical analysis of Binding Precedent efficiency in the Brazilian Supreme Court via Similar Case Retrieval<\/b><\/a>.",
+    "mod_date": "2024-07-23",
+    "pub_date": "2024-07-23",
+    "visible": 0
+  },
+  {
+    "id": 33,
+    "text": "New paper presented <a href=\"\/papers\/StreetView\/\"><b>What Makes a Place Feel Safe? Analyzing Street View Images to Identify Relevant Visual Elements<\/b><\/a>.",
+    "mod_date": "2024-12-12",
+    "pub_date": "2024-12-12",
+    "visible": 1
+  },
+  {
+    "id": 34,
+    "text": "New paper published <a href=\"\/papers\/TimberChain\/\"><b>Assessing Timber Trade Networks and Supply Chains in Brazil<\/b><\/a>.",
+    "mod_date": "2025-01-08",
+    "pub_date": "2025-01-06",
+    "visible": 1
+  },
+  {
+    "id": 35,
+    "text": "New paper published <a href=\"\/papers\/ZigzagNetVis\/\"><b>ZigzagNetVis: Suggesting Temporal Resolutions for Graph Visualization using Zigzag Persistence<\/b><\/a>.",
+    "mod_date": "2025-01-22",
+    "pub_date": "2025-01-17",
+    "visible": 1
+  }
+]

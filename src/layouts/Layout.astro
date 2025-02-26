@@ -1,32 +1,34 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
-import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Visual Data Science Lab</title>
-	</head>
-	<body class="flex justify-center font-display">
-		<div class="max-w-5xl w-full px-2 lg:px-4">
-			<Header />
-			<slot />
-			<Footer />
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Visual Data Science Lab</title>
+    <ClientRouter />
+  </head>
+  <body class="flex justify-center font-display">
+    <div class="max-w-5xl w-full px-2 lg:px-4">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

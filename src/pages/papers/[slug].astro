@@ -118,7 +118,7 @@ function formatDate(dateStr: string) {
           <h3 class="text-lg font-semibold mb-4">Publication Details</h3>
           <dl class="space-y-2">
             <dt class="text-gray-600">Venue</dt>
-            <dd class="font-medium">{publication.venue}</dd>
+            <dd class="font-medium">{publication.venue.full_name}</dd>
 
             <dt class="text-gray-600">Year</dt>
             <dd class="font-medium">{publication.year}</dd>
@@ -148,12 +148,21 @@ function formatDate(dateStr: string) {
 
         {/* Citation Card - You might want to add this */}
         <div class="bg-white rounded-lg shadow p-6">
-          <h3 class="text-lg font-semibold mb-4">Cite this publication</h3>
-          <div class="bg-gray-50 p-3 rounded text-sm font-mono">
-            {/* Add formatted citation here */}
-            {
-              `${publication.authors.join(", ")} (${publication.year}). ${publication.title}. ${publication.venue}.`
-            }
+          <h3 class="text-lg font-semibold mb-4">
+            Cite this publication (BIBTEX)
+          </h3>
+          <div class="bg-gray-50 p-3 rounded font-mono text-sm">
+            @article{"{"}{publication.year}-{publication.web_name}, title={"{"}{
+              publication.title
+            }{"}"}, author={"{"}{publication.authors.join(" and ")}
+            {"}"}, journal={"{"}{publication.venue.full_name}{"}"}, year={"{"}
+            {publication.year}{"}"}, url={"{"}{publication.url}{"}"}
+            <!-- {publication.doi && `doi={"{"}{publication.doi}{"}"}`} -->
+            {publication.pub_date && `date={${publication.pub_date}}`}
+            {publication.volume && `volume={${publication.volume}}`}
+            {publication.issue && `issue={${publication.issue}}`}
+            <!-- {publication.pages && `pages={"{"}{publication.pages}{"}"}`} -->
+            <!-- {publication.number && `number={"{"}{publication.number}{"}"}`} -->
           </div>
         </div>
       </div>
