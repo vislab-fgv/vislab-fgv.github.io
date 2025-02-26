@@ -49,14 +49,14 @@ function formatDate(dateStr: string) {
       </div>
     </div>
 
-    {/* Main Content Grid */}
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {/* Left Column - Main Content */}
+    {/* Two-column layout for figure and publication details */}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+      {/* Left Column - Figure */}
       <div class="lg:col-span-2">
         {/* Figure Section */}
         {
           publication.figure && (
-            <div class="mb-8">
+            <div>
               <img
                 src={`http://visualdslab.com/static/${publication.figure}`}
                 alt={publication.title}
@@ -70,67 +70,25 @@ function formatDate(dateStr: string) {
             </div>
           )
         }
-
-        {/* Abstract Section */}
-        <div class="mb-8">
-          <h2 class="text-xl font-semibold mb-4">Abstract</h2>
-          <div class="prose max-w-none">
-            <p>{publication.abstract}</p>
-          </div>
-        </div>
-
-        {/* Materials Section if they exist */}
-        {
-          publication.links && publication.links.length > 0 && (
-            <div class="mb-8">
-              <h2 class="text-xl font-semibold mb-4">Materials</h2>
-              <div class="flex flex-wrap gap-3">
-                {publication.pdf && (
-                  <a
-                    href={publication.pdf}
-                    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    PDF
-                  </a>
-                )}
-                {publication.links.map((link) => (
-                  <a
-                    href={link.file || link.link}
-                    class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )
-        }
       </div>
 
-      {/* Right Column - Sidebar */}
+      {/* Right Column - Publication Details */}
       <div class="lg:col-span-1">
         {/* Publication Details Card */}
         <div class="bg-white rounded-lg shadow p-6 mb-6">
           <h3 class="text-lg font-semibold mb-4">Publication Details</h3>
           <dl class="space-y-2">
             <dt class="text-gray-600">Venue</dt>
-            <dd class="font-medium">{publication.venue.full_name}</dd>
-
+            <dd class="font-medium">{publication.venue?.full_name}</dd>
             <dt class="text-gray-600">Year</dt>
             <dd class="font-medium">{publication.year}</dd>
-
             <dt class="text-gray-600">Publication Date</dt>
             <dd class="font-medium">{formatDate(publication.pub_date)}</dd>
-
             {
               publication.url && (
                 <>
                   <dt class="text-gray-600">DOI</dt>
-                  <dd>
+                  <dd class="break-words">
                     <a
                       href={publication.url}
                       class="text-blue-600 hover:underline"
@@ -146,24 +104,67 @@ function formatDate(dateStr: string) {
           </dl>
         </div>
 
-        {/* Citation Card - You might want to add this */}
+        {/* Materials Section if they exist */}
         <div class="bg-white rounded-lg shadow p-6">
-          <h3 class="text-lg font-semibold mb-4">
-            Cite this publication (BIBTEX)
-          </h3>
-          <div class="bg-gray-50 p-3 rounded font-mono text-sm">
-            @article{"{"}{publication.year}-{publication.web_name}, title={"{"}{
-              publication.title
-            }{"}"}, author={"{"}{publication.authors.join(" and ")}
-            {"}"}, journal={"{"}{publication.venue.full_name}{"}"}, year={"{"}
-            {publication.year}{"}"}, url={"{"}{publication.url}{"}"}
-            <!-- {publication.doi && `doi={"{"}{publication.doi}{"}"}`} -->
-            {publication.pub_date && `date={${publication.pub_date}}`}
-            {publication.volume && `volume={${publication.volume}}`}
-            {publication.issue && `issue={${publication.issue}}`}
-            <!-- {publication.pages && `pages={"{"}{publication.pages}{"}"}`} -->
-            <!-- {publication.number && `number={"{"}{publication.number}{"}"}`} -->
+          <h3 class="text-lg font-semibold mb-4">Materials</h3>
+          <div class="flex flex-wrap gap-3">
+            {
+              publication.pdf && (
+                <a
+                  href={publication.pdf}
+                  class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PDF
+                </a>
+              )
+            }
+            {
+              publication.materials &&
+                publication.materials.map((material) => (
+                  <a
+                    href={material.link}
+                    class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {material.name}
+                  </a>
+                ))
+            }
           </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Full-width sections for Abstract and BibTeX */}
+    <div class="grid grid-cols-1 gap-8">
+      {/* Abstract Section */}
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Abstract</h2>
+        <div class="prose max-w-none">
+          <p>{publication.abstract}</p>
+        </div>
+      </div>
+
+      {/* Citation Card - Full width */}
+      <div class="bg-white rounded-lg shadow p-6">
+        <h3 class="text-lg font-semibold mb-4">
+          Cite this publication (BIBTEX)
+        </h3>
+        <div class="bg-gray-50 p-3 rounded font-mono text-sm overflow-x-auto">
+          <pre
+            class="whitespace-pre-wrap break-words">@article{"{"}{publication.year}-{publication.web_name}, 
+  title={"{"}{publication.title}{"}"}, 
+  author={"{"}{publication.authors?.map((author) => `${author.first_name} ${author.last_name}`).join(" and ")}{"}"}, 
+  journal={"{"}{publication.venue?.full_name}{"}"}, 
+  year={"{"}{publication.year}{"}"}, 
+  url={"{"}{publication.url}{"}"}
+  {publication.pub_date && `date={${publication.pub_date}}`}
+  {publication.volume && `volume={${publication.volume}}`}
+  {publication.issue && `issue={${publication.issue}}`}
+          </pre>
         </div>
       </div>
     </div>

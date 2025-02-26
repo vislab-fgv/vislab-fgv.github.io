@@ -4,7 +4,8 @@ import type { ExtendedPublication } from "../types/publication";
 const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 type Props = ExtendedPublication;
 
-const { title, authors, year, thumbnail, venue, web_name, pdf } = Astro.props;
+const { title, authors, year, thumbnail, venue, web_name, pdf, materials } =
+  Astro.props;
 ---
 
 <div class="pb-4">
@@ -47,15 +48,23 @@ const { title, authors, year, thumbnail, venue, web_name, pdf } = Astro.props;
       <p class="inline italic pl-1">{venue?.full_name}</p>
       <p class="inline">, {year}</p>
       <div class="flex gap-2">
-        <a href={`${BUCKET_BASE_URL}${pdf}`} target="_blank" class="hover:underline hover:text-orange-500">PDF</a>
-        <!-- {
-          links.map((link, index) => (
-            <a href="#" class="hover:underline hover:text-orange-500">
-              {link}
-              {index < links.length - 1 && " |"}
+        <a
+          href={`${BUCKET_BASE_URL}${pdf}`}
+          target="_blank"
+          class="hover:underline hover:text-orange-500">PDF</a
+        >
+        {
+          materials?.map((material, index) => (
+            <a
+              href={material.link}
+              target="_blank"
+              class="hover:underline hover:text-orange-500"
+            >
+              {material.name}
+              {index < materials.length - 1 && " | "}
             </a>
           ))
-        } -->
+        }
       </div>
     </div>
   </div>

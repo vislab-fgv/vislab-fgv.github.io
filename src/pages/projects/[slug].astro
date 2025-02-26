@@ -1,17 +1,27 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import projectsData from "../../data/projects.json";
+import basePublicationsData from "../../data/publications.json";
+import { extendPublications } from "../../lib/utils";
+import PublicationCard from "../../components/PublicationCard.astro";
+
+const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 
 interface Project {
+  id: number;
   title: string;
   web_name: string;
   figure: string;
   abstract: string;
-  description?: string;
+  caption: string | null;
+  description: string;
+  visible: boolean;
+  type: "c" | "s";
+  papers: number[];
 }
 
 export async function getStaticPaths() {
-  const projects = projectsData;
+  const projects = projectsData as Project[];
   return projects
     .filter((item) => item.visible === true)
     .map((project) => ({
@@ -25,6 +35,20 @@ interface Props {
 }
 
 const { project } = Astro.props;
+
+const projectPublications = basePublicationsData.filter((item) =>
+  project.papers.includes(item.id)
+);
+
+const extendedProjectPublications = extendPublications(projectPublications);
+
+const researchers = extendedProjectPublications
+  .flatMap((pub) => pub.authors || [])
+  .filter((author) => author.visible === 1)
+  .filter(
+    (author, index, self) => index === self.findIndex((a) => a.id === author.id)
+  )
+  .sort((a, b) => a.order - b.order);
 ---
 
 <Layout>
@@ -33,7 +57,7 @@ const { project } = Astro.props;
 
     <div class="flex justify-center">
       <img
-        src={`http://visualdslab.com/static/images${project.figure}`}
+        src={`${BUCKET_BASE_URL}/images${project.figure}`}
         alt={project.title}
       />
     </div>
@@ -45,28 +69,41 @@ const { project } = Astro.props;
     </div>
 
     <!-- Researchers section -->
-    <section class="space-y-2 lg:space-y-4">
-      <h2 class="text-base font-medium">RESEARCHERS</h2>
-      <ul class="list-disc">
-        <li class="flex items-center">
-          <span class="text-gray-700">Giovani Valdrighi, FGV EMAp (former)</span
-          >
-        </li>
-        <li class="flex items-center">
-          <span class="text-gray-700">Nivan Ferreira, UFPE</span>
-        </li>
-        <li class="flex items-center">
-          <span class="text-gray-700">Jorge Poco, FGV EMAp</span>
-        </li>
-        <li class="flex items-center">
-          <span class="text-gray-700">Elio Rodriguez, FGV EMAp (former)</span>
-        </li>
-      </ul>
-    </section>
+    {
+      researchers.length > 0 && (
+        <section class="space-y-2 lg:space-y-4">
+          <h2 class="text-base font-medium">RESEARCHERS</h2>
+          <ul class="list-disc pl-5">
+            {researchers.map((researcher) => (
+              <li class="flex items-center">
+                <span class="text-gray-700 mr-2">•</span>
+                {researcher.url ? (
+                  <a 
+                    href={researcher.url} 
+                    class="text-gray-700 hover:text-orange-500 hover:underline transition-colors duration-200"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    {researcher.display_name}
+                    {researcher.affiliation ? `, ${researcher.affiliation}` : ""}
+                  </a>
+                ) : (
+                  <span class="text-gray-700">
+                    {researcher.display_name}
+                    {researcher.affiliation ? `, ${researcher.affiliation}` : ""}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
-    <!-- Researchers section -->
+    <!-- Publications section -->
     <section class="space-y-2 lg:space-y-4">
       <h2 class="text-base font-medium">PUBLICATIONS</h2>
+      {extendedProjectPublications.map((item) => <PublicationCard {...item} />)}
     </section>
   </div>
 </Layout>

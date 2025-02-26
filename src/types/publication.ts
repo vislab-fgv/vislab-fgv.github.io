@@ -30,7 +30,16 @@ export interface Publication {
   authors: number[];
 }
 
+export interface Material {
+  id: number;
+  pub_id: number;
+  name: string;
+  material: string | null;
+  link: string | null;
+}
+
 export type ExtendedPublication = Omit<Publication, "authors" | "venue"> & {
   authors?: Person[];
   venue?: Venue | null;
+  materials?: Material[];
 };

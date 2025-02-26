@@ -76,9 +76,20 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
                         <p class="inline">, {publication.year}</p>
                         <p>
                           <a
-                              href={`${BUKET_BASE_URL}${publication.pdf}`}
+                            href={`${BUKET_BASE_URL}${publication.pdf}`}
+                            class="hover:underline hover:text-orange-500"
+                          >
+                            PDF
+                          </a>
+                          {publication.materials?.map((material, index) => (
+                            <a
+                              href={material.link}
+                              target="_blank"
                               class="hover:underline hover:text-orange-500"
-                            >PDF</a>
+                            >
+                              {material.name}
+                            </a>
+                          ))}
                         </p>
                       </div>
                     </div>

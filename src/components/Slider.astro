@@ -1,7 +1,13 @@
 ---
-import publications from "../data/dummy.json";
+import type { ExtendedPublication } from "../types/publication";
+const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 
-const { autoplaySpeed = 2000 } = Astro.props;
+type Props = {
+  autoplaySpeed?: number;
+  items: ExtendedPublication[];
+};
+
+const { autoplaySpeed = 2000, items } = Astro.props;
 ---
 
 <div
@@ -10,15 +16,15 @@ const { autoplaySpeed = 2000 } = Astro.props;
 >
   <a href="#" class="w-full h-full -z-1">
     {
-      publications.publications.map((pub, index) => (
+      items.map((pub, index) => (
         <div
           class={`slide absolute -z-1 w-full h-full transition-opacity duration-1000 ${
             index === 0 ? "opacity-100" : "opacity-0"
           }`}
         >
           <img
-            class="w-full h-full rounded-xl transition-all"
-            src={pub.thumbnail}
+            class="w-full h-full rounded-xl transition-all object-cover"
+            src={`${BUCKET_BASE_URL}${pub.figure}`}
             alt={pub.title}
             loading="lazy"
           />
