@@ -25,6 +25,37 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
 ---
 
 <Layout title="Papers">
+  <div
+    class="w-full flex flex-col sm:flex-row gap-2 p-4 items-center text-sm"
+    id="filterContainer"
+  >
+    <input
+      type="text"
+      class="w-full h-8 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Search ..."
+    />
+
+    <div class="flex gap-2 items-center" id="buttonsContainer">
+      <button
+        data-year="2025"
+        class="year-btn h-7 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-50"
+      >
+        2025
+      </button>
+      <button
+        data-year="2024"
+        class="year-btn h-7 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-50"
+      >
+        2024
+      </button>
+      <button
+        data-year="2023"
+        class="year-btn h-7 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-50"
+      >
+        2023
+      </button>
+    </div>
+  </div>
   <main class="flex justify-center px-2 lg:px-4">
     <div class="flex flex-col gap-4">
       {
@@ -32,11 +63,14 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
           .sort((a, b) => parseInt(b) - parseInt(a))
           .map((year) => (
             <div>
-              <h2 class="text-md font-semibold mb-4">{year}</h2>
               <div class="flex flex-col gap-4">
+                <h2 class="header-year text-md font-semibold mb-4">{year}</h2>
                 {groupedPublications[year].map(
                   (publication: ExtendedPublication) => (
-                    <div class="flex flex-row md:flex-row gap-4">
+                    <div
+                      class="publication-item flex flex-row md:flex-row gap-4"
+                      data-year={publication.year}
+                    >
                       <div class="max-w-32 min-w-32 w-full">
                         {publication.thumbnail && (
                           <a href={`/papers/${publication.web_name}`}>
@@ -81,15 +115,6 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
                           >
                             PDF
                           </a>
-                          {publication.materials?.map((material, index) => (
-                            <a
-                              href={material.link}
-                              target="_blank"
-                              class="hover:underline hover:text-orange-500"
-                            >
-                              {material.name}
-                            </a>
-                          ))}
                         </p>
                       </div>
                     </div>
@@ -102,3 +127,102 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
     </div>
   </main>
 </Layout>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const yearButtons = document.querySelectorAll(".year-btn");
+    let selectedYears: string[] = []; // Array para almacenar los años seleccionados
+
+    yearButtons.forEach((button) => {
+      button.addEventListener("click", function (this: HTMLButtonElement) {
+        const year = this.getAttribute("data-year") ?? "";
+
+        // Si el año ya está seleccionado, deselect
+        if (selectedYears.includes(year)) {
+          selectedYears = selectedYears.filter(
+            (selectedYear) => selectedYear !== year
+          );
+
+          // Deseleccionar el botón
+          this.classList.remove(
+            "bg-blue-50",
+            "border-blue-500",
+            "text-blue-700"
+          );
+          this.classList.add("border-gray-300", "hover:bg-gray-50");
+
+          // Eliminar la "X"
+          const closeIcon = this.querySelector(".close-icon");
+          if (closeIcon) {
+            this.removeChild(closeIcon);
+          }
+        } else {
+          // Si no está seleccionado, seleccionar el botón
+          selectedYears.push(year);
+          this.classList.add("bg-blue-50", "border-blue-500", "text-blue-700");
+          this.classList.remove("border-gray-300", "hover:bg-gray-50");
+
+          // Añadir la "X"
+          const closeIcon = document.createElement("span");
+          closeIcon.classList.add(
+            "close-icon",
+            "ml-2",
+            "text-blue-500",
+            "font-medium"
+          );
+          closeIcon.textContent = "×";
+
+          // Al hacer clic en la "X", desmarcar el botón
+          closeIcon.addEventListener("click", function (e: MouseEvent) {
+            e.stopPropagation();
+
+            // Eliminar el año del array
+            selectedYears = selectedYears.filter(
+              (selectedYear) => selectedYear !== year
+            );
+
+            // Deseleccionar el botón
+            button.classList.remove(
+              "bg-blue-50",
+              "border-blue-500",
+              "text-blue-700"
+            );
+            button.classList.add("border-gray-300", "hover:bg-gray-50");
+            button.removeChild(closeIcon);
+
+            // Filtrar las publicaciones nuevamente
+            filterPublications(selectedYears);
+          });
+
+          this.appendChild(closeIcon);
+        }
+
+        // Filtrar las publicaciones por los años seleccionados
+        filterPublications(selectedYears);
+      });
+    });
+
+    // Función para filtrar publicaciones por los años seleccionados
+    function filterPublications(years: string[]) {
+      const publicationItems = document.querySelectorAll(".publication-item");
+      publicationItems.forEach((item) => {
+        const itemYear = item.getAttribute("data-year") ?? "";
+        if (years.length === 0 || years.includes(itemYear)) {
+          item.classList.remove("hidden"); // Mostrar publicación si está en los años seleccionados
+        } else {
+          item.classList.add("hidden"); // Ocultar publicación si no está en los años seleccionados
+        }
+      });
+
+      // Mostrar/ocultar los encabezados de los años
+      const yearHeaders = document.querySelectorAll(".header-year");
+      yearHeaders.forEach((header) => {
+        const year = header.textContent?.trim() ?? "";
+        if (years.length === 0 || years.includes(year)) {
+          header.classList.remove("hidden"); // Mostrar encabezado si el año está seleccionado
+        } else {
+          header.classList.add("hidden"); // Ocultar encabezado si el año no está seleccionado
+        }
+      });
+    }
+  });
+</script>
