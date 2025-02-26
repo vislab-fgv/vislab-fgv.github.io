@@ -1,19 +1,16 @@
 ---
 interface Props {
   date: string;
-  title: string;
-  type: string;
+  text: string;
+  id: number;
 }
 
-const { date, title, type } = Astro.props;
+const { date, text, id } = Astro.props;
 ---
 
-<div class="text-sm">
+<div class="text-sm mb-6">
   <div class="italic">{date}</div>
-  <div class="py-3">
-    <p class="">{type}</p>
-    <a href="#" class="hover:text-orange-500 hover:underline font-semibold"
-      >{title}</a
-    >
+  <div class="py-1">
+    <Fragment set:html={text} />
   </div>
 </div>
