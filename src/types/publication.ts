@@ -28,6 +28,7 @@ export interface Publication {
   url: string | null;
 
   authors: number[];
+  keywords: string[];
 }
 
 export interface Material {
