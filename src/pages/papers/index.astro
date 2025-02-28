@@ -36,6 +36,7 @@ const keywordCounts: { [key: string]: number } = publications
 
 <Layout title="Papers">
   <div class="flex flex-col md:flex-row justify-between gap-6 px-4">
+    <aside></aside>
     <main class="w-full md:w-3/4">
       <div class="flex flex-col gap-4">
         {
@@ -136,57 +137,6 @@ const keywordCounts: { [key: string]: number } = publications
             }
           </div>
         </div>
-
-        {
-          /*
-          <div>
-            <h3 class="mb-2 text-sm font-medium text-gray-700">
-              Research Domains
-            </h3>
-            <div class="flex flex-wrap gap-2 text-xs">
-              <button
-                class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
-              >
-                Visualization
-              </button>
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 text-sm font-medium text-gray-700">Methodologies</h3>
-            <div class="flex flex-wrap gap-2 text-xs">
-              <button
-                class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
-              >
-                Visualization
-              </button>
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 text-sm font-medium text-gray-700">
-              Applications & Contexts
-            </h3>
-            <div class="flex flex-wrap gap-2 text-xs">
-              <button
-                class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
-              >
-                Visualization
-              </button>
-            </div>
-          </div>
-          <div>
-            <h3 class="mb-2 text-sm font-medium text-gray-700">
-              Technical Approaches
-            </h3>
-            <div class="flex flex-wrap gap-2 text-xs">
-              <button
-                class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
-              >
-                Visualization
-              </button>
-            </div>
-          </div>
-         */
-        }
       </div>
     </aside>
   </div>
@@ -199,6 +149,30 @@ const keywordCounts: { [key: string]: number } = publications
     const publicationItems = document.querySelectorAll(".publication-item");
     const yearSections = document.querySelectorAll(".year-section");
     const filterButtons = document.querySelectorAll(".filter-btn");
+
+    const asideNav = document.querySelector("aside:first-of-type");
+    if (asideNav) {
+      const yearNavContainer = document.createElement("div");
+      yearNavContainer.className =
+        "hidden md:flex flex-col gap-2 p-4 rounded-lg sticky top-6";
+      yearNavContainer.innerHTML = `
+      <div class="flex flex-col gap-1 text-sm" id="year-nav">
+        ${Array.from(yearSections)
+          .map((section) => {
+            const year = section.getAttribute("data-year");
+            return `<a href="#year-${year}" data-year="${year}" class="year-nav-link text-xs py-1 pl-3 relative hover:text-orange-500 transition-colors">${year}</a>`;
+          })
+          .join("")}
+      </div>
+    `;
+      asideNav.appendChild(yearNavContainer);
+
+      // Add IDs to year sections for navigation
+      yearSections.forEach((section) => {
+        const year = section.getAttribute("data-year");
+        section.id = `year-${year}`;
+      });
+    }
 
     // Track active filters
     const activeFilters = new Set<string>();
@@ -279,16 +253,8 @@ const keywordCounts: { [key: string]: number } = publications
         // Check keyword filters match
         let matchesKeywords = true;
         if (activeKeywords.size > 0) {
-          // Get publication ID or other unique identifier to fetch keywords
-          // This requires having keywords data available for each publication item
-          // Option 1: Add data attributes for keywords to each publication item
           const publicationKeywords =
             item.getAttribute("data-keywords")?.split(",") || [];
-
-          // Option 2: Match against publications data object (requires a global publications variable)
-          // const webName = item.querySelector("a")?.getAttribute("href")?.split("/").pop() || "";
-          // const publication = publications.find(p => p.web_name === webName);
-          // const publicationKeywords = publication?.keywords || [];
 
           // Check if publication has all active keywords
           matchesKeywords = Array.from(activeKeywords).every((keyword) =>
@@ -333,5 +299,75 @@ const keywordCounts: { [key: string]: number } = publications
         }
       });
     }
+
+    // Apply styles for the vertical line effect
+    const style = document.createElement("style");
+    style.textContent = `
+    .year-nav-link {
+      transition: color 0.3s ease;
+    }
+    .year-nav-link.active {
+      color: #f97316; /* orange-500 */
+      font-weight: 600;
+    }
+    .year-nav-link.active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #f97316; /* orange-500 */
+      border-radius: 0 2px 2px 0;
+    }
+  `;
+    document.head.appendChild(style);
+
+    // Scroll spy functionality to highlight the current year in the sidebar
+    const yearLinks = document.querySelectorAll(".year-nav-link");
+
+    // Use Intersection Observer to detect when year sections are in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Get the year from the section id
+          const yearId = entry.target.id;
+          const year = yearId.replace("year-", "");
+
+          // Find the corresponding navigation link
+          const link = document.querySelector(
+            `.year-nav-link[data-year="${year}"]`
+          );
+
+          if (entry.isIntersecting) {
+            // Add active class to the year link
+            yearLinks.forEach((l) => l.classList.remove("active"));
+            link?.classList.add("active");
+          }
+        });
+      },
+      {
+        rootMargin: "-100px 0px -80% 0px",
+        threshold: 0,
+      }
+    );
+
+    // Observe all year sections
+    yearSections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Smooth scroll to year section when clicking on year links
+    yearLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const year = link.getAttribute("data-year");
+        const section = document.getElementById(`year-${year}`);
+
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
   });
 </script>
