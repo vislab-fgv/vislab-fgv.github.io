@@ -22,207 +22,257 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
     },
     {}
   );
+
+  const keywordCounts: { [key: string]: number } = 
+  publications.flatMap(paper => paper.keywords)
+  .reduce((acc: { [key: string]: number }, keyword) => {
+    acc[keyword] = (acc[keyword] || 0) + 1;
+    return acc;
+  }, {} as { [key: string]: number }); 
 ---
 
 <Layout title="Papers">
-  <div
-    class="w-full flex flex-col sm:flex-row gap-2 p-4 items-center text-sm"
-    id="filterContainer"
-  >
-    <input
-      type="text"
-      class="w-full h-8 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      placeholder="Search ..."
-    />
-
-    <div class="flex gap-2 items-center" id="buttonsContainer">
-      <button
-        data-year="2025"
-        class="year-btn h-7 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-50"
-      >
-        2025
-      </button>
-      <button
-        data-year="2024"
-        class="year-btn h-7 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-50"
-      >
-        2024
-      </button>
-      <button
-        data-year="2023"
-        class="year-btn h-7 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-50"
-      >
-        2023
-      </button>
-    </div>
-  </div>
-  <main class="flex justify-center px-2 lg:px-4">
-    <div class="flex flex-col gap-4">
-      {
-        Object.keys(groupedPublications)
-          .sort((a, b) => parseInt(b) - parseInt(a))
-          .map((year) => (
-            <div>
-              <div class="flex flex-col gap-4">
-                <h2 class="header-year text-md font-semibold mb-4">{year}</h2>
-                {groupedPublications[year].map(
-                  (publication: ExtendedPublication) => (
-                    <div
-                      class="publication-item flex flex-row md:flex-row gap-4"
-                      data-year={publication.year}
-                    >
-                      <div class="max-w-32 min-w-32 w-full">
-                        {publication.thumbnail && (
-                          <a href={`/papers/${publication.web_name}`}>
-                            <img
-                              src={`${BUKET_BASE_URL}${publication.thumbnail}`}
-                              alt={publication.title}
-                              class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
-                            />
-                          </a>
-                        )}
-                      </div>
-                      <div class="text-md text-base/5">
-                        <a
-                          href={`/papers/${publication.web_name}`}
-                          class="hover:text-orange-500 hover:underline font-semibold pr-1"
-                        >
-                          {publication.title}
-                        </a>
-                        <div>
-                          {publication.authors?.map((author, index) => (
-                            <span>
-                              <a
-                                href="#"
-                                class="hover:text-orange-500 hover:underline"
-                              >
-                                {author.first_name} {author.last_name}
-                              </a>
-                              {publication.authors &&
-                                index < publication.authors.length - 1 &&
-                                ","}
-                            </span>
-                          ))}
+  <div class="flex flex-col md:flex-row justify-between gap-6 px-4">
+    <main class="w-full md:w-3/4">
+      <div class="flex flex-col gap-4">
+        {
+          Object.keys(groupedPublications)
+            .sort((a, b) => parseInt(b) - parseInt(a))
+            .map((year) => (
+              <div class="year-section" data-year={year}>
+                <div class="flex flex-col gap-4">
+                  <h2 class="header-year text-md font-semibold mb-4">{year}</h2>
+                  {groupedPublications[year].map(
+                    (publication: ExtendedPublication) => (
+                      <div
+                        class="publication-item flex flex-row md:flex-row gap-4"
+                        data-year={publication.year}
+                        data-title={publication.title.toLowerCase()}
+                      >
+                        <div class="max-w-32 min-w-32 w-full">
+                          {publication.thumbnail && (
+                            <a href={`/papers/${publication.web_name}`}>
+                              <img
+                                src={`${BUKET_BASE_URL}${publication.thumbnail}`}
+                                alt={publication.title}
+                                class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
+                              />
+                            </a>
+                          )}
                         </div>
-                        <p class="inline italic">
-                          {publication.venue?.full_name}
-                        </p>
-                        <p class="inline">, {publication.year}</p>
-                        <p>
+                        <div class="text-md text-base/5">
                           <a
-                            href={`${BUKET_BASE_URL}${publication.pdf}`}
-                            class="hover:underline hover:text-orange-500"
+                            href={`/papers/${publication.web_name}`}
+                            class="publication-title hover:text-orange-500 hover:underline font-semibold pr-1"
                           >
-                            PDF
+                            {publication.title}
                           </a>
-                        </p>
+                          <div>
+                            {publication.authors?.map((author, index) => (
+                              <span>
+                                <a
+                                  href="#"
+                                  class="author-name hover:text-orange-500 hover:underline"
+                                >
+                                  {author.first_name} {author.last_name}
+                                </a>
+                                {publication.authors &&
+                                  index < publication.authors.length - 1 &&
+                                  ","}
+                              </span>
+                            ))}
+                          </div>
+                          <p class="inline italic venue-name">
+                            {publication.venue?.full_name}
+                          </p>
+                          <p class="inline">, {publication.year}</p>
+                          <p>
+                            <a
+                              href={`${BUKET_BASE_URL}${publication.pdf}`}
+                              class="hover:underline hover:text-orange-500"
+                            >
+                              PDF
+                            </a>
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  )
-                )}
+                    )
+                  )}
+                </div>
               </div>
-            </div>
-          ))
-      }
-    </div>
-  </main>
+            ))
+        }
+      </div>
+    </main>
+    <aside class="md:w-2/5 md:sticky md:top-6 h-fit">
+      <div class="flex flex-col gap-4 p-4 bg-gray-50 rounded-lg">
+        <!-- Solo el input de búsqueda -->
+        <div class="w-full">
+          <p class="bold">Search</p>
+          <input
+            type="text"
+            id="search-input"
+            class="w-full h-10 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            placeholder="Search publications..."
+          />
+        </div>
+
+        <div>
+          <h3 class="mb-2 text-sm font-medium text-gray-700">
+            Filtros
+          </h3>
+          <div id="filters" class="flex flex-wrap gap-2 text-xs">
+            {Object.entries(keywordCounts).map(([keyword, count]) => (
+              <button 
+                data-keyword={keyword}
+                class="filter-btn h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
+              >
+                {keyword} ({count})
+              </button>
+            ))}
+          </div>
+        </div>    
+
+        <div>
+          <h3 class="mb-2 text-sm font-medium text-gray-700">
+            Research Domains
+          </h3>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button
+              class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
+            >
+              Visualization
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3 class="mb-2 text-sm font-medium text-gray-700">Methodologies</h3>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button
+              class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
+            >
+              Visualization
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3 class="mb-2 text-sm font-medium text-gray-700">
+            Applications & Contexts
+          </h3>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button
+              class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
+            >
+              Visualization
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3 class="mb-2 text-sm font-medium text-gray-700">
+            Technical Approaches
+          </h3>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button
+              class="h-6 px-4 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
+            >
+              Visualization
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 </Layout>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const yearButtons = document.querySelectorAll(".year-btn");
-    let selectedYears: string[] = []; // Array para almacenar los años seleccionados
+    const searchInput = document.getElementById(
+      "search-input"
+    ) as HTMLInputElement;
+    const publicationItems = document.querySelectorAll(".publication-item");
+    const yearSections = document.querySelectorAll(".year-section");
 
-    yearButtons.forEach((button) => {
-      button.addEventListener("click", function (this: HTMLButtonElement) {
-        const year = this.getAttribute("data-year") ?? "";
-
-        // Si el año ya está seleccionado, deselect
-        if (selectedYears.includes(year)) {
-          selectedYears = selectedYears.filter(
-            (selectedYear) => selectedYear !== year
-          );
-
-          // Deseleccionar el botón
-          this.classList.remove(
-            "bg-blue-50",
-            "border-blue-500",
-            "text-blue-700"
-          );
-          this.classList.add("border-gray-300", "hover:bg-gray-50");
-
-          // Eliminar la "X"
-          const closeIcon = this.querySelector(".close-icon");
-          if (closeIcon) {
-            this.removeChild(closeIcon);
-          }
-        } else {
-          // Si no está seleccionado, seleccionar el botón
-          selectedYears.push(year);
-          this.classList.add("bg-blue-50", "border-blue-500", "text-blue-700");
-          this.classList.remove("border-gray-300", "hover:bg-gray-50");
-
-          // Añadir la "X"
-          const closeIcon = document.createElement("span");
-          closeIcon.classList.add(
-            "close-icon",
-            "ml-2",
-            "text-blue-500",
-            "font-medium"
-          );
-          closeIcon.textContent = "×";
-
-          // Al hacer clic en la "X", desmarcar el botón
-          closeIcon.addEventListener("click", function (e: MouseEvent) {
-            e.stopPropagation();
-
-            // Eliminar el año del array
-            selectedYears = selectedYears.filter(
-              (selectedYear) => selectedYear !== year
-            );
-
-            // Deseleccionar el botón
-            button.classList.remove(
-              "bg-blue-50",
-              "border-blue-500",
-              "text-blue-700"
-            );
-            button.classList.add("border-gray-300", "hover:bg-gray-50");
-            button.removeChild(closeIcon);
-
-            // Filtrar las publicaciones nuevamente
-            filterPublications(selectedYears);
-          });
-
-          this.appendChild(closeIcon);
-        }
-
-        // Filtrar las publicaciones por los años seleccionados
-        filterPublications(selectedYears);
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase().trim();
+        filterPublications(searchTerm);
       });
-    });
+    }
 
-    // Función para filtrar publicaciones por los años seleccionados
-    function filterPublications(years: string[]) {
-      const publicationItems = document.querySelectorAll(".publication-item");
+    // Función simplificada para filtrar solo por término de búsqueda
+    function filterPublications(searchTerm: string = "") {
       publicationItems.forEach((item) => {
         const itemYear = item.getAttribute("data-year") ?? "";
-        if (years.length === 0 || years.includes(itemYear)) {
-          item.classList.remove("hidden"); // Mostrar publicación si está en los años seleccionados
+
+        // Verificar si coincide con el término de búsqueda
+        let matchesSearch = true;
+        if (searchTerm !== "") {
+          // Método 1: Usar el atributo data-title
+          const title = item.getAttribute("data-title") || "";
+
+          // Método 2: Buscar directamente en el elemento con la clase publication-title
+          const titleElement = item.querySelector(".publication-title");
+          const titleText = titleElement
+            ? titleElement.textContent?.toLowerCase() || ""
+            : "";
+
+          // Recopilar información de autores
+          const authorElements = item.querySelectorAll(".author-name");
+          let authors = "";
+          authorElements.forEach((el) => {
+            authors += el.textContent?.toLowerCase() + " ";
+          });
+
+          // Recopilar información de venue
+          const venueElement = item.querySelector(".venue-name");
+          const venue = venueElement?.textContent?.toLowerCase() || "";
+
+          // Un item coincide si cualquiera de sus campos contiene el término de búsqueda
+          matchesSearch =
+            title.includes(searchTerm) ||
+            titleText.includes(searchTerm) ||
+            authors.includes(searchTerm) ||
+            venue.includes(searchTerm) ||
+            itemYear.includes(searchTerm);
+        }
+
+        // Mostrar u ocultar según coincidencia con el término de búsqueda
+        if (matchesSearch) {
+          item.classList.remove("hidden");
         } else {
-          item.classList.add("hidden"); // Ocultar publicación si no está en los años seleccionados
+          item.classList.add("hidden");
         }
       });
 
-      // Mostrar/ocultar los encabezados de los años
-      const yearHeaders = document.querySelectorAll(".header-year");
-      yearHeaders.forEach((header) => {
-        const year = header.textContent?.trim() ?? "";
-        if (years.length === 0 || years.includes(year)) {
-          header.classList.remove("hidden"); // Mostrar encabezado si el año está seleccionado
+      // Actualizar la visibilidad de las secciones de año
+      updateYearSectionsVisibility();
+    }
+
+    // Función para actualizar la visibilidad de las secciones de año
+    function updateYearSectionsVisibility() {
+      yearSections.forEach((section) => {
+        const publications = section.querySelectorAll(".publication-item");
+
+        // Verificar si hay publicaciones visibles en esta sección
+        let hasVisiblePublications = false;
+        publications.forEach((pub) => {
+          if (!pub.classList.contains("hidden")) {
+            hasVisiblePublications = true;
+          }
+        });
+
+        // Mostrar u ocultar la sección completa y su encabezado
+        if (hasVisiblePublications) {
+          section.classList.remove("hidden");
+          const header = section.querySelector(".header-year");
+          if (header) header.classList.remove("hidden");
         } else {
-          header.classList.add("hidden"); // Ocultar encabezado si el año no está seleccionado
+          section.classList.add("hidden");
+          const header = section.querySelector(".header-year");
+          if (header) header.classList.add("hidden");
         }
       });
     }
+
+
   });
 </script>
