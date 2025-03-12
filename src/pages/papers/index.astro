@@ -142,7 +142,7 @@ const keywordCounts: { [key: string]: number } = publications
   </div>
 </Layout>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const searchInput = document.getElementById(
       "search-input"
     ) as HTMLInputElement;
@@ -370,4 +370,5 @@ const keywordCounts: { [key: string]: number } = publications
       });
     });
   });
+
 </script>
