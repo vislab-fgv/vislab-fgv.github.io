@@ -22,83 +22,353 @@ const groupedPublications: { [key: string]: ExtendedPublication[] } =
     },
     {}
   );
+
+const keywordCounts: { [key: string]: number } = publications
+  .flatMap((paper) => paper.keywords)
+  .reduce(
+    (acc: { [key: string]: number }, keyword) => {
+      acc[keyword] = (acc[keyword] || 0) + 1;
+      return acc;
+    },
+    {} as { [key: string]: number }
+  );
 ---
 
 <Layout title="Papers">
-  <main class="flex justify-center px-2 lg:px-4">
-    <div class="flex flex-col gap-4">
-      {
-        Object.keys(groupedPublications)
-          .sort((a, b) => parseInt(b) - parseInt(a))
-          .map((year) => (
-            <div>
-              <h2 class="text-md font-semibold mb-4">{year}</h2>
-              <div class="flex flex-col gap-4">
-                {groupedPublications[year].map(
-                  (publication: ExtendedPublication) => (
-                    <div class="flex flex-row md:flex-row gap-4">
-                      <div class="max-w-32 min-w-32 w-full">
-                        {publication.thumbnail && (
-                          <a href={`/papers/${publication.web_name}`}>
-                            <img
-                              src={`${BUKET_BASE_URL}${publication.thumbnail}`}
-                              alt={publication.title}
-                              class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
-                            />
-                          </a>
-                        )}
-                      </div>
-                      <div class="text-md text-base/5">
-                        <a
-                          href={`/papers/${publication.web_name}`}
-                          class="hover:text-orange-500 hover:underline font-semibold pr-1"
-                        >
-                          {publication.title}
-                        </a>
-                        <div>
-                          {publication.authors?.map((author, index) => (
-                            <span>
-                              <a
-                                href="#"
-                                class="hover:text-orange-500 hover:underline"
-                              >
-                                {author.first_name} {author.last_name}
-                              </a>
-                              {publication.authors &&
-                                index < publication.authors.length - 1 &&
-                                ","}
-                            </span>
-                          ))}
+  <div class="flex flex-col md:flex-row justify-between gap-6 px-4">
+    <aside></aside>
+    <main class="w-full md:w-3/4">
+      <div class="flex flex-col gap-4">
+        {
+          Object.keys(groupedPublications)
+            .sort((a, b) => parseInt(b) - parseInt(a))
+            .map((year) => (
+              <div class="year-section" data-year={year}>
+                <div class="flex flex-col gap-4">
+                  <h2 class="header-year text-md font-semibold mb-4">{year}</h2>
+                  {groupedPublications[year].map(
+                    (publication: ExtendedPublication) => (
+                      <div
+                        class="publication-item flex flex-row md:flex-row gap-4"
+                        data-year={publication.year}
+                        data-title={publication.title.toLowerCase()}
+                        data-keywords={publication.keywords.join(",")}
+                      >
+                        <div class="max-w-32 min-w-32 w-full">
+                          {publication.thumbnail && (
+                            <a href={`/papers/${publication.web_name}`}>
+                              <img
+                                src={`${BUKET_BASE_URL}${publication.thumbnail}`}
+                                alt={publication.title}
+                                class="rounded-md w-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,165,0,0.6)]"
+                              />
+                            </a>
+                          )}
                         </div>
-                        <p class="inline italic">
-                          {publication.venue?.full_name}
-                        </p>
-                        <p class="inline">, {publication.year}</p>
-                        <p>
+                        <div class="text-md text-base/5">
                           <a
-                            href={`${BUKET_BASE_URL}${publication.pdf}`}
-                            class="hover:underline hover:text-orange-500"
+                            href={`/papers/${publication.web_name}`}
+                            class="publication-title hover:text-orange-500 hover:underline font-semibold pr-1"
                           >
-                            PDF
+                            {publication.title}
                           </a>
-                          {publication.materials?.map((material, index) => (
+                          <div>
+                            {publication.authors?.map((author, index) => (
+                              <span>
+                                <a
+                                  href="#"
+                                  class="author-name hover:text-orange-500 hover:underline"
+                                >
+                                  {author.first_name} {author.last_name}
+                                </a>
+                                {publication.authors &&
+                                  index < publication.authors.length - 1 &&
+                                  ","}
+                              </span>
+                            ))}
+                          </div>
+                          <p class="inline italic venue-name">
+                            {publication.venue?.full_name}
+                          </p>
+                          <p class="inline">, {publication.year}</p>
+                          <p>
                             <a
-                              href={material.link}
-                              target="_blank"
+                              href={`${BUKET_BASE_URL}${publication.pdf}`}
                               class="hover:underline hover:text-orange-500"
                             >
-                              {material.name}
+                              PDF
                             </a>
-                          ))}
-                        </p>
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  )
-                )}
+                    )
+                  )}
+                </div>
               </div>
-            </div>
-          ))
-      }
-    </div>
-  </main>
+            ))
+        }
+      </div>
+    </main>
+    <aside class="md:w-2/5 md:sticky md:top-6 h-fit">
+      <div class="flex flex-col gap-4 p-4 bg-gray-50 rounded-lg">
+        <div class="w-full">
+          <h3 class="mb-2 text-sm font-bold text-gray-700">Search</h3>
+          <input
+            type="text"
+            id="search-input"
+            class="w-full h-8 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-sm"
+            placeholder="Search publications..."
+          />
+        </div>
+
+        <div>
+          <h3 class="mb-2 text-sm font-bold text-gray-700">Tags</h3>
+          <div id="filters" class="flex flex-wrap gap-2 text-xs">
+            {
+              Object.entries(keywordCounts).map(([keyword, count]) => (
+                <button
+                  data-keyword={keyword}
+                  class="filter-btn h-6 px-2 border rounded-full flex items-center justify-center transition-colors border-gray-300 hover:bg-gray-100 hover:border-gray-500"
+                >
+                  {keyword}
+                  <p class="text-gray-400 pl-1 italic">({count})</p>
+                </button>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 </Layout>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const searchInput = document.getElementById(
+      "search-input"
+    );
+    const publicationItems = document.querySelectorAll(".publication-item");
+    const yearSections = document.querySelectorAll(".year-section");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    const asideNav = document.querySelector("aside:first-of-type");
+    if (asideNav) {
+      const yearNavContainer = document.createElement("div");
+      yearNavContainer.className =
+        "hidden md:flex flex-col gap-2 p-4 rounded-lg sticky top-6";
+      yearNavContainer.innerHTML = `
+      <div class="flex flex-col gap-1 text-sm" id="year-nav">
+        ${Array.from(yearSections)
+          .map((section) => {
+            const year = section.getAttribute("data-year");
+            return `<a href="#year-${year}" data-year="${year}" class="year-nav-link text-xs py-1 pl-3 relative hover:text-orange-500 transition-colors">${year}</a>`;
+          })
+          .join("")}
+      </div>
+    `;
+      asideNav.appendChild(yearNavContainer);
+
+      // Add IDs to year sections for navigation
+      yearSections.forEach((section) => {
+        const year = section.getAttribute("data-year");
+        section.id = `year-${year}`;
+      });
+    }
+
+    // Track active filters
+    const activeFilters = new Set();
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase().trim();
+        applyFilters(searchTerm, activeFilters);
+      });
+    }
+
+    // Add click event listeners to all filter buttons
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const keyword = this.getAttribute("data-keyword");
+
+        if (!keyword) return;
+
+        // Toggle filter state
+        if (activeFilters.has(keyword)) {
+          activeFilters.delete(keyword);
+          this.classList.remove("bg-orange-100", "border-orange-500");
+          this.classList.add("border-gray-300", "hover:bg-gray-100");
+        } else {
+          activeFilters.add(keyword);
+          this.classList.add("bg-orange-100", "border-orange-500");
+          this.classList.remove("border-gray-300", "hover:bg-gray-100");
+        }
+
+        // Apply filters with current search term
+        const searchTerm = searchInput
+          ? searchInput.value.toLowerCase().trim()
+          : "";
+        applyFilters(searchTerm, activeFilters);
+      });
+    });
+
+    // Main filter function that combines search term and keyword filters
+    function applyFilters(
+      searchTerm,
+      activeKeywords
+    ) {
+      publicationItems.forEach((item) => {
+        const itemYear = item.getAttribute("data-year") ?? "";
+
+        // Check search term match
+        let matchesSearch = true;
+        if (searchTerm !== "") {
+          // Method 1: Use data-title attribute
+          const title = item.getAttribute("data-title") || "";
+
+          // Method 2: Search directly in the publication-title element
+          const titleElement = item.querySelector(".publication-title");
+          const titleText = titleElement
+            ? titleElement.textContent?.toLowerCase() || ""
+            : "";
+
+          // Collect author information
+          const authorElements = item.querySelectorAll(".author-name");
+          let authors = "";
+          authorElements.forEach((el) => {
+            authors += el.textContent?.toLowerCase() + " ";
+          });
+
+          // Collect venue information
+          const venueElement = item.querySelector(".venue-name");
+          const venue = venueElement?.textContent?.toLowerCase() || "";
+
+          // Item matches if any field contains the search term
+          matchesSearch =
+            title.includes(searchTerm) ||
+            titleText.includes(searchTerm) ||
+            authors.includes(searchTerm) ||
+            venue.includes(searchTerm) ||
+            itemYear.includes(searchTerm);
+        }
+
+        // Check keyword filters match
+        let matchesKeywords = true;
+        if (activeKeywords.size > 0) {
+          const publicationKeywords =
+            item.getAttribute("data-keywords")?.split(",") || [];
+
+          // Check if publication has all active keywords
+          matchesKeywords = Array.from(activeKeywords).every((keyword) =>
+            publicationKeywords.includes(keyword)
+          );
+        }
+
+        // Show or hide based on combined match of search term and keywords
+        if (matchesSearch && matchesKeywords) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+
+      // Update year sections visibility
+      updateYearSectionsVisibility();
+    }
+
+    // Function to update year sections visibility
+    function updateYearSectionsVisibility() {
+      yearSections.forEach((section) => {
+        const publications = section.querySelectorAll(".publication-item");
+
+        // Check if there are visible publications in this section
+        let hasVisiblePublications = false;
+        publications.forEach((pub) => {
+          if (!pub.classList.contains("hidden")) {
+            hasVisiblePublications = true;
+          }
+        });
+
+        // Show or hide the entire section and its header
+        if (hasVisiblePublications) {
+          section.classList.remove("hidden");
+          const header = section.querySelector(".header-year");
+          if (header) header.classList.remove("hidden");
+        } else {
+          section.classList.add("hidden");
+          const header = section.querySelector(".header-year");
+          if (header) header.classList.add("hidden");
+        }
+      });
+    }
+
+    // Apply styles for the vertical line effect
+    const style = document.createElement("style");
+    style.textContent = `
+    .year-nav-link {
+      transition: color 0.3s ease;
+    }
+    .year-nav-link.active {
+      color: #f97316; /* orange-500 */
+      font-weight: 600;
+    }
+    .year-nav-link.active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #f97316; /* orange-500 */
+      border-radius: 0 2px 2px 0;
+    }
+  `;
+    document.head.appendChild(style);
+
+    // Scroll spy functionality to highlight the current year in the sidebar
+    const yearLinks = document.querySelectorAll(".year-nav-link");
+
+    // Use Intersection Observer to detect when year sections are in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Get the year from the section id
+          const yearId = entry.target.id;
+          const year = yearId.replace("year-", "");
+
+          // Find the corresponding navigation link
+          const link = document.querySelector(
+            `.year-nav-link[data-year="${year}"]`
+          );
+
+          if (entry.isIntersecting) {
+            // Add active class to the year link
+            yearLinks.forEach((l) => l.classList.remove("active"));
+            link?.classList.add("active");
+          }
+        });
+      },
+      {
+        rootMargin: "-100px 0px -80% 0px",
+        threshold: 0,
+      }
+    );
+
+    // Observe all year sections
+    yearSections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Smooth scroll to year section when clicking on year links
+    yearLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const year = link.getAttribute("data-year");
+        const section = document.getElementById(`year-${year}`);
+
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  });
+
+</script>
