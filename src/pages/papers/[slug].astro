@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import BixtexCitation from "../../components/BixtexCitation.astro";
 import publicationsData from "../../data/publications.json";
 import type { ExtendedPublication, Publication } from "../../types/publication";
 import { extendPublication } from "../../lib/utils";
@@ -149,24 +150,7 @@ function formatDate(dateStr: string) {
       </div>
 
       {/* Citation Card - Full width */}
-      <div class="bg-white rounded-lg shadow p-6">
-        <h3 class="text-lg font-semibold mb-4">
-          Cite this publication (BIBTEX)
-        </h3>
-        <div class="bg-gray-50 p-3 rounded font-mono text-sm overflow-x-auto">
-          <pre
-            class="whitespace-pre-wrap break-words">@article{"{"}{publication.year}-{publication.web_name}, 
-  title={"{"}{publication.title}{"}"}, 
-  author={"{"}{publication.authors?.map((author) => `${author.first_name} ${author.last_name}`).join(" and ")}{"}"}, 
-  journal={"{"}{publication.venue?.full_name}{"}"}, 
-  year={"{"}{publication.year}{"}"}, 
-  url={"{"}{publication.url}{"}"}
-  {publication.pub_date && `date={${publication.pub_date}}`}
-  {publication.volume && `volume={${publication.volume}}`}
-  {publication.issue && `issue={${publication.issue}}`}
-          </pre>
-        </div>
-      </div>
+      <BixtexCitation publication={publication} />
     </div>
   </main>
 </Layout>

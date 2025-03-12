@@ -1,0 +1,94 @@
+---
+import type { ExtendedPublication } from '../types/publication';
+
+interface Props {
+  publication: ExtendedPublication;
+}
+
+const { publication } = Astro.props;
+
+const optionalFields = [
+  publication.pub_date ? `  date={${publication.pub_date}}` : null,
+  publication.volume ? `  volume={${publication.volume}}` : null,
+  publication.issue ? `  issue={${publication.issue}}` : null
+].filter(Boolean);
+
+const optionalFieldsText = optionalFields.length > 0 
+  ? ',\n' + optionalFields.join(',\n')
+  : '';
+
+const bibtexContent = `@article{${publication.year}-${publication.web_name}, 
+  title={${publication.title}}, 
+  author={${publication.authors?.map((author) => `${author.first_name} ${author.last_name}`).join(" and ")}}, 
+  journal={${publication.venue?.full_name}}, 
+  year={${publication.year}}, 
+  url={${publication.url}}${optionalFieldsText}
+}`;
+---
+
+<div class="bg-white rounded-lg shadow p-6">
+  <h3 class="text-lg font-semibold mb-4">Cite this publication (BIBTEX)</h3>
+  <div
+    class="bg-gray-50 p-3 rounded font-mono text-sm overflow-x-auto relative"
+  >
+    <button
+      id="copy-bibtex-btn"
+      class="absolute top-2 right-2 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md transition-all duration-200"
+      aria-label="Copy BibTeX to clipboard"
+    >
+      <!-- Icono SVG de copiar -->
+      <svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <!-- Icono SVG de check (inicialmente oculto) -->
+      <svg id="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </button>
+    <pre
+      id="bibtex-content"
+      class="whitespace-pre-wrap break-words">{bibtexContent}</pre>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const copyButton = document.getElementById("copy-bibtex-btn");
+    const copyIcon = document.getElementById("copy-icon");
+    const checkIcon = document.getElementById("check-icon");
+    const bibtexContent = document.getElementById("bibtex-content");
+
+    if (copyButton && bibtexContent && copyIcon && checkIcon) {
+      copyButton.addEventListener("click", () => {
+        const text = bibtexContent.textContent || "";
+
+        navigator.clipboard
+          .writeText(text.trim())
+          .then(() => {
+            copyIcon.classList.add("hidden");
+            checkIcon.classList.remove("hidden");
+            copyButton.classList.remove("bg-blue-600", "hover:bg-blue-700");
+            copyButton.classList.add("bg-green-600", "hover:bg-green-700");
+
+            setTimeout(() => {
+              copyIcon.classList.remove("hidden");
+              checkIcon.classList.add("hidden");
+              copyButton.classList.remove("bg-green-600", "hover:bg-green-700");
+              copyButton.classList.add("bg-blue-600", "hover:bg-blue-700");
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Error al copiar: ", err);
+            copyButton.classList.remove("bg-blue-600", "hover:bg-blue-700");
+            copyButton.classList.add("bg-red-600", "hover:bg-red-700");
+
+            setTimeout(() => {
+              copyButton.classList.remove("bg-red-600", "hover:bg-red-700");
+              copyButton.classList.add("bg-blue-600", "hover:bg-blue-700");
+            }, 2000);
+          });
+      });
+    }
+  });
+</script>
