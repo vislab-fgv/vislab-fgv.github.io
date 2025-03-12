@@ -141,11 +141,11 @@ const keywordCounts: { [key: string]: number } = publications
     </aside>
   </div>
 </Layout>
-<script>
+<script is:inline>
   document.addEventListener("astro:page-load", () => {
     const searchInput = document.getElementById(
       "search-input"
-    ) as HTMLInputElement;
+    );
     const publicationItems = document.querySelectorAll(".publication-item");
     const yearSections = document.querySelectorAll(".year-section");
     const filterButtons = document.querySelectorAll(".filter-btn");
@@ -175,7 +175,7 @@ const keywordCounts: { [key: string]: number } = publications
     }
 
     // Track active filters
-    const activeFilters = new Set<string>();
+    const activeFilters = new Set();
 
     if (searchInput) {
       searchInput.addEventListener("input", function () {
@@ -186,7 +186,7 @@ const keywordCounts: { [key: string]: number } = publications
 
     // Add click event listeners to all filter buttons
     filterButtons.forEach((button) => {
-      button.addEventListener("click", function (this: HTMLElement) {
+      button.addEventListener("click", function () {
         const keyword = this.getAttribute("data-keyword");
 
         if (!keyword) return;
@@ -212,8 +212,8 @@ const keywordCounts: { [key: string]: number } = publications
 
     // Main filter function that combines search term and keyword filters
     function applyFilters(
-      searchTerm: string = "",
-      activeKeywords: Set<string>
+      searchTerm,
+      activeKeywords
     ) {
       publicationItems.forEach((item) => {
         const itemYear = item.getAttribute("data-year") ?? "";
