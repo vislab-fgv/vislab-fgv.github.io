@@ -28,6 +28,9 @@ function formatDate(dateStr: string) {
     day: "numeric",
   });
 }
+
+const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
+
 ---
 
 <Layout title={publication.title}>
@@ -59,7 +62,7 @@ function formatDate(dateStr: string) {
           publication.figure && (
             <div>
               <img
-                src={`http://visualdslab.com/static/${publication.figure}`}
+                src={`${BUCKET_BASE_URL}${publication.figure}`}
                 alt={publication.title}
                 class="w-full rounded-lg shadow-lg mb-2"
               />
