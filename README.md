@@ -1,48 +1,115 @@
-# Astro Starter Kit: Basics
+# Visual Data Science Lab Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+##  Website Features
+This website showcases:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+- Recent publications and research papers
+- Lab members and collaborators
+- Research projects
+- News and updates
+- Available positions (students, postdocs, programmers)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## The website is built with:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
+- Astro - Modern static site builder
+- Tailwind CSS - Utility-first CSS framework
+- TypeScript - Typed JavaScript
+##  Project Structure
+```txt
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/       # Reusable Astro components
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── NewsItem.astro
+│   │   ├── PaperCard.astro
+│   │   ├── PersonCard.astro
+│   │   └── ...
+│   ├── data/            # JSON data files
+│   │   ├── materials.json
+│   │   ├── news.json
+│   │   ├── projects.json
+│   │   ├── publications.json
+│   │   └── venues.json
+│   ├── layouts/         # Page layout templates
+│   │   ├── Layout.astro
+│   │   └── PositionsLayout.astro
+│   ├── lib/            # Utility functions
+│   │   └── utils.ts
+│   ├── pages/          # Website pages (routes)
+│   │   ├── about/
+│   │   ├── index.astro
+│   │   ├── papers/
+│   │   ├── people/
+│   │   ├── positions/
+│   │   └── ...
+│   ├── styles/         # Global CSS files
+│   │   ├── font.css
+│   │   ├── global.css
+│   │   └── no-preflight.css
+│   └── types/          # TypeScript type definitions
+│       ├── people.ts
+│       ├── publication.ts
+│       └── venue.ts
+└── package.json        # Project dependencies and scripts
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Installation
+1. Clone this repository:
+```bash
+git clone [repository-url]
+```
 
-## 🧞 Commands
+2. Install dependencies:
+```bash
+npm install
+```
 
-All commands are run from the root of the project, from a terminal:
+3. Start the development server:
+```bash
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+4. Open your browser at http://localhost:4321
 
-## 👀 Want to learn more?
+Available Scripts
+- npm  dev - Start development server
+- npm  build - Build the site for production
+- npm  preview - Preview the production build locally
+- npm  astro - Run Astro CLI commands
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+##  Content Management
+The website content is primarily managed through JSON files in the src/data/ directory:
+
+- publications.json - Academic publications
+- news.json - News and updates
+- projects.json - Research projects
+- venues.json - Conference and journal information
+- materials.json - Additional materials
+- people.json - Lab members and collaborators
+
+## Data Types
+The website uses TypeScript for type safety. Main data types include:
+
+- Person: Faculty, researchers, students, alumni, and collaborators
+- Publication: Research papers with metadata
+- Project: Research projects with descriptions
+- Venue: Publication venues (conferences, journals)
+
+##  Page Structure
+- Home: Recent publications and news
+- Papers: Complete list of publications organized by year
+- People: Lab members categorized by role
+- About: Information about the lab's mission and focus
+- Positions: Available positions and opportunities
+
+## Contributing
+
+For contributions, refer to the [Contribuiting file](CONTRIBUTION.md).
+
+
+## Contact
+
+Visual Data Science Lab - EMAp FGV
+
+- Email: visualdslab@gmail.com
+- Website: http://visualdslab.com/
