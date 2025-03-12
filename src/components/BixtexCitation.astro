@@ -52,8 +52,8 @@ const bibtexContent = `@article{${publication.year}-${publication.web_name},
   </div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
     const copyButton = document.getElementById("copy-bibtex-btn");
     const copyIcon = document.getElementById("copy-icon");
     const checkIcon = document.getElementById("check-icon");
