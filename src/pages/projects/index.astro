@@ -3,6 +3,8 @@
 import ProjectCard from "../../components/ProjectCard.astro";
 import Layout from "../../layouts/Layout.astro";
 import projectsData from "../../data/projects.json";
+
+const BUCKET_BASE_URL = import.meta.env.BUCKET_BASE_URL;
 ---
 
 <Layout>
@@ -15,7 +17,7 @@ import projectsData from "../../data/projects.json";
             web_name={item.web_name}
             title={item.title}
             description={item.description}
-            image={`http://visualdslab.com/static/images${item.figure}`}
+            image={`${BUCKET_BASE_URL}/images${item.figure}`}
           />
         ))
     }
