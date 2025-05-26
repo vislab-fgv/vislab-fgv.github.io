@@ -25,7 +25,7 @@
     "pub_date": "2011-06-28",
     "url": "https://doi.org/10.1111/j.1467-8659.2011.01958.x",
     "authors": [27, 28, 1, 29, 30, 19],
-    "keywords": ["Visualization", "Interactive Visualization", "Interactive Large"]
+    "keywords": ["Projections", "Vis"]
   },
   {
     "id": 2,
@@ -53,7 +53,7 @@
     "pub_date": "2011-06-28",
     "url": "https://doi.org/10.1111/j.1467-8659.2011.01960.x",
     "authors": [1, 31, 27, 32, 33, 34, 35],
-    "keywords": ["Visualization", "Interactive Visualization", "Data Mining"]
+    "keywords": ["Projections", "Vis"]
   },
   {
     "id": 3,
@@ -81,7 +81,7 @@
     "pub_date": "2012-05-25",
     "url": "http://dx.doi.org/10.1111/j.1467-8659.2012.03100.x",
     "authors": [1, 28, 27, 30],
-    "keywords": ["Visualization", "Interactive Visualization", "Data Mining"]
+    "keywords": ["Projections", "3D", "Vis"]
   },
   {
     "id": 4,
@@ -109,7 +109,7 @@
     "pub_date": "2013-01-21",
     "url": "https://doi.org/10.1109/MCSE.2013.15",
     "authors": [36, 1, 37, 38, 39, 40, 16],
-    "keywords": ["Climate Science", "Visualization", "Interactive Visualization"]
+    "keywords": ["Climate", "UVCDAT", "Vis"]
   },
   {
     "id": 5,
@@ -137,7 +137,7 @@
     "pub_date": "2013-09-30",
     "url": "https://doi.ieeecomputersociety.org/10.1109/MC.2013.119",
     "authors": [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 16, 36, 55, 56, 1, 57, 58, 59, 60, 61, 62, 63 ],
-    "keywords": ["Climate Science", "Visualization"]
+    "keywords": ["Climate", "Vis", "UVCDAT"]
   },
   {
     "id": 6,
@@ -165,7 +165,7 @@
     "pub_date": "2013-10-16",
     "url": "https://doi.org/10.1109/TVCG.2013.226",
     "authors": [17, 1, 64, 65, 16],
-    "keywords": ["Urban Computing", "Spatial Data", "Temporal Data", "Spatio-temporal Visualization"]
+    "keywords": ["Urban", "Similarity", "Vis"]
   },
   {
     "id": 7,
@@ -193,7 +193,7 @@
     "pub_date": "2014-06-24",
     "url": "https://dl.acm.org/doi/10.5555/2854210.2854257",
     "authors": [1, 66, 67, 68, 69, 70, 71, 16],
-    "keywords": ["Climate Science", "Visualization", "Similarity Analysis"]
+    "keywords": ["Climate", "Vis", "Similarity"]
   },
   {
     "id": 8,
@@ -221,7 +221,7 @@
     "pub_date": "2014-12-01",
     "url": "http://sites.computer.org/debull/A14dec/p43.pdf",
     "authors": [65, 16, 64, 72, 17, 1],
-    "keywords": ["Urban Computing", "Traffic Analysis", "Spatial Data"]
+    "keywords": ["Urban", "Vis", "Spatial"]
   },
   {
     "id": 9,
@@ -249,7 +249,7 @@
     "pub_date": "2014-12-01",
     "url": "http://dx.doi.org/10.1109/TVCG.2014.2346755",
     "authors": [1, 66, 67, 68, 69, 73, 70, 71, 16],
-    "keywords": ["Climate Science", "Visualization", "Similarity Analysis", "Clustering"]
+    "keywords": ["Climate", "Vis", "Similarity"]
   },
   {
     "id": 10,
@@ -277,7 +277,7 @@
     "pub_date": "2015-07-20",
     "url": "https://doi.org/10.1111/cgf.12628",
     "authors": [1, 72, 64, 74, 65, 16],
-    "keywords": ["Traffic Analysis", "Urban Computing", "Spatio-temporal Visualization"]
+    "keywords": ["Urban", "Spatial", "Temporal", "Vis"]
   },
   {
     "id": 11,
@@ -305,7 +305,7 @@
     "pub_date": "2015-09-01",
     "url": "https://doi.org/10.1109/TVCG.2015.2413774",
     "authors": [66, 1, 67, 70, 71, 16],
-    "keywords": ["Climate Science", "Visualization", "Visual Analytics"]
+    "keywords": ["Climate", "Vis"]
   },
   {
     "id": 12,
@@ -333,7 +333,7 @@
     "pub_date": "2015-10-25",
     "url": "https://doi.org/10.1109/SciVis.2015.7429486",
     "authors": [1, 72, 75, 76, 16],
-    "keywords": ["Environmental Studies", "Topological Data Analysis", "Visualization", "Similarity Analysis"]
+    "keywords": ["TDA", "Vis"]
   },
   {
     "id": 13,
@@ -361,7 +361,7 @@
     "pub_date": "2016-01-01",
     "url": "https://doi.org/10.1109/MCSE.2016.7",
     "authors": [66, 1, 71, 16],
-    "keywords": ["Climate Science", "Visualization", "Visual Analytics"]
+    "keywords": ["Climate", "Vis"]
   },
   {
     "id": 14,
@@ -389,7 +389,7 @@
     "pub_date": "2017-07-04",
     "url": "https://doi.org/10.1111/cgf.13193",
     "authors": [1, 77],
-    "keywords": ["Visualization", "Image Analysis", "Visual Analytics"]
+    "keywords": ["Charts", "Vis"]
   },
   {
     "id": 15,
@@ -417,7 +417,7 @@
     "pub_date": "2018-01-10",
     "url": "https://doi.org/10.1109/SIBGRAPI.2018.00025",
     "authors": [21, 18, 77, 1],
-    "keywords": ["Visualization", "Spatial Data", "Image Analysis"]
+    "keywords": ["Maps", "Charts", "Vis"]
   },
   {
     "id": 16,
@@ -445,7 +445,7 @@
     "pub_date": "2018-08-29",
     "url": "https://doi.org/10.1109/TVCG.2017.2744320",
     "authors": [1, 21, 77],
-    "keywords": ["Visualization", "Computer Vision", "Image Analysis"]
+    "keywords": ["Charts", "Color", "Vis"]
   },
   {
     "id": 17,
@@ -473,7 +473,7 @@
     "pub_date": "2020-10-17",
     "url": "https://doi.org/10.1109/TVCG.2018.2876539",
     "authors": [66, 1, 78, 79, 71, 16],
-    "keywords": ["Visualization", "Climate Science", "Visual Analytics", "Spatial Data"]
+    "keywords": ["Color", "Vis"]
   },
   {
     "id": 18,
@@ -501,7 +501,7 @@
     "pub_date": "2020-11-25",
     "url": "https://doi.org/10.1109/SIBGRAPI51738.2020.00028",
     "authors": [13, 18, 80, 1, 81, 82, 19],
-    "keywords": ["Crime Analysis", "Visualization", "Urban Computing"]
+    "keywords": ["Crime", "Spatial", "Temporal", "Vis"]
   },
   {
     "id": 19,
@@ -529,7 +529,7 @@
     "pub_date": "2021-01-04",
     "url": "https://doi.org/10.1109/TVCG.2019.2947515",
     "authors": [13, 80, 1, 83, 81, 16, 82, 19],
-    "keywords": ["Crime Analysis", "Spatial Data", "Temporal Data", "Visual Analytics", "Spatio-temporal Visualization"]
+    "keywords": ["Crime", "Spatial", "Temporal", "Vis"]
   },
   {
     "id": 20,
@@ -557,7 +557,7 @@
     "pub_date": "2021-08-01",
     "url": null,
     "authors": [84, 13, 85, 86, 1, 18],
-    "keywords": ["Education", "Machine Learning", "Student Performance", "Classification"]
+    "keywords": ["Education", "Vis"]
   },
   {
     "id": 21,
@@ -585,7 +585,7 @@
     "pub_date": "2021-08-26",
     "url": "https://doi.org/10.1109/TVCG.2021.3111146",
     "authors": [13, 9, 1, 81, 16, 82, 19],
-    "keywords": ["Crime Analysis", "Spatial Data", "Temporal Data", "Visual Analytics", "Spatio-temporal Visualization"]
+    "keywords": ["Crime", "Spatial", "Temporal", "Vis"]
   },
   {
     "id": 22,
@@ -613,7 +613,7 @@
     "pub_date": "2021-06-01",
     "url": "https://doi.org/10.1016/j.cag.2021.04.006",
     "authors": [11, 24, 88, 89],
-    "keywords": ["Network Analysis", "Visualization", "Temporal Data", "Graph Visualization", "Streaming network", "Nonuniform timeslicing"]
+    "keywords": ["Network", "Vis"]
   },
   {
     "id": 23,
@@ -641,7 +641,7 @@
     "pub_date": "2021-10-08",
     "url": null,
     "authors": [90, 1, 91, 92, 19, 18],
-    "keywords": ["Scientific Literature", "Visual Analytics", "Multimodal Processing", "Interactive Visualization"]
+    "keywords": ["Vis", "Multimodal", "Vision", "NLP"]
   },
   {
     "id": 24,
@@ -669,7 +669,7 @@
     "pub_date": "2021-09-30",
     "url": "https://link.springer.com/chapter/10.1007/978-3-030-89817-5_21",
     "authors": [5, 10, 1],
-    "keywords": ["Urban Computing", "Computer Vision", "Interpretability", "Explainability", "Urban Safety", "Image Analysis"]
+    "keywords": ["Urban", "Perception", "xAI"]
   },
   {
     "id": 25,
@@ -697,7 +697,7 @@
     "pub_date": "2016-11-01",
     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0097849316301054",
     "authors": [13, 19, 18],
-    "keywords": ["Visualization", "Multidimensional Data", "Star Coordinates"]
+    "keywords": ["Vis"]
   },
   {
     "id": 26,
@@ -725,7 +725,7 @@
     "pub_date": "2021-10-29",
     "url": null,
     "authors": [93, 94, 95, 13],
-    "keywords": ["Spatial Data", "Temporal Data", "Clustering", "Similarity Analysis"]
+    "keywords": ["Spatial", "Temporal", "Trajectory"]
   },
   {
     "id": 27,
@@ -753,7 +753,7 @@
     "pub_date": "2021-12-14",
     "url": null,
     "authors": [5, 10, 1],
-    "keywords": ["Urban Computing", "Computer Vision", "Deep Learning", "Urban Safety", "Image Analysis"]
+    "keywords": ["Urban", "Perception", "Vision"]
   },
   {
     "id": 28,
@@ -781,7 +781,7 @@
     "pub_date": "2022-02-06",
     "url": "https://doi.org/10.5220/0010883300003124",
     "authors": [10, 96, 5, 19, 16, 1],
-    "keywords": ["Urban Computing", "Computer Vision", "Spatial Data", "Crime Analysis"]
+    "keywords": ["Urban", "Perception", "Crime"]
   },
   {
     "id": 29,
@@ -809,7 +809,7 @@
     "pub_date": "2022-01-27",
     "url": null,
     "authors": [22, 17, 1],
-    "keywords": ["Traffic Analysis", "Visualization", "Spatio-temporal Visualization"]
+    "keywords": ["Urban", "Traffic", "Spatial", "Temporal", "Vis"]
   },
   {
     "id": 30,
@@ -837,7 +837,7 @@
     "pub_date": "2022-01-13",
     "url": "https://arxiv.org/abs/2201.05043",
     "authors": [20, 1],
-    "keywords": ["Visualization", "Natural Language Processing", "Document Analysis"]
+    "keywords": ["Vision", "NLP", "Multimodal", "Vis"]
   },
   {
     "id": 31,
@@ -865,7 +865,7 @@
     "pub_date": "2022-02-11",
     "url": "https://doi.org/10.1016/j.cag.2022.02.005",
     "authors": [90, 3, 1, 19, 18],
-    "keywords": ["Scientific Literature", "Visual Analytics", "Multimodal Processing", "Interactive Visualization"]
+    "keywords": ["Multimodal", "Vision", "NLP", "Vis"]
   },
   {
     "id": 32,
@@ -893,7 +893,7 @@
     "pub_date": "2022-02-18",
     "url": "https://doi.org/10.1109/TVCG.2022.3152450",
     "authors": [4, 11, 19, 1],
-    "keywords": ["Legal Analysis", "Visual Analytics", "Natural Language Processing", "Legal Systems"]
+    "keywords": ["Legal", "NLP", "Vis"]
   },
   {
     "id": 33,
@@ -921,7 +921,7 @@
     "pub_date": "2022-03-28",
     "url": null,
     "authors": [84, 13, 85, 86, 1, 18],
-    "keywords": ["Education", "Student Performance", "Educational Assessment"]
+    "keywords": ["Education", "Vis"]
   },
   {
     "id": 34,
@@ -949,7 +949,7 @@
     "pub_date": "2022-05-06",
     "url": "https://doi.org/10.1145/3477314.3507018",
     "authors": [11, 24, 25, 88, 89],
-    "keywords": ["Network Analysis", "Visualization", "Temporal Data", "Graph Visualization"]
+    "keywords": ["Networks", "Temporal", "Vis"]
   },
   {
     "id": 35,
@@ -977,7 +977,7 @@
     "pub_date": "2022-05-19",
     "url": "https://doi.org/10.1109/TVCG.2022.3175626",
     "authors": [24, 98, 11, 99, 100, 1, 101, 26],
-    "keywords": ["Visualization", "Interactive Visualization", "Healthcare", "Visual Analytics"]
+    "keywords": ["Healthcare", "Vis"]
   },
   {
     "id": 36,
@@ -1005,7 +1005,7 @@
     "pub_date": "2022-06-07",
     "url": "https://www.mdpi.com/2076-3417/12/12/5785",
     "authors": [13, 84, 86, 1, 18],
-    "keywords": ["Education", "Visual Analytics", "Explainability", "Counterfactual Analysis", "Student Performance"]
+    "keywords": ["Education", "xAI", "Counterfactual", "Vis"]
   },
   {
     "id": 37,
@@ -1033,7 +1033,7 @@
     "pub_date": "2022-07-24",
     "url": "https://doi.org/10.5281/zenodo.6852946",
     "authors": [6, 9, 1],
-    "keywords": ["Education", "Educational Assessment", "Data Mining", "Fairness & Bias"]
+    "keywords": ["Education", "Fairness"]
   },
   {
     "id": 38,
@@ -1061,7 +1061,7 @@
     "pub_date": "2023-01-15",
     "url": "10.1109/TVCG.2022.3209477",
     "authors": [24, 11, 103, 25, 26, 1],
-    "keywords": ["Visualization", "Network Analysis", "Temporal Data", "Graph Visualization", "Interactive Visualization", "Healthcare"]
+    "keywords": ["Networks", "Vis"]
   },
   {
     "id": 39,
@@ -1089,7 +1089,7 @@
     "pub_date": "2022-12-16",
     "url": "https://doi.org/10.1007/s10618-022-00906-4",
     "authors": [9, 19, 1],
-    "keywords": ["Explainability", "Interpretability", "Machine Learning", "Multi-objective Optimization", "Crime Analysis", "Counterfactual Analysis"]
+    "keywords": ["xAI", "MOO", "Counterfactuals"]
   },
   {
     "id": 40,
@@ -1117,7 +1117,7 @@
     "pub_date": "2023-02-21",
     "url": null,
     "authors": [5, 105, 1],
-    "keywords": ["Explainability", "Interpretability", "Computer Vision", "Image Analysis", "Machine Learning", "Classification"]
+    "keywords": ["xAI", "Vision"]
   },
   {
     "id": 41,
@@ -1145,7 +1145,7 @@
     "pub_date": "2023-02-14",
     "url": "https://link.springer.com/article/10.1007/s10618-023-00922-y",
     "authors": [6, 9, 1],
-    "keywords": ["Machine Learning", "Fairness & Bias", "Multi-objective Optimization", "Classification"]
+    "keywords": ["xAI", "MOO"]
   },
   {
     "id": 42,
@@ -1173,7 +1173,7 @@
     "pub_date": "2023-06-01",
     "url": null,
     "authors": [2, 17, 1],
-    "keywords": ["Visualization", "Spatial Data", "Temporal Data", "Spatio-temporal Visualization"]
+    "keywords": ["Spatial", "Temporal", "Urban"]
   },
   {
     "id": 43,
@@ -1201,7 +1201,7 @@
     "pub_date": "2023-04-11",
     "url": "https://proceedings.mlr.press/v206/pereira23a.html",
     "authors": [113, 114, 4, 115, 116],
-    "keywords": ["Explainability", "Network Analysis", "Machine Learning", "Interpretability"]
+    "keywords": ["xAI", "Networks"]
   },
   {
     "id": 44,
@@ -1229,7 +1229,7 @@
     "pub_date": "2024-02-21",
     "url": "10.1109/JSTARS.2024.3368018",
     "authors": [119, 2, 120, 121, 122, 123, 1, 16],
-    "keywords": ["Urban Computing", "Computer Vision", "Deep Learning", "Spatial Data", "Image Analysis"]
+    "keywords": ["Urban", "Remote Sensing", "Vision"]
   },
   {
     "id": 45,
@@ -1257,7 +1257,7 @@
     "pub_date": "2024-06-16",
     "url": "https://aclanthology.org/2024.findings-naacl.262/",
     "authors": [4, 9, 1],
-    "keywords": ["Interpretability", "Explainability", "Machine Learning"]
+    "keywords": ["xAI", "NLP", "MOO"]
   },
   {
     "id": 46,
@@ -1285,7 +1285,7 @@
     "pub_date": "2024-09-07",
     "url": "https://arxiv.org/abs/2407.07004",
     "authors": [14, 15, 4, 126, 11, 1],
-    "keywords": ["Legal Analysis", "Legal Systems", "Natural Language Processing", "Similarity Analysis"]
+    "keywords": ["Legal", "NLP"]
   },
   {
     "id": 47,
@@ -1313,7 +1313,7 @@
     "pub_date": "2024-10-13",
     "url": null,
     "authors": [109, 5, 104, 111, 1],
-    "keywords": ["Machine Learning", "Visualization", "Knowledge Graphs", "Fairness & Bias", "Interpretability", "Human-AI Interaction"]
+    "keywords": ["Bias", "Knowledge", "Networks", "LLM"]
   },
   {
     "id": 48,
@@ -1341,7 +1341,7 @@
     "pub_date": "2024-10-13",
     "url": null,
     "authors": [104, 111, 109, 5, 1],
-    "keywords": ["Visualization", "Knowledge Graphs", "Spatial Data", "Visual Analytics"]
+    "keywords": ["Knowledge", "Networks"]
   },
   {
     "id": 49,
@@ -1369,7 +1369,7 @@
     "pub_date": "2024-12-12",
     "url": null,
     "authors": [5, 106, 1],
-    "keywords": ["Urban Computing", "Computer Vision", "Deep Learning", "Urban Safety", "Image Analysis"]
+    "keywords": ["Urban", "Perception"]
   },
   {
     "id": 50,
@@ -1397,7 +1397,7 @@
     "pub_date": "2025-01-06",
     "url": "https://www.nature.com/articles/s41893-024-01491-8",
     "authors": [19, 130, 131, 5, 132, 133, 134, 135, 1],
-    "keywords": ["Environmental Studies", "Network Analysis", "Spatial Data"]
+    "keywords": ["Amazon", "Remote Sensing", "Networks"]
   },
   {
     "id": 51,
@@ -1425,6 +1425,6 @@
     "pub_date": "2025-01-17",
     "url": "https://ieeexplore.ieee.org/abstract/document/10844578",
     "authors": [14, 11, 24, 26, 1],
-    "keywords": ["Visualization", "Network Analysis", "Temporal Data", "Graph Visualization", "Topological Data Analysis"]
+    "keywords": ["Networks", "Temporal", "TDA"]
   }
 ]
