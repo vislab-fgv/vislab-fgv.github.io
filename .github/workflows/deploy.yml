@@ -23,6 +23,8 @@ jobs:
       
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        env:
+          BUCKET_BASE_URL: "https://files.visualdslab.com"
 
   deploy:
     needs: build
